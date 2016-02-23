@@ -48,7 +48,7 @@ install.packages("swirl")
 
 ```
 library(swirl)
-install_course_github("ismaeIfm", "programacion-estadistica-r")
+install_course_github("ifunam", "programacion-estadistica-r")
 swirl()
 ```
 
