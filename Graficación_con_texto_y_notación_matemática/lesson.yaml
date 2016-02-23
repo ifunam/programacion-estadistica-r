@@ -1,0 +1,168 @@
+- Class: meta
+  Course: Introducción a la Programación Estadística con R
+  Lesson: Graficación texto y con notación matemática
+  Author: Ismael Fernández
+  Type: Standard
+  Organization: Universidad Nacional Autónoma De México
+  Version: 2.2.21
+
+- Class: text
+  Output: "En esta lección conocerás cómo utilizar notación matemática en R."
+
+- Class: text
+  Output: 'Antes de comenzar con notación matemática es importante que sepas que
+  existe la función text().'
+
+- Class: cmd_question
+  Output: 'La función text() dibuja cadenas sobre gráficas. Para probar la
+  función text(), crea una gráfica vacía de tamaño 20x20. Ingresa plot(1:20,
+  type="n") en la línea de comandos.'
+  CorrectAnswer: plot(1:20, type="n")
+  AnswerTests: omnitest(correctExpr='plot(1:20, type="n")')
+
+- Class: cmd_question
+  Output: 'Ahora ingresa text(5, 5, "¡Hola Mundo!") en la línea de comandos para
+  probar la función text().'
+  CorrectAnswer: text(5, 5, "¡Hola Mundo!")
+  AnswerTests: omnitest(correctExpr='text(5, 5, "¡Hola Mundo!")')
+
+- Class: cmd_question
+  Output: 'Con esto graficaste la cadena "¡Hola Mundo!" en las coordenadas (5,
+  5). Para conocer más acerca de text() ve su página de ayuda.'
+  CorrectAnswer: ?text
+  AnswerTests: omnitest(correctExpr='?text')
+  Hint: "Ingresa ?text en la línea de comandos."
+
+- Class: text
+  Output: "La función text() dibuja las cadenas dadas por el argumento labels
+  en las coordenadas x y y."
+
+- Class: text
+  Output: "Muchos parámetros controlan el aspecto en que los textos son
+  mostrados en la gráfica."
+
+- Class: cmd_question
+  Output: 'Si deseas cambiar el tamaño de los textos producidos por la función text(),
+  puedes usar el argumento cex de la función text(), el cual especifica un
+  factor de escala por defecto para el texto. Pruébalo. Ingresa text(11, 11,
+  "¡Hola Mundo! x2", cex=2) en la línea de comandos.'
+  CorrectAnswer: text(11, 11, "¡Hola Mundo! x2", cex=2)
+  AnswerTests: omnitest(correctExpr='text(11, 11, "¡Hola Mundo! x2", cex=2)')
+
+- Class: cmd_question
+  Output: 'Otro aspecto importante son los tipos de fuentes que puedes usar.
+  Una manera simple para cambiar los tipos de fuentes es usando el parámetro
+  family. Ingresa text(7, 7, "¡Hola Mundo con Serif!", family="serif") en la línea
+  de comandos.'
+  CorrectAnswer: text(7, 7, "¡Hola Mundo con Serif!", family="serif")
+  AnswerTests: omnitest(correctExpr='text(7, 7, "¡Hola Mundo con Serif!", family="serif")')
+
+- Class: cmd_question
+  Output: 'Los valores comunes usados para el argumento family son "serif",
+  "sans", "mono" y "symbol". Ahora prueba la fuente "mono". Ingresa text(9, 9,
+  "¡Hola Mundo con Mono!", family="mono") en la línea de comandos.'
+  CorrectAnswer: text(9, 9, "¡Hola Mundo con Mono!", family="mono")
+  AnswerTests: omnitest(correctExpr='text(9, 9, "¡Hola Mundo con Mono!", family="mono")')
+
+- Class: cmd_question
+  Output: 'Ahora ingresa text(13, 13, "¡Hola Mundo con Sans!", family="sans") en
+  la línea de comandos.'
+  CorrectAnswer: text(13, 13, "¡Hola Mundo con Sans!", family="sans")
+  AnswerTests: omnitest(correctExpr='text(13, 13, "¡Hola Mundo con Sans!", family="sans")')
+
+- Class: text
+  Output: 'Notarás que la fuente por defecto es "sans".'
+
+- Class: text
+  Output: "Volviendo a la notación matemática..."
+
+- Class: text
+  Output: "Muchas veces necesitarás etiquetas o títulos donde tengas que
+  utilizar notación matemática; es decir, que tengas que hacer uso de símbolos
+  y/o expresiones matemáticas."
+
+- Class: cmd_question
+  Output: "Ingresa demo(plotmath) para ver un ejemplo de expresiones
+  matemáticas que puedes usar en R."
+  CorrectAnswer: demo(plotmath)
+  AnswerTests: omnitest(correctExpr='demo(plotmath)')
+
+- Class: text
+  Output: "Las columnas de texto gris muestran las expresiones en R, y la
+  columna de texto negra muestra cómo se verán."
+
+- Class: cmd_question
+  Output: 'Para generar estos símbolos matemáticos, en R puedes utilizar la
+  función expression(). La función expression() recibe como argumento una
+  expresión como las que viste en color gris. Pruébalo. Ingresa plot(1:10,
+  type="n", main=expression(alpha +
+  beta)) en la línea de comandos.'
+  CorrectAnswer: plot(1:10, type="n", main=expression(alpha + beta))
+  AnswerTests: omnitest(correctExpr='plot(1:10, type="n", main=expression(alpha + beta))')
+
+- Class: cmd_question
+  Output: 'Además, puedes combinar expression() con la función paste() para poder
+  tener texto y símbolos en una misma sentencia. Ingresa plot(1:10, type="n",
+  xlab = expression(paste("Valores de ", x^phi1))) en la línea de comandos.'
+  CorrectAnswer: plot(1:10, type="n", xlab = expression(paste("Valores de ", x^phi1)))
+  AnswerTests: omnitest(correctExpr='plot(1:10, type="n", xlab = expression(paste("Valores de ", x^phi1)))')
+
+- Class: cmd_question
+  Output: "Si deseas revisar la lista de expresiones disponibles, ingresa
+  ?plotmath en la línea de comandos."
+  CorrectAnswer: ?plotmath
+  AnswerTests: any_of_exprs('?plotmath', '?"plotmath"', 'help(plotmath)', 'help("plotmath")')
+
+- Class: text
+  Output: "Además, puedes utilizar la función substitute() que te permitirá
+  obtener el valor de una variable u objeto en R; esto lo podrás usar dentro de
+  una función paste() para generar una expresión."
+
+- Class: cmd_question
+  Output: "Para mostrar su uso, ingresa t <- 10 en la línea de comandos."
+  CorrectAnswer: t <- 10
+  AnswerTests: omnitest(correctExpr='t <- 10')
+
+- Class: cmd_question
+  Output: 'Y ahora ingresa plot(1:t, main=substitute(paste("La gráfica del
+  vector 1:", x), list(x=t))) en la línea de comandos.'
+  CorrectAnswer: plot(1:t, main=substitute(paste("La gráfica del vector 1:", x), list(x=t)))
+  AnswerTests: omnitest(correctExpr='plot(1:t, main=substitute(paste("La gráfica del vector 1:", x), list(x=t)))')
+
+- Class: text
+  Output: 'Observa el título de la gráfica: "La gráfica del vector 1:10".'
+
+- Class: cmd_question
+  Output: 'Si ahora cambias el valor de t, ingresa t <- 20 en la línea de
+  comandos.'
+  CorrectAnswer: t <- 20
+  AnswerTests: omnitest(correctExpr='t <- 20')
+
+- Class: cmd_question
+  Output: 'Y nuevamente grafica plot(1:t, main=substitute(paste("La gráfica
+  del vector 1:", x), list(x=t))); cambiará el título de la gráfica. ¡Pruébalo!'
+  CorrectAnswer: plot(1:t, main=substitute(paste("La gráfica del vector 1:", x), list(x=t)))
+  AnswerTests: omnitest(correctExpr='plot(1:t, main=substitute(paste("La gráfica del vector 1:", x), list(x=t)))')
+
+- Class: text
+  Output: 'Notaras que el título cambio.'
+
+- Class: text
+  Output: "Esto es muy útil si quieres obtener gráficas donde alguno de los
+  parámetros es diferente; así puedes generar múltiples gráficas con distintos
+  parámetros y las etiquetas de éstos pueden ir cambiando de acuerdo a los
+  parámetros."
+
+- Class: cmd_question
+  Output: "Para conocer más acerca de la función substitute() ingresa
+  ?substitute en la línea de comandos."
+  CorrectAnswer: ?substitute
+  AnswerTests: omnitest(correctExpr='?substitute')
+
+- Class: mult_question
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
+  Coursera que has completado esta lección?"
+  CorrectAnswer: NULL
+  AnswerChoices: Si;No
+  AnswerTests: coursera_on_demand()
+  Hint: ""

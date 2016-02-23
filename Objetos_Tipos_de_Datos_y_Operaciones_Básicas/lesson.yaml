@@ -1,0 +1,523 @@
+- Class: meta
+  Course: Introducción a la Programación Estadística con R
+  Lesson: Objetos Tipos de Datos y Operaciones Básicas
+  Author: Ismael Fernández
+  Type: Standard
+  Organization: Universidad Nacional Autónoma De México
+  Version: 2.2.21
+
+- Class: text
+  Output: 'En esta lección conocerás los tipos de datos que existen en el
+  lenguaje R, además de las operaciones básicas que puedes hacer con ellos.'
+
+- Class: text
+  Output: 'Cuando introduces una expresión en la línea de comandos y das ENTER,
+  R evalúa la expresión y muestra el resultado (si es que existe uno). R puede
+  ser usado como una calculadora, ya que realiza operaciones aritméticas, además
+  de operaciones lógicas.'
+
+- Class: cmd_question
+  Output: 'Pruébalo: ingresa 3 + 7 en la línea de comandos.'
+  CorrectAnswer: 3 + 7
+  AnswerTests: omnitest(correctVal=3 + 7)
+
+- Class: text
+  Output: 'R simplemente imprime el resultado 10 por defecto. Sin embargo, R es
+  un lenguaje de programación y normalmente la razón por la que usas éstos es
+  para automatizar algún proceso y evitar la repetición innecesaria.'
+
+- Class: text
+  Output: 'En ese caso, tal vez quieras usar el resultado anterior en algún otro
+  cálculo. Así que en lugar de volver a teclear la expresión cada vez que la
+  necesites, puedes crear una variable que guarde el resultado de ésta.'
+
+- Class: text
+  Output: "La manera de asignar un valor a una variable en R es usar el operador
+  de asignación, el cual es sólo un símbolo de menor que seguido de un signo de
+  menos, mejor conocido como guion alto. El operador se ve así: <-"
+
+- Class: cmd_question
+  Output: 'Por ejemplo, ahora ingresa en la línea de comandos: mi_variable <-
+  (180 /  6) - 15'
+  CorrectAnswer: mi_variable <- (180 /  6) - 15
+  AnswerTests: omnitest(correctExpr='mi_variable <- (180 /  6) - 15')
+
+- Class: text
+  Output: "Lo que estás haciendo en este caso es asignarle a la variable
+  mi_variable el valor de todo lo que se encuentra del lado derecho del operador
+   de asignación, en este caso (180 /  6) - 15."
+
+- Class: text
+  Output: 'En R también puedes asignar del lado izquierdo: (180 /  6) - 15 ->
+  mi_variable'
+
+- Class: mult_question
+  Output: "Como ya te habrás dado cuenta, la asignación '<-' no muestra ningún
+  resultado. Antes de ver el contenido de la variable 'mi_variable', ¿qué crees
+  que contenga la variable ‘mi_variable’?."
+  CorrectAnswer: la expresión evaluada, es decir un 15
+  AnswerChoices: la expresión evaluada, es decir un 15; la expresión (180 /  6) - 15;la dirección de memoria de la variable 'mi_variable'
+  AnswerTests: omnitest(correctVal='la expresión evaluada, es decir un 15')
+
+- Class: cmd_question
+  Output: "La variable 'mi_variable' deberá contener el número 15, debido a que
+  (180 /  6) - 15 = 15. Para revisar el contenido de una variable, basta con
+  escribir el nombre de ésta en la línea de comandos y presionar ENTER.
+  Inténtalo: muestra el contenido de la variable 'mi_variable':"
+  CorrectAnswer: mi_variable
+  AnswerTests: omnitest(correctExpr='mi_variable')
+  Hint: "Introduce mi_variable en la línea de comandos."
+
+- Class: text
+  Output: "Nota que el '[1]' acompaña a los valores mostrados al evaluar las
+  expresiones anteriores. Esto se debe a que en R todo número que introduces en
+  la consola es interpretado como un vector."
+
+- Class: text
+  Output: "Un vector es una colección ordenada de números, por lo cual el '[1]'
+  denota la posición del primer elemento mostrado en el renglón 1. En los casos
+  anteriores sólo existe un único elemento en el vector."
+
+- Class: cmd_question
+  Output: "En R puedes construir vectores más largos usando la función c()
+  (combine). Por ejemplo, introduce: y <- c(561, 1105, 1729, 2465,
+  2821)"
+  CorrectAnswer: y <- c(561, 1105, 1729, 2465, 2821)
+  AnswerTests: omnitest(correctExpr='y <- c(561, 1105, 1729, 2465, 2821)')
+  Hint: 'Introduce y <- c(561, 1105, 1729, 2465, 2821) en la línea de comandos.'
+
+- Class: cmd_question
+  Output: "Ahora observa el contenido de la variable 'y'. Otra manera de ver el
+  contenido de una variable es imprimirlo con la función print(). Introduce
+  print(y) en la línea de comandos:"
+  CorrectAnswer: print(y)
+  AnswerTests: omnitest(correctExpr='print(y)')
+
+- Class: cmd_question
+  Output: 'Como puedes notar, la expresión anterior resulta ser un vector que
+  contiene los primeros cinco números de Carmichael. Como ejemplo de un vector
+  que abarque más de una línea, usa el operador de secuencia para producir un
+  vector con cada uno de los enteros del 1 al 100. Introduce 1:100 en la línea
+  de comandos.'
+  CorrectAnswer: 1:100
+  AnswerTests: omnitest(correctExpr='1:100')
+
+- Class: text
+  Output: 'El vector es el objeto más simple en R. La mayoría de las operaciones
+  están basadas en vectores.'
+
+- Class: cmd_question
+  Output: 'Por ejemplo, puedes realizar operaciones sobre vectores y R
+  automáticamente empareja los elementos de los dos vectores. Introduce c(1.1,
+  2.2, 3.3, 4.4) - c(1, 1, 1, 1) en la línea de comandos.'
+  CorrectAnswer: c(1.1, 2.2, 3.3, 4.4) - c(1, 1, 1, 1)
+  AnswerTests: omnitest(correctExpr='c(1.1, 2.2, 3.3, 4.4) - c(1, 1, 1, 1)')
+
+- Class: cmd_question
+  Output: 'Nota: Si los dos vectores son de diferente tamaño, R repetirá la
+  secuencia más pequeña múltiples veces. Por ejemplo, introduce c(1, 2, 3, 4, 5,
+  6, 7, 8, 9, 10) - c(1, 2) en la línea de comandos.'
+  CorrectAnswer: c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) - c(1, 2)
+  AnswerTests: omnitest(correctExpr='c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) - c(1, 2)')
+
+- Class: cmd_question
+  Output: 'En R casi todo es un objeto. Para ver qué objetos tienes en un
+  momento determinado, puedes usar la función ls(). Inténtalo ahora.'
+  CorrectAnswer: ls()
+  AnswerTests: omnitest(correctExpr='ls()')
+  Hint: 'Introduce ls() en la línea de comandos.'
+
+- Class: text
+  Output: 'Como sabes, existen otros tipos de objetos, como los caracteres
+  (character).'
+
+- Class: cmd_question
+  Output: 'Las expresiones con caracteres se denotan entre comillas. Por
+  ejemplo, introduce "¡Hola Mundo!" en la línea de comandos.'
+  CorrectAnswer: '"¡Hola Mundo!"'
+  AnswerTests: omnitest(correctExpr='"¡Hola Mundo!"')
+
+- Class: text
+  Output: 'Esto es mejor conocido en R como un vector de caracteres. De hecho,
+  este ejemplo es un vector de longitud uno.'
+
+- Class: cmd_question
+  Output: 'Ahora crea una variable llamada ‘colores’ que contenga un vector con
+  las cadenas "rojo", "azul", "verde", "azul", "rojo", en ese orden.'
+  CorrectAnswer: colores <- c("rojo", "azul", "verde", "azul", "rojo")
+  AnswerTests: omnitest(correctExpr='colores <- c("rojo", "azul", "verde", "azul", "rojo")')
+  Hint: 'Introduce colores <- c("rojo", "azul", "verde", "azul", "rojo") en la
+  línea de comandos.'
+
+- Class: cmd_question
+  Output: "Ahora imprime el vector ‘colores’ ."
+  CorrectAnswer: colores
+  AnswerTests:  any_of_exprs('colores', 'print(colores)')
+  Hint: 'Introduce colores en la línea de comandos.'
+
+- Class: text
+  Output: 'En otros lenguajes como C, carácter (character) hace referencia a un
+  simple carácter, y cadena (string) se entiende como un conjunto de caracteres
+  ordenados. Una cadena de caracteres es equivalente al valor de carácter en R.'
+
+- Class: text
+  Output: 'Además, hay objetos de tipo numérico (numeric) que se dividen en
+  complejos (complex) y enteros (integer). Los últimos ya los conoces, pues has
+  estado trabajando con ellos, además de los vectores y los caracteres.'
+
+- Class: cmd_question
+  Output: "Los complejos en R se representan de la siguiente manera: a+bi, donde
+  'a' es la parte real y 'b' la parte imaginaria. Pruébalo: guarda el valor de
+  2+1i en la variable 'complejo'."
+  CorrectAnswer: complejo <- 2+1i
+  AnswerTests: omnitest(correctExpr='complejo <- 2+1i')
+  Hint: 'Introduce complejo <- 2+1i en la línea de comandos.'
+
+- Class: text
+  Output: "Al igual que los demás objetos de tipo numérico, lo complejos pueden
+  hacer uso de los operadores aritméticos más comunes, como `+`(suma), `-`
+  (resta, o negación en el caso unario), `/`(división), `*` (multiplicación) `^`
+  (donde x^2 significa 'x elevada a la potencia 2'). Para obtener la raíz
+  cuadrada, usa la función sqrt(), y para obtener el valor absoluto, la función
+  abs()."
+
+- Class: text
+  Output: 'También hay objetos lógicos (logic) que representan los valores
+  lógicos falso y verdadero.'
+
+- Class: text
+  Output: "El valor lógico falso puede ser representado por la instrucción FALSE
+  o únicamente por la letra F mayúscula; de la misma manera, el valor lógico
+  verdadero es representado por la instrucción TRUE o por la letra T."
+
+- Class: text
+  Output: "Como operadores lógicos están el AND lógico: `&` y `&&` y el OR
+  lógico: `|` y `||`."
+
+- Class: cmd_question
+  Output: 'También existen operadores que devuelven valores lógicos, éstos
+  pueden ser de orden, como: `>` (mayor que), `<` (menor que), `>=` (mayor
+  igual) y `<=` (menor igual), o de comparación, como: `==` (igualdad) y `!=`
+  (diferencia). Por ejemplo, introduce en la línea de comandos mi_variable ==
+  15.'
+  CorrectAnswer: mi_variable == 15
+  AnswerTests: omnitest(correctExpr='mi_variable == 15')
+
+- Class: text
+  Output: "Como puedes ver, R te devuelve el valor TRUE, pues si recuerdas, en
+  la variable 'mi_variable' asignaste el valor de la expresión (180 /  6) - 15,
+  la cual resultaba en el valor 15. Por lo cual, cuando le preguntas a R si
+  'mi_variable' es igual a 15, te devuelve el valor TRUE."
+
+- Class: text
+  Output: 'En R existen algunos valores especiales.'
+
+- Class: cmd_question
+  Output: "Por ejemplo, los valores NA son usados para representar valores
+  faltantes. Supón que cambias el tamaño de un vector a un valor más grande del
+  previamente definido. Recuerda el vector 'complejo', el cual contenía el
+  número complejo 2+1i; cambia la longitud de 'complejo'. Ingresa
+  length(complejo) <- 3 en la línea de comandos."
+  CorrectAnswer: length(complejo) <- 3
+  AnswerTests: omnitest(correctExpr='length(complejo) <- 3')
+  Hint: 'Introduce length(complejo) <- 3) en la línea de comandos.'
+
+- Class: cmd_question
+  Output: "Ahora ve el contenido de 'complejo'."
+  CorrectAnswer: complejo
+  AnswerTests:  any_of_exprs('complejo', 'print(complejo)')
+  Hint: 'Introduce complejo en la línea de comandos.'
+
+- Class: text
+  Output: "Los nuevos espacios tendrán el valor NA, el cual quiere decir not
+  available (no disponible)."
+
+- Class: cmd_question
+  Output: "Si un resultado de la evaluación de alguna expresión aritmética es
+  muy grande, R regresa el valor 'Inf' para un valor positivo y '-Inf' para un
+  valor negativo (infinitos positivo y negativo, respectivamente). Por ejemplo,
+  introduce 2^1024 en la línea de comandos."
+  CorrectAnswer: 2^1024
+  AnswerTests: omnitest(correctExpr='2^1024')
+  Hint: 'Introduce 2^1024 en la línea de comandos.'
+
+- Class: cmd_question
+  Output: 'Algunas veces la evaluación de alguna expresión no tendrá sentido. En
+  estos casos, R regresará el valor Nan (not a number). Por ejemplo, divide 0
+  entre 0.'
+  CorrectAnswer: 0/0
+  AnswerTests: omnitest(correctExpr='0/0')
+  Hint: 'Introduce 0/0 en la línea de comandos.'
+
+- Class: text
+  Output: 'Adicionalmente, en R existe el objeto null y es representado por el
+  símbolo NULL.'
+
+- Class: text
+  Output: 'Nota que NULL no es lo mismo que NA, Inf, -Inf o Nan.'
+
+- Class: text
+  Output: "Recuerda que R incluye un conjunto de clases para representar fechas
+  y horas. Algunas de ellas son: Date, POSIXct y POSTXlt."
+
+- Class: cmd_question
+  Output: "Por ejemplo, introduce fecha_primer_curso_R <- Sys.Date() en la línea
+  de comandos."
+  CorrectAnswer: fecha_primer_curso_R <- Sys.Date()
+  AnswerTests: omnitest(correctExpr='fecha_primer_curso_R <- Sys.Date()')
+
+- Class: cmd_question
+  Output: "Ahora imprime el contenido de fecha_primer_curso_R."
+  CorrectAnswer: fecha_primer_curso_R
+  AnswerTests: any_of_exprs('fecha_primer_curso_R', 'print(fecha_primer_curso_R)')
+  Hint: 'Introduce fecha_primer_curso_R en la línea de comandos.'
+
+- Class: text
+  Output: "Recuerda que R te permite llevar a cabo operaciones numéricas y
+  estadísticas con las fechas y horas. Además, R incluye funciones para
+  manipularlas. Muchas funciones de graficación requieren fechas y horas."
+
+- Class: text
+  Output: 'Ahora que conoces los objetos más usados en R, debes saber que además
+  de la función c(), en R existe la función vector() para crear vectores. Al
+  usar la función vector(), debes especificar el tipo de dato que almacenará
+  el vector y el tamaño.'
+
+- Class: text
+  Output: 'La función vector() crea un vector con los valores por defecto del
+  tipo especificado.'
+
+- Class: cmd_question
+  Output: 'Por ejemplo, escribe vector("numeric", length = 10) en la línea de
+  comandos.'
+  CorrectAnswer: vector("numeric", length = 10)
+  AnswerTests: omnitest(correctExpr='vector("numeric", length = 10)')
+
+- Class: text
+  Output: "Como puedes observar, el vector fue llenado con ceros."
+
+- Class: cmd_question
+  Output: 'Ahora introduce vector("character", length = 10) en la línea de
+  comandos.'
+  CorrectAnswer: vector("character", length = 10)
+  AnswerTests: omnitest(correctExpr='vector("character", length = 10)')
+
+- Class: text
+  Output: "Esta vez el vector fue llenado con 10 cadenas vacías."
+
+- Class: mult_question
+  Output: 'Si le indicaras al vector que el tipo fuera "logical", ¿qué
+  crees que contendría?'
+  CorrectAnswer: sólo valores FALSE
+  AnswerChoices: sólo valores FALSE; sólo valores TRUE; ninguna de las anteriores;
+  AnswerTests: omnitest(correctVal='sólo valores FALSE')
+
+- Class: cmd_question
+  Output: 'Crea un vector de tipo "logical" de tamaño 10 usando la función
+  vector().'
+  CorrectAnswer: vector("logical", length = 10)
+  AnswerTests: omnitest(correctExpr='vector("logical", length = 10)')
+  Hint: 'Introduce vector("logical", length = 10) en la línea de comandos.'
+
+- Class: text
+  Output: 'Nota: Ahora que conoces los objetos más usados en R, es importante
+  que sepas que los vectores sólo pueden contener objetos de la misma clase.
+  Para guardar objetos de diferentes clases, puedes usar listas.'
+
+- Class: cmd_question
+  Output: 'Las listas son una colección ordenada de objetos. Para crear una
+  lista, usa la función list() y especifica el contenido de la lista separado
+  por comas dentro de los paréntesis. Inténtalo: crea una lista que contenga un
+  0, la cadena "Hola" y el valor TRUE, en ese orden.'
+  CorrectAnswer: list(0,"Hola",TRUE)
+  AnswerTests: omnitest(correctExpr='list(0,"Hola",TRUE)')
+  Hint: 'Introduce list(0,"Hola",TRUE) en la línea de comandos. '
+
+- Class: text
+  Output: 'Anteriormente viste que en R los vectores sólo pueden contener
+  objetos de la misma clase.'
+
+- Class: cmd_question
+  Output: 'Pero, ¿qué pasa si creas un vector c(T, 19, 1+3i)? Introduce c(T, 19,
+  1+3i) en la línea de comandos.'
+  CorrectAnswer: c(T, 19, 1+3i)
+  AnswerTests: omnitest(correctExpr='c(T, 19, 1+3i)')
+
+- Class: text
+  Output: 'Como habrás supuesto, el número complejo 1+3i no puede ser convertido
+   a entero ni a objeto de tipo "logical", entonces los valores T y 19 son
+   convertidos a los números complejos 1+0i y 19+0i respectivamente. Esto no es
+   más que la representación de esos valores en objeto tipo "complex".'
+
+- Class: text
+  Output: 'Esto se llama coerción.'
+
+- Class: text
+  Output: 'La coerción hace que todos los objetos de un vector sean de una misma
+  clase. Entonces, cuando creas un vector de diferentes tipos, R busca un tipo
+  común, y los elementos que no son de ese tipo son convertidos.'
+
+- Class: text
+  Output: 'Otro ejemplo de coerción es cuando usas las funciones as.*().'
+
+- Class: cmd_question
+  Output: 'Inténtalo: crea un vector de longitud 5 de tipo "numeric" con la
+  función vector() y guardarlo en la variable ‘c’.'
+  CorrectAnswer: c <- vector("numeric", length=5)
+  AnswerTests: omnitest(correctExpr='c <- vector("numeric", length=5)')
+  Hint: 'Introduce c <- vector("numeric", length=5) en la línea de comandos.'
+
+- Class: cmd_question
+  Output: "Revisa el contenido de la variable ‘c’ ."
+  CorrectAnswer: c
+  AnswerTests: any_of_exprs('c', 'print(c)')
+  Hint: 'Introduce print(c) en la línea de comandos.'
+
+- Class: cmd_question
+  Output: "Ahora usa la función as.logical() con el vector c."
+  CorrectAnswer: as.logical(c)
+  AnswerTests: omnitest(correctExpr='as.logical(c)')
+  Hint: 'Introduce as.logical(c) en la línea de comandos. '
+
+- Class: text
+  Output: 'Como puedes imaginar, el vector de tipo "numeric" fue explícitamente
+  convertido a "logical".'
+
+- Class: text
+  Output: 'Este tipo de coerción es mejor conocida como coerción explícita.
+  Además de as.logical(), también existe as.numeric(), as.character(),
+  as.integer().'
+
+- Class: cmd_question
+  Output: 'Si usas la función class(), que te dice la clase a la que pertenece
+  un objeto, obtendrás que class(c) = "numeric." Pruébalo, ingresa class(c) en
+  la línea de comandos.'
+  CorrectAnswer: class(c)
+  AnswerTests: omnitest(correctExpr='class(c)')
+
+- Class: cmd_question
+  Output: 'Pero si después pruebas la misma función class() enviándole como
+  argumento as.logical(c), obtendrás que es de tipo logical. Compruébalo:'
+  CorrectAnswer: class(as.logical(c))
+  AnswerTests: omnitest(correctExpr='class(as.logical(c))')
+  Hint: "Introduce class(as.logical(c)) en la línea de comandos."
+
+- Class: text
+  Output: 'Además de los vectores y las listas, existen las matrices.'
+
+- Class: text
+  Output: 'Una matriz es una extensión de un vector de dos dimensiones. Las
+  matrices son usadas para representar información de un solo tipo de dos
+  dimensiones.'
+
+- Class: cmd_question
+  Output: 'Una manera de generar una matriz es al usar la función matrix().
+  Inténtalo, introduce m <- matrix(data=1:12,nrow=4,ncol=3) en la línea de
+  comandos.'
+  CorrectAnswer: m <- matrix(data=1:12,nrow=4,ncol=3)
+  AnswerTests: omnitest(correctExpr='m <- matrix(data=1:12,nrow=4,ncol=3)')
+  Hint: 'Introduce m <- matrix(data=1:12,nrow=4,ncol=3) en la línea de
+  comandos.'
+
+- Class: cmd_question
+  Output: "Ahora imprime el contenido de 'm'."
+  CorrectAnswer: m
+  AnswerTests: any_of_exprs('m', 'print(m)')
+  Hint: 'Imprime el contenido de m, usa la función print o introduce m en la
+  línea de comandos.'
+
+- Class: text
+  Output: 'Como puedes observar, creaste una matriz con tres columnas (ncol) y
+  cuatro renglones (nrow).'
+
+- Class: text
+  Output: 'Recuerda que también puedes crear matrices con las funciones cbind,
+  rbind y as.matrix().'
+
+- Class: text
+  Output: 'Los factores son otro tipo especial de vectores usados para
+  representar datos categóricos, éstos pueden ser ordenados o sin orden.'
+
+- Class: text
+  Output: "Recuerda el vector 'colores' que creaste previamente y supón que
+  representa un conjunto de observaciones acerca de cuál es el color preferido
+  de las personas."
+
+- Class: cmd_question
+  Output: 'Es una representación perfectamente válida, pero puede llegar a ser
+  ineficiente. Ahora representarás los colores como un factor. Introduce
+  factor(colores) en la línea de comandos.'
+  CorrectAnswer: factor(colores)
+  AnswerTests: omnitest(correctExpr='factor(colores)')
+
+- Class: text
+  Output: 'La impresión de un factor muestra información ligeramente diferente
+  a la de un vector de caracteres. En particular, puedes notar que las comillas
+  no son mostradas y que los niveles son explícitamente impresos.'
+
+- Class: text
+  Output: 'Por último, existen los dataframes, que son una manera muy útil de
+  representar datos tabulares. Son uno de los tipos más importantes.'
+
+- Class: text
+  Output: 'Un dataframe representa una tabla de datos. Cada columna de éste
+  puede ser de un tipo diferente, pero cada fila debe tener la misma longitud.'
+
+- Class: cmd_question
+  Output: 'Ahora crea uno. Introduce data.frame(llave=y, color=colores) en la
+  línea de comandos.'
+  CorrectAnswer: data.frame(llave=y, color=colores)
+  AnswerTests: omnitest(correctExpr='data.frame(llave=y, color=colores)')
+
+- Class: text
+  Output: "¿Recuerdas los vectores 'y' y 'colores'? Pues con ellos creaste un data
+  frame cuya primera columna tiene números de Carmichael y la segunda colores."
+
+- Class: text
+  Output: 'Otra manera de crear dataframes es con las funciones data.frame(),
+  read.table() y read.csv().'
+
+- Class: text
+  Output: 'También puedes usar la función data.matrix( ) para convertir un
+  data frame en una matriz.'
+
+- Class: text
+  Output: Antes de concluir la lección, te mostraré un par de atajos.
+
+- Class: text
+  Output: 'Al inicio de esta lección introdujiste mi_variable <- (180 / 6) - 15
+  en la línea de comandos. Supón que cometiste un error y que querías introducir
+  mi_variable <- (180 / 60) - 15, es decir, querías escribir 60, pero escribiste
+  6. Puedes reescribir la expresión o...'
+
+- Class: cmd_question
+  Output: "En muchos entornos de programación, presionar la tecla 'flecha hacia
+  arriba' te mostrará comandos anteriores. Presiona esta tecla hasta que llegues
+  al comando (mi_variable <- (180 / 6) - 15), entonces cambia el número 6 por 60
+  y presiona ENTER. Si la tecla 'flecha hacia arriba' no funciona, sólo escribe
+  el comando correcto."
+  CorrectAnswer: mi_variable <- (180 / 60) - 15
+  AnswerTests: omnitest(correctExpr='mi_variable <- (180 / 60) - 15')
+  Hint: "Si la tecla 'flecha hacia arriba' no funciona, sólo escribe el comando
+  correcto."
+
+- Class: cmd_question
+  Output: "Por último, puedes teclear las dos primeras letras del nombre de la
+  variable y después presionar la tecla Tab (tabulador). La mayoría de los
+  entornos de programación muestran una lista de las variables que has creado
+  con el prefijo 'mi_'. Esta función se llama autocompletado y es muy útil para
+  cuando tienes muchas variables en tu espacio de trabajo. Pruébalo, ingresa
+  'mi_' y autocompleta. Si autocompletar no sirve en tu caso, sólo ingresa
+  mi_variable en la línea de comandos)."
+  CorrectAnswer: mi_variable
+  AnswerTests: omnitest(correctExpr='mi_variable')
+  Hint: 'Si autocompletar no sirve en tu caso, sólo introduce mi_variable en la
+  línea de comandos.'
+
+- Class: mult_question
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
+  Coursera que has completado esta lección?"
+  CorrectAnswer: NULL
+  AnswerChoices: Si;No
+  AnswerTests: coursera_on_demand()
+  Hint: ""

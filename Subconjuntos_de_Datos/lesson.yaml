@@ -1,0 +1,337 @@
+- Class: meta
+  Course: Introducción a la Programación Estadística con R
+  Lesson: Subconjuntos de Datos
+  Author: Ismael Fernández
+  Type: Standard
+  Organization: Universidad Nacional Autónoma De México
+  Version: 2.2.21
+
+- Class: text
+  Output: 'En esta lección conocerás las maneras de acceder a las estructuras de
+  datos en el lenguaje R.'
+
+- Class: text
+  Output: 'R tiene una sintaxis especializada para acceder a las estructuras de
+  datos.'
+
+- Class: text
+  Output: 'Tú puedes obtener un elemento o múltiples elementos de una estructura
+  de datos usando la notación de indexado de R.'
+
+- Class: cmd_question
+  Output: "R provee diferentes maneras de referirse a un elemento (o conjunto de
+  elementos) de un vector. Para probar estas diferentes maneras crea una
+  variable llamada 'mi_vector' que contenga un vector con los números enteros del
+  11 al 30. Recuerda que puedes usar el operador secuencia ':'."
+  CorrectAnswer: mi_vector <- 11:30
+  AnswerTests: any_of_exprs('mi_vector <- c(11:30)', 'mi_vector <- c(11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,26,27,28,29,30)', 'mi_vector <- 11:30')
+
+- Class: cmd_question
+  Output: "Y ahora ve su contenido."
+  CorrectAnswer: mi_vector
+  AnswerTests: any_of_exprs('mi_vector', 'print(mi_vector)')
+  Hint: "Ingresa mi_vector en la línea de comandos."
+
+- Class: text
+  Output: 'La manera más común de buscar un elemento en R es por medio de un
+  vector numérico.'
+
+- Class: text
+  Output: "Puedes buscar elementos por posición en un vector usando la siguiente
+  notación: x[s], donde 'x' es un vector del cual deseas obtener elementos y 's'
+  es un segundo vector representando el conjunto de índices de elementos que te
+  gustaría consultar."
+
+- Class: text
+  Output: 'Debes saber que en R las posiciones de los elementos de un vector
+  comienzan en 1 y no en 0, como en lenguajes de programación como Java o C.'
+
+- Class: text
+  Output: 'Puedes usar un vector entero para buscar un simple elemento o
+  múltiples.'
+
+- Class: cmd_question
+  Output: "Por ejemplo, obten el tercer elemento de 'mi_vector'."
+  CorrectAnswer: mi_vector[3]
+  AnswerTests: omnitest(correctExpr='mi_vector[3]')
+  Hint: "Introduce mi_vector[3] en la línea de comandos."
+
+- Class: cmd_question
+  Output: "Ahora obten los primeros cinco elementos de 'mi_vector'."
+  CorrectAnswer:  mi_vector[1:5]
+  AnswerTests: any_of_exprs('mi_vector[1:5]', 'mi_vector[c(1, 2, 3, 4, 5)]', 'mi_vector[c(1:5)]')
+  Hint: "Introduce mi_vector[1:5] en la línea de comandos."
+
+- Class: cmd_question
+  Output: "No necesariamente los índices deben ser consecutivos.
+  Ingresa mi_vector[c(4,6,13)] en la línea de comandos."
+  CorrectAnswer: mi_vector[c(4,6,13)]
+  AnswerTests: omnitest(correctExpr='mi_vector[c(4,6,13)]')
+
+- Class: cmd_question
+  Output: "Asimismo, no es necesario que los índices se encuentren ordenados.
+  Ingresa mi_vector[c(6,13,4)] en la línea de comandos."
+  CorrectAnswer: mi_vector[c(6,13,4)]
+  AnswerTests: omnitest(correctExpr='mi_vector[c(6,13,4)]')
+
+- Class: cmd_question
+  Output: "Como un caso especial, puedes usar la notación [[]] para referirte
+  a un solo elemento. Ingresa mi_vector[[3]] en la línea de comandos."
+  CorrectAnswer: mi_vector[[3]]
+  AnswerTests: omnitest(correctExpr='mi_vector[[3]]')
+
+- Class: text
+  Output: 'La notación [[]] funciona de la misma manera que la notación [] en
+  este caso.'
+
+- Class: cmd_question
+  Output: "También puedes usar enteros negativos para obtener un vector que
+  consista en todos los elementos, excepto los elementos especificados. Excluye
+  los elementos 9:15, al especificar -9:-15."
+  CorrectAnswer: mi_vector[-9:-15]
+  AnswerTests: any_of_exprs('mi_vector[-9:-15]', 'mi_vector[c(-9:-15)]', 'mi_vector[-15:-9]', 'mi_vector[c(-15:-9)]')
+  Hint: "Introduce mi_vector[-9:-15] en la línea de comandos."
+
+- Class: text
+  Output: 'Como alternativa a indexar con un vector de enteros, puedes
+  indexar a través de un vector lógico.'
+
+- Class: cmd_question
+  Output: "Como ejemplo crea un vector lógico de longitud 10 con valores
+  lógicos alternados, TRUE y FALSE (rep(c(TRUE,FALSE),10)), y consulta con él
+  mi_vector[rep(c(TRUE,FALSE),10)]."
+  CorrectAnswer: mi_vector[rep(c(TRUE,FALSE),10)]
+  AnswerTests: omnitest(correctExpr='mi_vector[rep(c(TRUE,FALSE),10)]')
+  Hint: "Introduce mi_vector[rep(c(TRUE,FALSE),10)] en la línea de comandos."
+
+- Class: text
+  Output: 'Como podrás notar, lo que ocurrió fue que indexaste únicamente los
+  elementos en las posiciones impares, puesto que creaste un vector con
+  elementos TRUE en las posiciones impares y FALSE en las pares.'
+
+- Class: cmd_question
+  Output: "El vector índice no necesita ser de la misma longitud que el vector a
+  indexar. R repetirá el vector más corto y regresará los valores que cacen.
+  Ingresa mi_vector[c(FALSE,FALSE,TRUE)] en la linea de comandos."
+  CorrectAnswer: mi_vector[c(FALSE,FALSE,TRUE)]
+  AnswerTests: omnitest(correctExpr='mi_vector[c(FALSE,FALSE,TRUE)]')
+
+- Class: text
+  Output: 'Notarás que ahora indexaste los índices de los elementos múltiplos de
+  3.'
+
+- Class:  cmd_question
+  Output: 'Es muy útil calcular un vector lógico de un mismo vector. Por
+  ejemplo, busca elementos más grandes que 20. Ingresa en la línea de
+  comandos  mi_vector > 20.'
+  CorrectAnswer: mi_vector > 20
+  AnswerTests: omnitest(correctExpr='mi_vector > 20')
+
+- Class:  cmd_question
+  Output: "Y ahora indexa 'mi_vector' usando el vector previamente calculado.
+  Ingresa  mi_vector[(mi_vector > 20)] en la línea de comandos."
+  CorrectAnswer: mi_vector[(mi_vector > 20)]
+  AnswerTests: omnitest(correctExpr='mi_vector[(mi_vector > 20)]')
+
+- Class: text
+  Output: 'También puedes usar esta notación para extraer partes de una
+  estructura de datos multidimensional.'
+
+- Class: text
+  Output: 'Un arreglo es un vector multidimensional. Vectores y arreglos se
+  almacenan de la misma manera internamente, pero un arreglo se muestra
+  diferente y se accede diferente.'
+
+- Class:  cmd_question
+  Output: "Para crear un arreglo de dimensión 3x3x2 y de contenido los números
+  del 1 al 18 y guardarlo en la variable 'mi_arreglo', ingresa mi_arreglo <-
+  array(c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18),dim=c(3,3,2)) en la
+  línea de comandos."
+  CorrectAnswer: mi_arreglo <- array(c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18),dim=c(3,3,2))
+  AnswerTests: any_of_exprs('mi_arreglo <- array(c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18),dim=c(3,3,2))', 'mi_arreglo <- array(1:18,dim=c(3,3,2))', 'mi_arreglo <- array(c(1:18),dim=c(3,3,2))')
+
+- Class:  cmd_question
+  Output: "Ahora ve el contenido de la variable 'mi_arreglo'."
+  CorrectAnswer: mi_arreglo
+  AnswerTests: any_of_exprs('mi_arreglo', 'print(mi_arreglo)')
+
+- Class:  cmd_question
+  Output: 'R tiene una manera muy limpia de referirse a parte de un arreglo. Se
+  especifican índices para cada dimensión, separados por comas.
+  Ingresa mi_arreglo[1,3,2] en la línea de comandos.'
+  CorrectAnswer: mi_arreglo[1,3,2]
+  AnswerTests: omnitest(correctExpr='mi_arreglo[1,3,2]')
+
+- Class:  cmd_question
+  Output: 'Asimismo, puedes ingresar mi_arreglo[1:2,1:2,1] en la línea de
+  comandos. ¡Inténtalo!'
+  CorrectAnswer: mi_arreglo[1:2,1:2,1]
+  AnswerTests: omnitest(correctExpr='mi_arreglo[1:2,1:2,1]')
+
+- Class: cmd_question
+  Output: "Una matriz es simplemente un arreglo bidimensional. Ahora
+  crea una matriz con 3 renglones y 3 columnas con los números enteros del 1 al
+  9 y guárdala en la variable 'mi_matriz'."
+  CorrectAnswer: mi_matriz <- matrix(data=1:9,nrow=3,ncol=3)
+  AnswerTests: any_of_exprs('mi_matriz <- matrix(data=c(1:9),nrow=3,ncol=3)', 'mi_matriz <- matrix(data=1:9,nrow=3,ncol=3)', 'mi_matriz <- matrix(data=c(1, 2, 3, 4, 5, 6, 7, 8, 9),nrow=3,ncol=3)')
+  Hint: "Ingresa mi_matriz <- matrix(data=1:9,nrow=3,ncol=3) en la línea de comandos."
+
+- Class: text
+  Output: 'Al igual que con los arreglos, para obtener todos los renglones o
+  columnas de una dimensión de una matriz, simplemente omite los índices.'
+
+- Class:  cmd_question
+  Output: "Por ejemplo, si quisiéras solo el primer renglón de 'mi_matriz',
+  basta con ingresar mi_matriz[1,] en la línea de comandos. ¡Inténtalo!"
+  CorrectAnswer: mi_matriz[1,]
+  AnswerTests: omnitest(correctExpr='mi_matriz[1,]')
+
+
+- Class:  cmd_question
+  Output: '¡Ahora obtén solo la primera columna!'
+  CorrectAnswer: mi_matriz[,1]
+  AnswerTests: omnitest(correctExpr='mi_matriz[,1]')
+  Hint: "Ingresa mi_matriz[,1] en la línea de comandos."
+
+- Class:  cmd_question
+  Output: 'También puedes referirte a un rango de renglones. Ingresa
+  mi_matriz[2:3,] en la línea de comandos.'
+  CorrectAnswer: mi_matriz[2:3,]
+  AnswerTests: omnitest(correctExpr='mi_matriz[2:3,]')
+
+- Class:  cmd_question
+  Output: 'O referirte a un conjunto no contiguo de renglones.
+  Ingresa mi_matriz[c(1,3),] en la línea de comandos.'
+  CorrectAnswer: mi_matriz[c(1,3),]
+  AnswerTests: omnitest(correctExpr='mi_matriz[c(1,3),]')
+
+- Class: text
+  Output: 'En los ejemplos de arriba solo has visto estructuras de datos
+  basadas en un solo tipo. Recordás que R tiene un tipo de datos incorporado
+  para la mezcla de objetos de diferentes tipos, llamados listas.'
+
+- Class: text
+  Output: 'Debes de saber que en R las listas son sutilmente diferentes de las
+  listas en muchos otros lenguajes. Las listas en R contienen una selección
+  heterogénea de objetos. Puedes nombrar cada componente en una lista.'
+
+- Class: text
+  Output: 'Los elementos en una lista pueden ser referidos por su ubicación o
+  por su nombre.'
+
+- Class:  cmd_question
+  Output: 'Ingresa este ejemplo de una lista con cuatro componentes nombrados:
+  carro <- list(color="rojo", nllantas=4, marca= "Renault", ncilindros=4).'
+  CorrectAnswer: carro <- list(color="rojo", nllantas=4, marca= "Renault", ncilindros=4)
+  AnswerTests: omnitest(correctExpr='carro <- list(color="rojo", nllantas=4, marca= "Renault", ncilindros=4)')
+
+- Class: text
+  Output: 'Tú puedes acceder a los elementos de una lista de múltiples formas.
+  Puedes usar la misma notación que usaste con los vectores.'
+
+- Class:  cmd_question
+  Output: 'Y además puedes indexar un elemento por nombre usando la notación $.
+  Por ejemplo, ingresa carro$color en la línea de comandos.'
+  CorrectAnswer: carro$color
+  AnswerTests: omnitest(correctExpr='carro$color')
+
+- Class:  cmd_question
+  Output: 'Además, puedes usar la notación [] para indexar un conjunto de
+  elementos por nombre. Ingresa carro[c("ncilindros","nllantas")] en la línea de
+  comandos.'
+  CorrectAnswer: carro[c("ncilindros","nllantas")]
+  AnswerTests: omnitest(correctExpr='carro[c("ncilindros","nllantas")]')
+
+- Class:  cmd_question
+  Output: 'También puedes indexar por nombre usando la notación [[]]
+  cuando seleccionas un simple elemento. Por ejemplo, ingresa carro[["marca"]]
+  en la línea de comandos.'
+  CorrectAnswer: carro[["marca"]]
+  AnswerTests: omnitest(correctExpr='carro[["marca"]]')
+
+- Class:  cmd_question
+  Output: 'Hasta puedes indexar por nombre parcial usando la opción
+  exact=FALSE. Ingresa carro[["mar",exact=FALSE]] en la línea de comandos.'
+  CorrectAnswer: carro[["mar",exact=FALSE]]
+  AnswerTests: omnitest(correctExpr='carro[["mar",exact=FALSE]]')
+
+- Class:  cmd_question
+  Output: 'Ahora crea la  siguiente lista: camioneta <- list(color="azul",
+  nllantas=4, marca= "BMW", ncilindros=6).'
+  CorrectAnswer: camioneta <- list(color="azul", nllantas=4, marca= "BMW", ncilindros=6)
+  AnswerTests: omnitest(correctExpr='camioneta <- list(color="azul", nllantas=4, marca= "BMW", ncilindros=6)')
+
+- Class: cmd_question
+  Output: 'Algunas veces una lista será una lista de listas. Ingresa cochera <-
+  list(carro, camioneta).'
+  CorrectAnswer: cochera <- list(carro, camioneta)
+  AnswerTests: omnitest(correctExpr='cochera <- list(carro, camioneta)')
+
+- Class: cmd_question
+  Output: "Ahora ve el contenido de 'cochera'."
+  CorrectAnswer: cochera
+  AnswerTests: any_of_exprs('cochera', 'print(cochera)')
+
+- Class: text
+  Output: 'Tú puedes usar la notación [[]] para referirte a un elemento en este
+  tipo de estructura de datos. Para hacer esto usa un vector como argumento. R
+  iterará a través de los elementos en el vector referenciando sublistas.'
+
+- Class: cmd_question
+  Output: 'Ingresar cochera[[c(2, 1)]] en la línea de comandos.'
+  CorrectAnswer: cochera[[c(2, 1)]]
+  AnswerTests: omnitest(correctExpr='cochera[[c(2, 1)]]')
+
+- Class: text
+  Output: 'Recuerda que los data frames son una lista que contiene múltiples
+  vectores nombrados que tienen la misma longitud. A partir de este momento
+  usarás el data frame cars del paquete datasets. No te preocupes, este
+  paquete viene cargado por defecto.'
+
+- Class: text
+  Output: 'Los datos que conforman al data frame cars son un conjunto de
+  observaciones tomadas en la década de 1920; estas observaciones describen la
+  velocidad (mph) de algunos carros y la distancia (ft) que les tomó parar.'
+
+- Class: cmd_question
+  Output: 'Ve el contenido del data frame cars. Ingresa cars en la línea de
+  comandos.'
+  CorrectAnswer: cars
+  AnswerTests: any_of_exprs('cars', 'print(cars)')
+
+- Class: cmd_question
+  Output: 'Te puedes referir a los elementos de un data frame (o a los elementos
+  de una lista) por nombre usando el operador $. Ingresa cars$speed en la línea
+  de comandos.'
+  CorrectAnswer: cars$speed
+  AnswerTests: omnitest(correctExpr='cars$speed')
+
+- Class: text
+  Output: 'Supón que deseas saber a qué velocidad iban los carros a los
+  que les tomó más de 100 pies (ft) frenar.'
+
+- Class: cmd_question
+  Output: 'Una manera de encontrar valores específicos en un data frame es al
+  usar un vector de valores booleanos para especificar cuál o cuáles elementos
+  regresar de la lista. La manera de calcular el vector apropiado es así:
+  cars$dist>100. ¡Inténtalo!'
+  CorrectAnswer: cars$dist>100
+  AnswerTests: omnitest(correctExpr='cars$dist>100')
+  Hint: 'Ingresa cars$dist>100 en la línea de comandos.'
+
+- Class: cmd_question
+  Output: 'Entonces puedes usar ese vector para referirte al elemento correcto.
+  Ingresa cars$speed[cars$dist>100] en la línea de comandos.'
+  CorrectAnswer: cars$speed[cars$dist>100]
+  AnswerTests: omnitest(correctExpr='cars$speed[cars$dist>100]')
+
+- Class: text
+  Output: 'Ahora ya sabes cómo acceder a las estructuras de datos.'
+
+- Class: mult_question
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
+  Coursera que has completado esta lección?"
+  CorrectAnswer: NULL
+  AnswerChoices: Si;No
+  AnswerTests: coursera_on_demand()
+  Hint: ""

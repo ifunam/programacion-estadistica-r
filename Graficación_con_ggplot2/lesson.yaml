@@ -1,0 +1,231 @@
+- Class: meta
+  Course: Introducción a la Programación Estadística con R
+  Lesson: Graficación con ggplot2
+  Author: Ismael Fernández
+  Type: Standard
+  Organization: Universidad Nacional Autónoma De México
+  Version: 2.2.21
+
+- Class: text
+  Output: 'ggplot2 es un sistema de graficación muy poderoso en R que te provee
+  con gráficos de alto nivel.'
+
+- Class: text
+  Output: 'Este modelo de gráficos hace fácil la producción de gráficos
+  complejos.'
+
+- Class: text
+  Output: 'No tendrás que preocuparte por las leyendas, los tipos de fuentes y
+  demás detalles a diferencia de usar el paquete base, ya que ggplot2 trae
+  valores por omisión.'
+
+- Class: text
+  Output: 'Ya que estos valores por omisión fueron cuidadosamente escogidos, lo
+  que significa que la mayor parte del tiempo tú puedes producir gráficas de tan
+  buena calidad que pueden utilizarse inmediatamente en publicaciones.'
+
+- Class: text
+  Output: 'En esta práctica trabajarás con el conjunto de datos diamonds del
+  paquete ggplot2, el cual contiene las medidas, información de calidad y
+  precios de casi de 54 000 diamantes.'
+
+- Class: cmd_question
+  Output: 'Para cargar el conjunto de datos diamonds ingresa data(diamonds) en
+  la línea de comandos.'
+  CorrectAnswer: data(diamonds)
+  AnswerTests: any_of_exprs('data(diamonds)', 'data("diamonds")')
+
+- Class: cmd_question
+  Output: 'Ahora ve lo que contiene diamonds. Para hacer esto usarás la
+  función View(). Si te encuentras en Rstudio simplemente puedes presionar el
+  nombre de tu variable diamonds en el apartado Entorno
+  ("Environment") y se mostrará su contenido. Presiona la variable
+  diamonds en Rstudio o ingresa en la línea de comando: View(diamonds).'
+  CorrectAnswer: View(diamonds)
+  AnswerTests: omnitest(correctExpr='View(diamonds)')
+
+- Class: text
+  Output: 'carat representa el peso del diamante, cut representa la calidad del
+  corte (Fair, Good, Very Good, Premium, Ideal), color representa el color del
+  diamante, desde J (el peor) a D (el mejor), clarity es una medida de qué tan
+  claro es el diamante (I1 (el peor), SI1, SI2, VS1, VS2, VVS1, VVS2, IF (el
+  mejor)).'
+
+- Class: text
+  Output: 'table indica la anchura de la parte superior del diamante con
+  relación al punto más ancho, price representa el precio del diamante en
+  dólares, x la longitud en milímetros, y la anchura en milímetros, z la
+  profundidad en milímetros y depth el porcentaje de profundidad total, es decir,
+  z / mean(x, y) = 2 * z / (x + y).'
+
+- Class: text
+  Output: 'Dominar el paquete ggplot2 puede ser un reto, por lo que en este
+  curso sólo verás la función qplot() (quick plot), la cual es una función
+  auxiliar, ya que esconde mucha de su complejidad cuando crea gráficos
+  estándares.'
+
+- Class: text
+  Output: 'La función qplot() puede ser usada para crear los tipos de gráficas
+  más comunes. Mientras que no expone las grandes capacidades de ggplot2, puede
+  crear un gran rango de gráficas útiles.'
+
+- Class: cmd_question
+  Output: 'Ingresa ?qplot para conocer más acerca de ella.'
+  CorrectAnswer: ?qplot
+  AnswerTests: any_of_exprs('?qplot', '?"qplot"', 'help("qplot")', 'help(qplot)')
+
+- Class: cmd_question
+  Output: 'Puedes hacer desde histogramas. Ingresa qplot(color, data=diamonds)
+  para crear un histograma de los colores.'
+  CorrectAnswer: qplot(color, data=diamonds)
+  AnswerTests: omnitest(correctExpr='qplot(color, data=diamonds)')
+
+- Class: cmd_question
+  Output: 'Hasta gráficas de dispersión. Ingresa qplot(carat, price,
+  data=diamonds) en la línea de comandos.'
+  CorrectAnswer: qplot(carat, price, data=diamonds)
+  AnswerTests: omnitest(correctExpr='qplot(carat, price, data=diamonds)')
+
+- Class: text
+  Output: 'Puedes ver que hay mucha saturación por la gran cantidad de
+  datos que hay al usar el dataset completo.'
+
+- Class: cmd_question
+  Output: "Existe cierta correlación para ser exponencial y hay ciertos lugares
+  donde parecen hacerse estrías. Esto puedes tratar de compensarlo haciendo una
+  transformación de las variables; es decir, en lugar de usar los valores
+  lineales, podrías aplicar una transformación logarítmica y entonces estarías
+  graficando los valores logarítmicos contra los valores logarítmicos de 'x' y 'y'.
+  Ingresa qplot(log(carat), log(price), data=diamonds) en la línea de comandos
+  para lograr esto."
+  CorrectAnswer: qplot(log(carat), log(price), data=diamonds)
+  AnswerTests: omnitest(correctExpr='qplot(log(carat), log(price), data=diamonds)')
+
+- Class: cmd_question
+  Output: 'También puedes utilizar los argumentos como combinaciones de otros.
+  Ingresa qplot(carat, x*y*z, data=diamonds) en la línea de comandos.'
+  CorrectAnswer: qplot(carat, x*y*z, data=diamonds)
+  AnswerTests: omnitest(correctExpr='qplot(carat, x*y*z, data=diamonds)')
+
+- Class: cmd_question
+  Output: 'En ggplot2() puedes mapear alguna categoría que tenga una variable a
+  un atributo estético, en este caso el atributo color de qplot(); por ejemplo,
+  si utilizas diamonds puedes mapear la columna color que te indica el color del
+  diamante a un color distinto en la gráfica. Ingresa qplot(carat, price, data=diamonds, color=color)
+  en la línea de comandos.'
+  CorrectAnswer: qplot(carat, price, data=diamonds, color=color)
+  AnswerTests: omnitest(correctExpr='qplot(carat, price, data=diamonds, color=color)')
+
+- Class: text
+  Output: 'Además del color otro atributo estético que tiene qplot() es shape;
+  shape se refiere a la forma con la que va a pintar los puntos qplot(); en la
+  gráfica por ejemplo shape también es muy bueno para poder mapear
+  características categóricas a una característica gráfica.'
+
+- Class: cmd_question
+  Output: 'Puedes mapear cada uno de los cortes distintos de los diamantes que
+  tienes a una figura distinta. Ingresa qplot(carat, price, data=diamonds, shape=cut)
+  en la línea de comandos.'
+  CorrectAnswer: qplot(carat, price, data=diamonds, shape=cut)
+  AnswerTests: omnitest(correctExpr='qplot(carat, price, data=diamonds, shape=cut)')
+
+- Class: cmd_question
+  Output: 'El atributo alpha de qplot() indica cuántos puntos se necesitan
+  pintar o aparecer en un mismo lugar para que puedas pintar un punto
+  completamente opaco. Ingresa qplot(carat, price, data=diamonds, alpha=I(1/10))
+  en la línea de comandos.'
+  CorrectAnswer: qplot(carat, price, data=diamonds, alpha=I(1/10))
+  AnswerTests: omnitest(correctExpr='qplot(carat, price, data=diamonds, alpha=I(1/10))')
+
+- Class: text
+  Output: 'Con esto necesitarías 10 puntos en un mismo lugar para que se pinte un
+  primer punto.'
+
+- Class: cmd_question
+  Output: 'Nota cómo si cambias el alpha de un 1/10 a un 1/100 puedes encontrar
+  nuevos patrones que no eran claros cuando usabas un alpha más grande. ¡Inténtalo!'
+  CorrectAnswer: qplot(carat, price, data=diamonds, alpha=I(1/100))
+  AnswerTests: omnitest(correctExpr='qplot(carat, price, data=diamonds, alpha=I(1/100))')
+  Hint: 'Ingresa qplot(carat, price, data=diamonds, alpha=I(1/100)) en la línea de comandos.'
+
+- Class: cmd_question
+  Output: 'size, es un atributo que indica el tamaño, por lo que si usas
+  size=table te pintará los puntos de diferente tamaño. Ingresa qplot(carat, price, data=diamonds, size=table)
+  en la línea de comandos.'
+  CorrectAnswer: qplot(carat, price, data=diamonds, size=table)
+  AnswerTests: omnitest(correctExpr='qplot(carat, price, data=diamonds, size=table)')
+
+- Class: text
+  Output: 'Debes de saber que algunas variables se mapean mejor a ciertos
+  atributos estéticos; por ejemplo, color y shape se mapean mejor a variables
+  categóricas, mientras que size se mapea mejor a variables de tipo continuo.'
+
+- Class: text
+  Output: 'A veces la cantidad de datos puede hacer una gran diferencia y ya
+  viste que puede usar alpha para cambiar la saturación mayor o menor
+  dependiendo del número de puntos que tengas. Si esto no te ayuda entonces
+  puedes tratar de subdividir los grupos de las variables que se forman en una
+  sola variable con una técnica especial conocida como faceting.'
+
+- Class: cmd_question
+  Output: 'El atributo facets te permite crear una tabla donde puedes subdividir en
+  grupos. Si quisieras ver cómo se comporta la variable carat contra la
+  variable price y le pides que te haga el faceting por color, entonces por cada
+  color de diamante te va graficando el carat contra el price (peso vs
+  precio). Ingresa qplot(carat, price, data=diamonds, facets = color ~ .) en la
+  línea de comandos.'
+  CorrectAnswer: qplot(carat, price, data=diamonds, facets = color ~ .)
+  AnswerTests: omnitest(correctExpr='qplot(carat, price, data=diamonds, facets = color ~ .)')
+
+- Class: text
+  Output: 'Entonces puedes observar cómo se va comportando para cada uno de los
+  colores de diamante. Esto te permite la comparación visual inmediata.'
+
+- Class: text
+  Output: 'Por último, el atributo geom de qplot() especifica el tipo de objeto
+  que utilizará para graficar. El valor por defecto es "point" (punto); esto
+  sólo si ’x’ y ‘y’ se encuentran especificados. Si sólo x se encuentra especificado
+  el valor es "histogram" (histograma).'
+
+- Class: cmd_question
+  Output: 'Un posible valor para geom es "smooth", el cual ajusta una curva a los
+  puntos que estas especificando, además de que te dibuja el error estándar
+  de esa curva. Ingresa qplot(carat, price, data=diamonds, geom = c("point","smooth"))
+  en la línea de comandos.'
+  CorrectAnswer: qplot(carat, price, data=diamonds, geom = c("point","smooth"))
+  AnswerTests: omnitest(correctExpr='qplot(carat, price, data=diamonds, geom = c("point","smooth"))')
+
+- Class: text
+  Output: 'Una característica de "smooth" es que puedes especificar el tipo de
+  ajuste que quieres para la curva.'
+
+- Class: cmd_question
+  Output: 'Otro valor posible es "jitter", el cual permite analizar en cajas
+  cómo se están dispersando los puntos, dependiendo de las variables que quieras
+  observar. Ingresa qplot(color, price/carat, data=diamonds, geom = "jitter") en
+  la línea de comandos.'
+  CorrectAnswer: qplot(color, price/carat, data=diamonds, geom = "jitter")
+  AnswerTests: omnitest(correctExpr='qplot(color, price/carat, data=diamonds, geom = "jitter")')
+
+- Class: cmd_question
+  Output: 'Si usas geom="boxplot" te graficará una gráfica de caja, donde
+  puedes observar la distribución de tus datos por la categoría que quieras
+  observar. Ingresa qplot(color, price/carat, data=diamonds, geom = "boxplot")
+  en la línea de comandos.'
+  CorrectAnswer: qplot(color, price/carat, data=diamonds, geom = "boxplot")
+  AnswerTests: omnitest(correctExpr='qplot(color, price/carat, data=diamonds, geom = "boxplot")')
+
+- Class: text
+  Output: 'Otros dos valores importantes que puede tomar geom son "line" y
+  "path".'
+
+- Class: text
+  Output: 'Actualmente, ggplot2 no puede ser usado para crear gráficas 3D.'
+
+- Class: mult_question
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
+  Coursera que has completado esta lección?"
+  CorrectAnswer: NULL
+  AnswerChoices: Si;No
+  AnswerTests: coursera_on_demand()
+  Hint: ""
