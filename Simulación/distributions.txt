@@ -1,0 +1,6 @@
+Para más información     apodo_distribucion       Distribución
+?Normal                  norm                     la distribución normal
+?Possion                 pois                     la distribución poisson
+?Binomial                binom                    la distribución binomial
+?Geometric               geom                     la distribución geométrica
+?Chisquare               chisq                    la distribución ji-cuadrada o chi-cuadrada

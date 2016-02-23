@@ -1,0 +1,251 @@
+- Class: meta
+  Course: Introducción a la Programación Estadística con R
+  Lesson: Expresiones regulares
+  Author: Ismael Fernández
+  Type: Standard
+  Organization: Universidad Nacional Autónoma De México
+  Version: 2.2.21
+
+- Class: text
+  Output: 'R te provee con algunas funciones que te sirven para manipular
+  cadenas de caracteres.'
+
+- Class: cmd_question
+  Output: 'Recuerda que una cadena contiene todo texto que se encuentre dentro
+  de un par de comillas. Guarda la cadena "¡Hola Mundo!" en la variable ‘texto’.'
+  CorrectAnswer: texto <- "¡Hola Mundo!"
+  AnswerTests: omnitest(correctExpr='texto <- "¡Hola Mundo!"')
+
+- Class: cmd_question
+  Output: 'Observa que una cadena es un vector de caracteres, pero no se puede
+  acceder directamente a sus elementos usando la notación de indexado([]).
+  Ingresa texto[1] en la línea de comandos para comprobar esto.'
+  CorrectAnswer: texto[1]
+  AnswerTests: omnitest(correctExpr='texto[1]')
+
+- Class: cmd_question
+  Output: 'Y ahora ingresa texto[2] en la línea de comandos.'
+  CorrectAnswer: texto[2]
+  AnswerTests: omnitest(correctExpr='texto[2]')
+
+- Class: cmd_question
+  Output: 'Esto se debe a que el acceso a los elementos de una cadena se realiza
+  con la función substring(). Para conocer el uso de substring() abre su página
+  de ayuda.'
+  CorrectAnswer: ?substring
+  AnswerTests: any_of_exprs('?substring', '?"substring"', 'help(substring)', 'help("substring")')
+  Hint: 'Ingresa ?substring en la línea de comandos para abrir la página de ayuda de substring.'
+
+- Class: cmd_question
+  Output: 'Ahora que conoces su uso, usando la función substring obtén la
+  subcadena "Mundo" de la variable texto.'
+  CorrectAnswer: substring(texto, 7, 11)
+  AnswerTests: omnitest(correctExpr='substring(texto, 7, 11)')
+  Hint: 'Ingresa substring(texto, 7, 11) en la línea de comandos para obtener la
+  subcadena "Mundo".'
+
+- Class: cmd_question
+  Output: 'Pero no sólo eso; esta función puede también utilizarse en
+  asignación, lo cual tiene el efecto colateral de cambiar las cadenas
+  originales. Para demostrar esto ingresa substring(texto, 7, 11) <- "Swirl" en
+  la línea de comandos.'
+  CorrectAnswer: substring(texto, 7, 11) <- "Swirl"
+  AnswerTests: omnitest(correctExpr='substring(texto, 7, 11) <- "Swirl"')
+
+- Class: cmd_question
+  Output: 'Ahora imprime el contenido de la variable ‘texto’.'
+  CorrectAnswer: texto
+  AnswerTests: any_of_exprs('texto', 'print(texto)')
+  Hint: 'Recuerda que para ver el contenido de una variable puedes usar la
+  función print() o simplemente ingresar el nombre de la variable en la línea de
+  comandos.'
+
+- Class: cmd_question
+  Output: 'Si deseas conocer la longitud de una cadena, no podrás hacer uso de
+  la función length(). En cambio deberás usar la función nchar(). Ingresa
+  nchar(texto) en la línea de comandos para conocer la longitud de texto.'
+  CorrectAnswer: nchar(texto)
+  AnswerTests: omnitest(correctExpr='nchar(texto)')
+
+- Class: cmd_question
+  Output: 'Anteriormente usaste la función paste(), la cual concatena las cadenas
+  que le sean pasadas como argumento. Ingresa paste("¡Adiós", "Mundo!") en la
+  línea de comandos.'
+  CorrectAnswer: paste("¡Adiós", "Mundo!")
+  AnswerTests: omnitest(correctExpr='paste("¡Adiós", "Mundo!")')
+
+- Class: cmd_question
+  Output: 'Debes de saber que por omisión estas cadenas son separadas por un
+  espacio, pero puedes cambiar el comportamiento usando el argumento sep.
+  Ingresa paste("¡Adiós", "Mundo!", sep="_") en la línea de comandos.'
+  CorrectAnswer: paste("¡Adiós", "Mundo!", sep="_")
+  AnswerTests: omnitest(correctExpr='paste("¡Adiós", "Mundo!", sep="_")')
+
+- Class: text
+  Output: 'Sin embargo, a menudo es más conveniente para crear una cadena
+  legible usar la función sprintf(), la cual tiene sintaxis del lenguaje C.'
+
+- Class: cmd_question
+  Output: 'Por ejemplo, crea la variable ‘i’ y guarda el número 9 en ella.'
+  CorrectAnswer: i <-9
+  AnswerTests: omnitest(correctExpr='i <-9')
+  Hint: "Ingresa i <- 9 en la línea de comandos."
+
+- Class: cmd_question
+  Output: 'Si quisieras conformar una cadena que te diera la información sobre ‘i’.
+  Puedes usar la función sprintf() y usar la cadena especial "%d" en cada lugar
+  donde quieras hacer uso de un valor numérico; en este caso ‘i’. Ingresa
+  sprintf("El cuadrado de %d es %d", i, i^2) en la línea de comandos.'
+  CorrectAnswer: sprintf("El cuadrado de %d es %d", i, i^2)
+  AnswerTests: omnitest(correctExpr='sprintf("El cuadrado de %d es %d", i, i^2)')
+
+- Class: cmd_question
+  Output: 'La función sprintf() ensambla una cadena formateada con los valores
+  que vayas pidiendo. Ingresa ?sprintf en la línea de comandos para conocer más
+  acerca de ella.'
+  CorrectAnswer: ?sprintf
+  AnswerTests: any_of_exprs('?sprintf', '?"sprintf"', 'help(sprintf)', 'help("sprintf")')
+
+- Class: cmd_question
+  Output: 'Contrario a la función paste() tienes la función strsplit(), la cual
+  subdivide una cadena en cadenas más pequeñas, dependiendo de la cadena
+  indicada como separación. Ingresa strsplit("Me/gusta/programar/en/R", "/") en
+  la línea de comandos.'
+  CorrectAnswer: strsplit("Me/gusta/programar/en/R", "/")
+  AnswerTests: omnitest(correctExpr='strsplit("Me/gusta/programar/en/R", "/")')
+
+- Class: cmd_question
+  Output: 'Anteriormente usaste la función chartr() para sustituir caracteres en
+  cadenas. Ingresa chartr("o", "a", "¡Hola Mundo!") en la línea de comandos.'
+  CorrectAnswer: chartr("o", "a", "¡Hola Mundo!")
+  AnswerTests: omnitest(correctExpr='chartr("o", "a", "¡Hola Mundo!")')
+
+- Class: text
+  Output: 'Muchas veces necesitarás reemplazar un texto con otro y chartr()
+  funcionará perfectamente.'
+
+- Class: text
+  Output: 'Pero muchas otras lo que querrás hacer será más complejo, porque
+  puede que en vez de ser un simple texto querrás reemplazar todas las palabras
+  que terminen con a.'
+
+- Class: text
+  Output: 'En estos casos puedes utilizar expresiones regulares (que suelen
+  llamarse "regex" o "regexp" de forma abreviada).'
+
+- Class: text
+  Output: 'Las expresiones regulares o patrones no son más que una especie de
+  comodín o un atajo para referirse a una gran cantidad de cadenas.'
+
+- Class: text
+  Output: 'A diferencia de otros lenguajes, en los que las expresiones regulares
+  se encierran entre algún tipo especial de delimitadores, en R una expresión
+  regular se representa como una cadena de texto.'
+
+- Class: text
+  Output: 'Por ejemplo, el grupo formado por las cadenas "Handel", "Händel" y
+  "Haendel" se describe mediante el patrón "H(a|ä|ae)ndel".'
+
+- Class: text
+  Output: 'Habitualmente las expresiones regulares se pasan como argumentos de
+  una función, que utiliza el patrón representado por ellas para realizar alguna
+  tarea como búsqueda o sustitución.'
+
+- Class: cmd_question
+  Output: 'Para ejemplificar esto guarda la cadena "H(a|ä|ae)ndel" en la
+  variable ‘patron’.'
+  CorrectAnswer: patron <- "H(a|ä|ae)ndel"
+  AnswerTests: omnitest(correctExpr='patron <- "H(a|ä|ae)ndel"')
+
+- Class: text
+  Output: 'Una de las funciones que trabaja con expresiones regulares es grep().
+  Esta función toma como argumentos primero un patrón y como segundo argumento
+  un vector de cadenas y grep() te regresa un vector numérico, el cual contiene
+  los índices de las cadenas que contienen ese patrón.'
+
+- Class: cmd_question
+  Output: 'Para probar grep() he creado un vector de cadenas y lo guarde en la
+  variable ‘musicos’. Revisa el contenido de ‘musicos’.'
+  CorrectAnswer: musicos
+  AnswerTests: any_of_exprs('musicos', 'print(musicos)')
+  Hint: 'Recuerda que para ver el contenido de una variable puedes usar la
+  función print() o simplemente ingresar el nombre de la variable en la línea de
+  comandos.'
+
+- Class: cmd_question
+  Output: 'Ahora ingresa grep(patron, musicos) en la línea de comandos.'
+  CorrectAnswer: grep(patron, musicos)
+  AnswerTests: omnitest(correctExpr='grep(patron, musicos)')
+
+- Class: text
+  Output: 'Efectivamente grep() te regresó las posiciones de las cadenas que
+  contienen el patrón "H(a|ä|ae)ndel"; es decir, las posiciones de las cadenas
+  "Handel", "Händel" , "Haendel".'
+
+- Class: text
+  Output: 'Es importante que sepas que el patrón es sensible a mayúsculas; esto
+  explica por qué no encontró coincidencia en la cadena "handel".'
+
+- Class: text
+  Output: 'Como ya te habrás imaginado el carácter "|" dentro de una expresión
+  regular no representa más que un OR; es decir, el patrón te indica a las
+  cadenas: "Handel" o "Händel" o "Haendel".'
+
+- Class: cmd_question
+  Output: 'Si deseas construir un patrón que además incluya las cadenas
+  "Mendel" y "handel", puedes hacerlo de la siguiente manera ".(a|ä|ae|e)ndel".
+  Ingresa nuevo_patron <- ".(a|ä|ae|e)ndel" en la línea de comandos.'
+  CorrectAnswer: nuevo_patron <- ".(a|ä|ae|e)ndel"
+  AnswerTests: omnitest(correctExpr='nuevo_patron <- ".(a|ä|ae|e)ndel"')
+
+- Class: cmd_question
+  Output: 'Donde el "." indica un carácter simple, por lo que cuando lo utilizas
+  dentro de la expresión regular estás diciendo que no te importa qué carácter
+  está ahí, cualquier carácter cazará con la expresión regular. Ingresa
+  grep(nuevo_patron, musicos) para comprobar esto.'
+  CorrectAnswer: grep(nuevo_patron, musicos)
+  AnswerTests: omnitest(correctExpr='grep(nuevo_patron, musicos)')
+
+- Class: cmd_question
+  Output: 'Otra función que trabaja con expresiones regulares es regexpr(), que
+  al igual que grep() recibe como primer argumento un patrón y como segundo un
+  vector de cadenas. A diferencia de grep(), regexpr() regresa el índice en
+  donde encuentra la primera aparición del patrón que estás buscando. Prueba la
+  función; ingresa regexpr(patron, musicos) en la línea de comandos.'
+  CorrectAnswer: regexpr(patron, musicos)
+  AnswerTests: omnitest(correctExpr='regexpr(patron, musicos)')
+
+- Class: text
+  Output: 'Además de regresar el índice en donde encuentra la primera aparición
+  del patrón, también te regresa la longitud del patrón encontrado. Si no
+  encuentra el patrón notarás que te regresa como índice y longitud un -1.'
+
+- Class: cmd_question
+  Output: 'Si deseas encontrar todas las posiciones donde es encontrado el
+  patrón y no sólo la primera, puedes usar gregexpr(), ya que funciona de la
+  misma manera que regexpr(), sólo que te regresa todos los índices donde
+  encuentra el patrón. Por ejemplo, ingresa gregexpr(patron, "Georg Friedrich
+  Händel, en inglés George Frideric Handel fue un compositor alemán.")
+  en la línea de comandos.'
+  CorrectAnswer: gregexpr(patron, "Georg Friedrich Händel, en inglés George Frideric Handel fue un compositor alemán.")
+  AnswerTests: omnitest(correctExpr='gregexpr(patron, "Georg Friedrich Händel, en inglés George Frideric Handel fue un compositor alemán.")')
+
+- Class: cmd_question
+  Output: 'Las expresiones regulares pueden ser muy ricas e incluso muy
+  complicadas. El objetivo del curso no define que las veas a profundidad,
+  pero puedes ver cómo las utiliza R usando ?regexpr. Inténtalo.'
+  CorrectAnswer: ?regexpr
+  AnswerTests: any_of_exprs('?regexpr', '?"regexpr"', 'help(regexpr)', 'help("regexpr")')
+
+- Class: text
+  Output: 'Aquí puedes ver todas las expresiones que te sirven para utilizar
+  expresiones regulares dentro del lenguaje con las funciones que acabas de
+  ver.'
+
+- Class: mult_question
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
+  Coursera que has completado esta lección?"
+  CorrectAnswer: NULL
+  AnswerChoices: Si;No
+  AnswerTests: coursera_on_demand()
+  Hint: ""
