@@ -19,4 +19,4 @@ display_swirl_file <- function(filename, course, lesson=""){
   message(paste("(Se ha copiado el archivo", filename, "a la ruta", file.path(getwd(), toloc), ")."))
 }
 
-display_swirl_file("ASA_estadisticasPasajeros(3).csv", "Introducción a la Programación Estadística con R", "Funciones apply")
+display_swirl_file("ASA_estadisticasPasajeros(3).csv", "programacion-estadistica-r", "Funciones apply")
