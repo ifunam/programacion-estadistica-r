@@ -66,7 +66,7 @@ coursera_on_demand <- function(){
   if(selection == "Si"){
     email <- readline("¿Cúal es tu nombre de usuario registrado en Coursera (email)? ")
     token <- readline("¿Cúal es tu token de la tarea? ")
-
+    
     payload <- sprintf('{
                        "assignmentKey": "_69PY9V_EeWJQA5WIHTZIQ",
                        "submitterEmail": "%s",
@@ -78,7 +78,7 @@ coursera_on_demand <- function(){
                        }
   }', email, token)
     url <- 'https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1'
-
+    
     respone <- httr::POST(url, body = payload)
     if(respone$status_code >= 200 && respone$status_code < 300){
       message("¡El envío de la calificación fue satisfactorio!")
