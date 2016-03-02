@@ -23,7 +23,7 @@ coursera_on_demand <- function(){
   if(selection == "Si"){
     email <- readline("¿Cúal es tu nombre de usuario registrado en Coursera (email)? ")
     token <- readline("¿Cúal es tu token de la tarea? ")
-
+    
     payload <- sprintf('{
                        "assignmentKey": "KdD8INWAEeWJQA5WIHTZIQ",
                        "submitterEmail": "%s",
