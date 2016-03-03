@@ -7,27 +7,19 @@
   Version: 2.2.21
 
 - Class: text
-  Output: "En esta lección conocerás las principales herramientas que R tiene
-  para obtener ayuda."
+  Output: "En esta lección conocerás las principales herramientas que R tiene para obtener ayuda."
 
 - Class: text
-  Output: "La primera herramienta que puedes usar para obtener ayuda es
-  help.start(). En ella encontrarás un menú de recursos, entre los cuales se
-  encuentran manuales, referencias y demás material para comenzar a aprender R."
+  Output: "La primera herramienta que puedes usar para obtener ayuda es help.start(). En ella encontrarás un menú de recursos, entre los cuales se encuentran manuales, referencias y demás material para comenzar a aprender R."
 
 - Class: cmd_question
-  Output: "Para usar help.start() escribe en la línea de comandos help.start().
-  Pruébalo ahora:"
+  Output: "Para usar help.start() escribe en la línea de comandos help.start(). Pruébalo ahora:"
   CorrectAnswer: help.start()
   AnswerTests: omnitest(correctExpr='help.start()')
-  Hint: "Esa no es la respuesta que estabas buscando, pero vuelve a intentarlo,
-  o bien, escribe info() para más opciones."
+  Hint: "Esa no es la respuesta que estabas buscando, pero vuelve a intentarlo, o bien, escribe info() para más opciones."
 
 - Class: text
-  Output: "R incluye un sistema de ayuda que te facilita obtener información
-  acerca de las funciones de los paquetes instalados. Para obtener información
-  acerca de una función, por ejemplo de la función print(), debes escribir
-  ?print en la línea de comandos."
+  Output: "R incluye un sistema de ayuda que te facilita obtener información acerca de las funciones de los paquetes instalados. Para obtener información acerca de una función, por ejemplo de la función print(), debes escribir ?print en la línea de comandos."
 
 - Class: cmd_question
   Output: "Ahora es tu turno, introduce ?print en la línea de comandos."
@@ -35,30 +27,21 @@
   AnswerTests: any_of_exprs('?print', '?"print"', 'help(print)', 'help("print")')
 
 - Class: text
-  Output: "Como puedes observar ? te muestra en la ventana Help una breve
-  descripción de la función, de cómo usarla, así como sus argumentos, etcétera."
+  Output: "Como puedes observar ? te muestra en la ventana Help una breve descripción de la función, de cómo usarla, así como sus argumentos, etcétera."
 
 - Class: text
-  Output: 'Asimismo, puedes usar la función help(), la cual es un equivalente
-  de ?. Al utilizar help(), usarás como argumento el nombre de la función entre
-  comillas, por ejemplo, help("print").'
+  Output: 'Asimismo, puedes usar la función help(), la cual es un equivalente de ?. Al utilizar help(), usarás como argumento el nombre de la función entre comillas, por ejemplo, help("print").'
 
 - Class: text
-  Output: "Para buscar ayuda sobre un operador, éste tiene que encontrarse entre
-  comillas inversas. Por ejemplo, si buscas información del operador +, deberás
-  escribir help(`+`) o ?`+` en la línea de comandos."
+  Output: "Para buscar ayuda sobre un operador, éste tiene que encontrarse entre comillas inversas. Por ejemplo, si buscas información del operador +, deberás escribir help(`+`) o ?`+` en la línea de comandos."
 
 - Class: cmd_question
-  Output: 'Otra herramienta disponible es la función apropos(), la cual recibe
-  una cadena entre comillas como argumento y te muestra una lista de todas las
-  funciones que contengan esa cadena. Inténtalo: escribe apropos("class") en la
-  línea de comandos.'
+  Output: 'Otra herramienta disponible es la función apropos(), la cual recibe una cadena entre comillas como argumento y te muestra una lista de todas las funciones que contengan esa cadena. Inténtalo: escribe apropos("class") en la línea de comandos.'
   CorrectAnswer: apropos("class")
   AnswerTests: omnitest(correctExpr='apropos("class")')
 
 - Class: cmd_question
-  Output: 'También puedes obtener ejemplos del uso de funciones con la función
-  example(). Por ejemplo, escribe example("read.table").'
+  Output: 'También puedes obtener ejemplos del uso de funciones con la función example(). Por ejemplo, escribe example("read.table").'
   CorrectAnswer: example("read.table")
   AnswerTests: any_of_exprs('example("read.table")', 'example(read.table)')
 
@@ -66,40 +49,29 @@
   Output: "Con eso tendrás una idea de lo que puedes hacer con esta función."
 
 - Class: cmd_question
-  Output: 'R te permite buscar información sobre un tema usando ??. Por ejemplo,
-  escribe ??regression en la línea de comandos.'
+  Output: 'R te permite buscar información sobre un tema usando ??. Por ejemplo, escribe ??regression en la línea de comandos.'
   CorrectAnswer: ??regression
   AnswerTests: any_of_exprs('??regression', '??"regression"', 'help.search("regression")')
 
 - Class: text
-  Output: 'Esta herramienta es muy útil si no recuerdas el nombre de una
-  función, ya que R te mostrará una lista de temas relevantes en la venta Help.
-  Análogamente, puedes usar la función help.search("regression").'
+  Output: 'Esta herramienta es muy útil si no recuerdas el nombre de una función, ya que R te mostrará una lista de temas relevantes en la venta Help. Análogamente, puedes usar la función help.search("regression").'
 
 - Class: text
-  Output: 'Otra manera de obtener información de ayuda sobre un paquete es usar
-  la opción help para el comando library, con lo cual tendrás información más
-  completa. Un ejemplo es library(help="stats").'
+  Output: 'Otra manera de obtener información de ayuda sobre un paquete es usar la opción help para el comando library, con lo cual tendrás información más completa. Un ejemplo es library(help="stats").'
 
 - Class: cmd_question
-  Output: 'Algunos paquetes incluyen viñetas. Una viñeta es un documento corto
-  que describe cómo se usa un paquete. Puedes ver una viñetas usando la función
-  vignette(). Pruébalo: escribe vignette("tests") en la línea de comandos.'
+  Output: 'Algunos paquetes incluyen viñetas. Una viñeta es un documento corto que describe cómo se usa un paquete. Puedes ver una viñetas usando la función vignette(). Pruébalo: escribe vignette("tests") en la línea de comandos.'
   CorrectAnswer: vignette("tests")
   AnswerTests: omnitest(correctExpr= 'vignette("tests")')
 
 - Class: text
-  Output: 'Por último si deseas ver la lista de viñetas disponibles puedes
-  hacerlo usando el comando vignette() con los paréntesis vacíos.'
+  Output: 'Por último si deseas ver la lista de viñetas disponibles puedes hacerlo usando el comando vignette() con los paréntesis vacíos.'
 
 - Class: text
-  Output: "Es MUY IMPORTANTE que sepas que durante todo el curso en swirl,
-  puedes hacer uso de las funciones help() o ? cuando lo desees, incluso si
-  estas en medio de una lección."
+  Output: "Es MUY IMPORTANTE que sepas que durante todo el curso en swirl, puedes hacer uso de las funciones help() o ? cuando lo desees, incluso si estas en medio de una lección."
 
 - Class: mult_question
-  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
-  Coursera que has completado esta lección?"
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a Coursera que has completado esta lección?"
   CorrectAnswer: NULL
   AnswerChoices: Si;No
   AnswerTests: coursera_on_demand()

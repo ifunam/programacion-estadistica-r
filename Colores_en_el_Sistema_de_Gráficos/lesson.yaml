@@ -7,32 +7,24 @@
   Version: 2.2.21
 
 - Class: text
-  Output: "En esta lección verás cómo se manejan los colores en el sistema de
-  gráficos de R."
+  Output: "En esta lección verás cómo se manejan los colores en el sistema de gráficos de R."
 
 - Class: text
-  Output: "Anteriormente viste que puedes usar el parámetro col para especificar
-  colores."
+  Output: "Anteriormente viste que puedes usar el parámetro col para especificar colores."
 
 - Class: text
-  Output: "Hasta ahora, la mayoría de las veces has usado cadenas refiriéndose a
-  un simple conjunto de colores."
+  Output: "Hasta ahora, la mayoría de las veces has usado cadenas refiriéndose a un simple conjunto de colores."
 
 - Class: text
-  Output: "En R puedes especificar colores de tres maneras: como una cadena,
-  usando los componentes RGB (rojo, verde, azul) o haciendo referencia a un
-  índice de la paleta de colores mediante un entero."
+  Output: "En R puedes especificar colores de tres maneras: como una cadena, usando los componentes RGB (rojo, verde, azul) o haciendo referencia a un índice de la paleta de colores mediante un entero."
 
 - Class: cmd_question
-  Output: 'Para obtener la lista de los nombres de colores válidos, usa la
-  función colors(). Ingresa colors() en la línea de comandos.'
+  Output: 'Para obtener la lista de los nombres de colores válidos, usa la función colors(). Ingresa colors() en la línea de comandos.'
   CorrectAnswer: colors()
   AnswerTests: omnitest(correctExpr='colors()')
 
 - Class: text
-  Output: 'Notarás que al final de la lista varios colores contienen la
-  subcadena "yellow". Una manera de buscar todos los colores que contengan la
-  subcadena "yellow", es usando la función grep().'
+  Output: 'Notarás que al final de la lista varios colores contienen la subcadena "yellow". Una manera de buscar todos los colores que contengan la subcadena "yellow", es usando la función grep().'
 
 - Class: cmd_question
   Output: 'Ve el uso de grep() usando la función help().'
@@ -40,48 +32,33 @@
   AnswerTests: any_of_exprs('help("grep")', '?grep', '?"grep"', 'help(grep)')
 
 - Class: text
-  Output: " La función grep() toma al argumento pattern (una expresión regular),
-  lee el argumento x (un vector de caracteres, o un objeto que puede ser
-  convertido por la función as.character() a un vector de caracteres), y regresa
-  las coincidencias de pattern dentro de x."
+  Output: " La función grep() toma al argumento pattern (una expresión regular), lee el argumento x (un vector de caracteres, o un objeto que puede ser convertido por la función as.character() a un vector de caracteres), y regresa las coincidencias de pattern dentro de x."
 
 - Class: cmd_question
-  Output: 'Para buscar todos los colores que contengan la subcadena "yellow"
-  ingresa grep("yellow", colors(), value=TRUE) en la línea de comandos.'
+  Output: 'Para buscar todos los colores que contengan la subcadena "yellow" ingresa grep("yellow", colors(), value=TRUE) en la línea de comandos.'
   CorrectAnswer: grep("yellow", colors(), value=TRUE)
   AnswerTests: omnitest(correctExpr='grep("yellow", colors(), value=TRUE)')
 
 - Class: text
-  Output: "Ahora sabes que R contiene 13 tipos de amarillos (yellow). Notarás
-  que usaste el argumento value de la función grep(); esto se debe a que de no
-  haberlo usado, grep() te hubiera regresado las posiciones en donde se encontraron
-  coincidencias, en vez de las cadenas en donde las encontró."
+  Output: "Ahora sabes que R contiene 13 tipos de amarillos (yellow). Notarás que usaste el argumento value de la función grep(); esto se debe a que de no haberlo usado, grep() te hubiera regresado las posiciones en donde se encontraron coincidencias, en vez de las cadenas en donde las encontró."
 
 - Class: cmd_question
   Output: 'La lista de colores válidos es muy extensa. Obten su longitud.'
   CorrectAnswer: length(colors())
   AnswerTests: omnitest(correctExpr='length(colors())')
-  Hint: "Ingresa length(colors()) en la línea de comandos para obtener el tamaño
-  de la lista de colores válidos."
+  Hint: "Ingresa length(colors()) en la línea de comandos para obtener el tamaño de la lista de colores válidos."
 
 - Class: text
-  Output: "Entonces ahora ya sabes que R tiene una gran lista de más de 650
-  colores que puedes usar por nombre."
+  Output: "Entonces ahora ya sabes que R tiene una gran lista de más de 650 colores que puedes usar por nombre."
 
 - Class: text
-  Output: 'Para especificar un color usando componentes RGB, usa una cadena de
-  la forma "#RRGGBB", donde RR, GG y BB son valores hexadecimales que
-  especifican la cantidad de rojo, verde y azul, respectivamente.'
+  Output: 'Para especificar un color usando componentes RGB, usa una cadena de la forma "#RRGGBB", donde RR, GG y BB son valores hexadecimales que especifican la cantidad de rojo, verde y azul, respectivamente.'
 
 - Class: text
-  Output: "Si deseas hacer referencia a un índice de la paleta de colores
-  mediante un entero, debes saber que existen ocho colores en la paleta por
-  defecto."
+  Output: "Si deseas hacer referencia a un índice de la paleta de colores mediante un entero, debes saber que existen ocho colores en la paleta por defecto."
 
 - Class: text
-  Output: "La función palette() es usada para ver o manipular la paleta de
-  colores. La paleta de colores es usada cuando el parámetro col es usado con
-  un valor numérico."
+  Output: "La función palette() es usada para ver o manipular la paleta de colores. La paleta de colores es usada cuando el parámetro col es usado con un valor numérico."
 
 - Class: cmd_question
   Output: 'Ingresa palette() para conocer la paleta por defecto.'
@@ -89,45 +66,29 @@
   AnswerTests: omnitest(correctExpr='palette()')
 
 - Class: cmd_question
-  Output: 'Cada color es representado por un número entero; es decir, el número 1
-  representa al color negro, el 2 al rojo… y el 8 al gris. Ingresa plot(1:8,
-  col=1:8, main="Colores por índice", pch=17, cex=3) en la línea de comandos.'
+  Output: 'Cada color es representado por un número entero; es decir, el número 1 representa al color negro, el 2 al rojo… y el 8 al gris. Ingresa plot(1:8, col=1:8, main="Colores por índice", pch=17, cex=3) en la línea de comandos.'
   CorrectAnswer: plot(1:8, col=1:8, main="Colores por índice", pch=17, cex=3)
   AnswerTests: omnitest(correctExpr='plot(1:8, col=1:8, main="Colores por índice", pch=17, cex=3)')
 
 - Class: text
-  Output: "Como recordarás, el argumento main es usado para establecer el título
-  de la gráfica, el argumento pch para establecer el símbolo con el que se
-  graficará y el argumento cex para indicar el tamaño del símbolo usado para
-  graficar."
+  Output: "Como recordarás, el argumento main es usado para establecer el título de la gráfica, el argumento pch para establecer el símbolo con el que se graficará y el argumento cex para indicar el tamaño del símbolo usado para graficar."
 
 - Class: cmd_question
-  Output: 'Si usas un número más grande que ocho para graficar, los colores
-  serán reciclados. Compruébalo: ingresa plot(1:12, col=1:12, main="Colores
-  reciclados", pch=18, cex=3) en la línea de comandos.'
+  Output: 'Si usas un número más grande que ocho para graficar, los colores serán reciclados. Compruébalo: ingresa plot(1:12, col=1:12, main="Colores reciclados", pch=18, cex=3) en la línea de comandos.'
   CorrectAnswer: plot(1:12, col=1:12, main="Colores reciclados", pch=18, cex=3)
   AnswerTests: omnitest(correctExpr='plot(1:12, col=1:12, main="Colores reciclados", pch=18, cex=3)')
 
 - Class: text
-  Output: "Si requieres un número más grande de colores para graficar,
-  necesitarás acceder a una paleta más grande."
+  Output: "Si requieres un número más grande de colores para graficar, necesitarás acceder a una paleta más grande."
 
 - Class: text
-  Output: "Existen varias funciones incluidas en R que te regresan colores
-  continuos (paletas de tamaño variable), que le pueden dar aspectos diferentes a
-  tus gráficas."
+  Output: "Existen varias funciones incluidas en R que te regresan colores continuos (paletas de tamaño variable), que le pueden dar aspectos diferentes a tus gráficas."
 
 - Class: text
-  Output: "Algunos ejemplos de estas funciones son rainbow(), heat.colors(),
-  topo.colors(), y terrain.colors()."
+  Output: "Algunos ejemplos de estas funciones son rainbow(), heat.colors(), topo.colors(), y terrain.colors()."
 
 - Class: cmd_question
-  Output: 'Para cambiar la paleta de colores por defecto por cualquiera de estas
-  paletas, lo primero que debes hacer es crear una paleta. Para crear una
-  nueva paleta basta con llamar a cualquiera de las funciones anteriormente
-  mencionadas, mandando como argumento el número de colores que deseas que
-  contenga la paleta. Por ejemplo, ingresa paleta_arcoiris <- rainbow(10) en la
-  línea de comandos para crear una paleta con 10 colores.'
+  Output: 'Para cambiar la paleta de colores por defecto por cualquiera de estas paletas, lo primero que debes hacer es crear una paleta. Para crear una nueva paleta basta con llamar a cualquiera de las funciones anteriormente mencionadas, mandando como argumento el número de colores que deseas que contenga la paleta. Por ejemplo, ingresa paleta_arcoiris <- rainbow(10) en la línea de comandos para crear una paleta con 10 colores.'
   CorrectAnswer: paleta_arcoiris <- rainbow(10)
   AnswerTests: omnitest(correctExpr='paleta_arcoiris <- rainbow(10)')
 
@@ -135,17 +96,13 @@
   Output: 'Ahora ve el contenido de la paleta que acabas de crear.'
   CorrectAnswer: paleta_arcoiris
   AnswerTests: omnitest(correctExpr='paleta_arcoiris')
-  Hint: "Recuerda que para ver el contenido de una variable puedes usar la
-  función print() o simplemente ingresar el nombre de la variable en la línea de
-  comandos."
+  Hint: "Recuerda que para ver el contenido de una variable puedes usar la función print() o simplemente ingresar el nombre de la variable en la línea de comandos."
 
 - Class: text
-  Output: "Como verás, la nueva paleta que creaste usando rainbow(10) contiene
-  colores que usan componentes RGB."
+  Output: "Como verás, la nueva paleta que creaste usando rainbow(10) contiene colores que usan componentes RGB."
 
 - Class: cmd_question
-  Output: 'Para cambiar la paleta de colores por la que creaste, ingresa
-  palette(paleta_arcoiris) en la línea de comandos.'
+  Output: 'Para cambiar la paleta de colores por la que creaste, ingresa palette(paleta_arcoiris) en la línea de comandos.'
   CorrectAnswer: palette(paleta_arcoiris)
   AnswerTests: omnitest(correctExpr='palette(paleta_arcoiris)')
 
@@ -156,14 +113,12 @@
   Hint: "Ingresa palette() en la línea de comandos."
 
 - Class: cmd_question
-  Output: 'Ahora grafica usando la nueva paleta; ingresa plot(1:10, col=1:10,
-  main="Paleta Arcoiris",pch=17, cex=3) en la línea de comandos.'
+  Output: 'Ahora grafica usando la nueva paleta; ingresa plot(1:10, col=1:10, main="Paleta Arcoiris",pch=17, cex=3) en la línea de comandos.'
   CorrectAnswer: plot(1:10, col=1:10, main="Paleta Arcoiris",pch=17, cex=3)
   AnswerTests: omnitest(correctExpr='plot(1:10, col=1:10, main="Paleta Arcoiris",pch=17, cex=3)')
 
 - Class: cmd_question
-  Output: 'Prueba con otra paleta; ingresa paleta_calida <- heat.colors(10)
-  para crear una paleta con 10 colores cálidos.'
+  Output: 'Prueba con otra paleta; ingresa paleta_calida <- heat.colors(10) para crear una paleta con 10 colores cálidos.'
   CorrectAnswer: paleta_calida <- heat.colors(10)
   AnswerTests: omnitest(correctExpr='paleta_calida <- heat.colors(10)')
 
@@ -171,61 +126,45 @@
   Output: 'Ahora cambia la paleta actual por la nueva paleta creada.'
   CorrectAnswer: palette(paleta_calida)
   AnswerTests: omnitest(correctExpr='palette(paleta_calida)')
-  Hint: "Ingresa palette(paleta_calida) en la línea de comandos para cambiar la
-  paleta actual por paleta_calida."
+  Hint: "Ingresa palette(paleta_calida) en la línea de comandos para cambiar la paleta actual por paleta_calida."
 
 - Class: cmd_question
-  Output: 'Y ahora grafica plot(1:10, col=1:10, main="Paleta Cálida",pch=17,
-  cex=3) para ver los cambios.'
+  Output: 'Y ahora grafica plot(1:10, col=1:10, main="Paleta Cálida",pch=17, cex=3) para ver los cambios.'
   CorrectAnswer: plot(1:10, col=1:10, main="Paleta Cálida",pch=17, cex=3)
   AnswerTests: omnitest(correctExpr='plot(1:10, col=1:10, main="Paleta Cálida",pch=17, cex=3)')
-  Hint: 'Ingresa plot(1:10, col=1:10, main="Paleta Cálida",pch=17, cex=3) en la
-  línea de comandos.'
+  Hint: 'Ingresa plot(1:10, col=1:10, main="Paleta Cálida",pch=17, cex=3) en la línea de comandos.'
 
 - Class: cmd_question
-  Output: 'Todas las diferentes paletas son muy bonitas y útiles de diferentes
-  maneras, pero tal vez no es exactamente lo que estás buscando, o tal vez tú
-  quieres tener más control sobre los colores. Para especificar los colores que
-  quieras puedes crear un vector que contenga dichos colores. Por ejemplo, crea
-  el vector ‘mi_paleta’ que contenga los colores 1, "green" y "#0019FFFF".'
+  Output: 'Todas las diferentes paletas son muy bonitas y útiles de diferentes maneras, pero tal vez no es exactamente lo que estás buscando, o tal vez tú quieres tener más control sobre los colores. Para especificar los colores que quieras puedes crear un vector que contenga dichos colores. Por ejemplo, crea el vector ‘mi_paleta’ que contenga los colores 1, "green" y "#0019FFFF".'
   CorrectAnswer: mi_paleta <- c("red", "green", "#0019FFFF")
   AnswerTests: omnitest(correctExpr='mi_paleta <- c("red", "green", "#0019FFFF")')
-  Hint: 'Ingresa mi_paleta <- c("red", "green", "#0019FFFF") en la línea de
-  comandos.'
+  Hint: 'Ingresa mi_paleta <- c("red", "green", "#0019FFFF") en la línea de comandos.'
 
 - Class: cmd_question
-  Output: 'Y ahora puedes usar el vector directamente para graficar. Por
-  ejemplo, ingresa plot(1:10, col=mi_paleta, main="Mi Paleta",pch=17, cex=3) en
-  la línea de comandos.'
+  Output: 'Y ahora puedes usar el vector directamente para graficar. Por ejemplo, ingresa plot(1:10, col=mi_paleta, main="Mi Paleta",pch=17, cex=3) en la línea de comandos.'
   CorrectAnswer: plot(1:10, col=mi_paleta, main="Mi Paleta",pch=17, cex=3)
   AnswerTests: omnitest(correctExpr='plot(1:10, col=mi_paleta, main="Mi Paleta",pch=17, cex=3)')
 
 - Class: cmd_question
-  Output: 'O establecerlo como tu nueva paleta. Ingresa palette(mi_paleta) en la
-  línea de comandos.'
+  Output: 'O establecerlo como tu nueva paleta. Ingresa palette(mi_paleta) en la línea de comandos.'
   CorrectAnswer: palette(mi_paleta)
   AnswerTests: omnitest(correctExpr='palette(mi_paleta)')
 
 - Class: cmd_question
-  Output: 'Y graficar haciendo referencia por índice. Ingresa plot(1:10,
-  col=1:10, main="Mi Paleta",pch=17, cex=3) en la línea de comandos.'
+  Output: 'Y graficar haciendo referencia por índice. Ingresa plot(1:10, col=1:10, main="Mi Paleta",pch=17, cex=3) en la línea de comandos.'
   CorrectAnswer: plot(1:10, col=1:10, main="Mi Paleta",pch=17, cex=3)
   AnswerTests: omnitest(correctExpr='plot(1:10, col=1:10, main="Mi Paleta",pch=17, cex=3)')
 
 - Class: cmd_question
-  Output: 'Si deseas regresar a la paleta de colores por defecto, debes de
-  ingresar palette("default") en la línea de comandos. ¡Ahora hazlo!'
+  Output: 'Si deseas regresar a la paleta de colores por defecto, debes de ingresar palette("default") en la línea de comandos. ¡Ahora hazlo!'
   CorrectAnswer: palette("default")
   AnswerTests: omnitest(correctExpr='palette("default")')
 
 - Class: text
-  Output: "Otras funciones que están disponibles para especificar colores son
-  rgb(), hsv(), hcl() y gray(), pero su uso es diferente a las que usaste
-  anteriormente. Si deseas usarlas consulta su página de ayuda."
+  Output: "Otras funciones que están disponibles para especificar colores son rgb(), hsv(), hcl() y gray(), pero su uso es diferente a las que usaste anteriormente. Si deseas usarlas consulta su página de ayuda."
 
 - Class: mult_question
-  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
-  Coursera que has completado esta lección?"
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a Coursera que has completado esta lección?"
   CorrectAnswer: NULL
   AnswerChoices: Si;No
   AnswerTests: coursera_on_demand()

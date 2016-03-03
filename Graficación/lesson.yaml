@@ -10,16 +10,10 @@
   Output: "En esta lección conocerás el sistema base de graficación en R."
 
 - Class: text
-  Output: 'Si estás familiarizado con Microsoft Excel, encontrarás que R
-  puede generar todas las gráficas con las que estás familiarizado: gráficas de
-  pastel, gráficas de barras, etc. Además, hay muchos más tipos de gráficas
-  disponibles en R.'
+  Output: 'Si estás familiarizado con Microsoft Excel, encontrarás que R puede generar todas las gráficas con las que estás familiarizado: gráficas de pastel, gráficas de barras, etc. Además, hay muchos más tipos de gráficas disponibles en R.'
 
 - Class: cmd_question
-  Output: "Para empezar ve las gráficas básicas que se pueden producir.
-  Ingresa demo(graphics) en la línea de comandos, y después presiona Enter para
-  comenzar y para cambiar de gráfica. SI PRESENTAS ALGÚN ERROR ingresa ok() en
-  la línea de comandos."
+  Output: "Para empezar ve las gráficas básicas que se pueden producir. Ingresa demo(graphics) en la línea de comandos, y después presiona Enter para comenzar y para cambiar de gráfica. SI PRESENTAS ALGÚN ERROR ingresa ok() en la línea de comandos."
   CorrectAnswer: ok()
   AnswerTests: any_of_exprs('demo(graphics)', 'ok()')
 
@@ -27,107 +21,73 @@
   Output: "Como pudiste observar, R es muy bueno a la hora de graficar."
 
 - Class: text
-  Output: "El sistema base de gráficos de R cuenta con tres tipos básicos de
-  funciones: funciones de alto nivel, funciones de bajo nivel y funciones
-  interactivas."
+  Output: "El sistema base de gráficos de R cuenta con tres tipos básicos de funciones: funciones de alto nivel, funciones de bajo nivel y funciones interactivas."
 
 - Class: text
   Output: "Las funciones de alto nivel generan gráficas preestablecidas."
 
 - Class: text
-  Output: "Las funciones de bajo nivel añaden información a un gráfico
-  existente."
+  Output: "Las funciones de bajo nivel añaden información a un gráfico existente."
 
 - Class: text
-  Output: "Y las funciones interactivas te permiten de forma interactiva añadir
-  información o extraer información de gráficos. Este curso sólo cubrirá las
-  funciones de alto nivel y bajo nivel."
+  Output: "Y las funciones interactivas te permiten de forma interactiva añadir información o extraer información de gráficos. Este curso sólo cubrirá las funciones de alto nivel y bajo nivel."
 
 - Class: text
   Output: "Comienza explorando las funciones de alto nivel."
 
 - Class: text
-  Output: "Las funciones de alto nivel están diseñadas para generar un gráfico
-  a partir de la información pasada como argumentos de la función."
+  Output: "Las funciones de alto nivel están diseñadas para generar un gráfico a partir de la información pasada como argumentos de la función."
 
 - Class: text
-  Output: "La función plot() es una de las funciones de alto nivel más
-  comúnmente usada."
+  Output: "La función plot() es una de las funciones de alto nivel más comúnmente usada."
 
 - Class: cmd_question
-  Output: "Comienza a jugar con ella. Ingresa plot(1:5) en la línea de
-  comandos."
+  Output: "Comienza a jugar con ella. Ingresa plot(1:5) en la línea de comandos."
   CorrectAnswer: plot(1:5)
   AnswerTests: omnitest(correctExpr='plot(1:5)')
 
 - Class: text
-  Output: "Al ingresar plot(1:5) has graficado cada elemento del vector 1:5
-  (1, 2, 3, 4, 5) contra la posición en dicho vector de cada elemento; es decir,
-  graficaste los puntos (1, 1), (2, 2), (3, 3), (4, 4) y (5, 5)."
+  Output: "Al ingresar plot(1:5) has graficado cada elemento del vector 1:5 (1, 2, 3, 4, 5) contra la posición en dicho vector de cada elemento; es decir, graficaste los puntos (1, 1), (2, 2), (3, 3), (4, 4) y (5, 5)."
 
 - Class: text
-  Output: "Es importante saber que plot() es una función genérica, por lo que
-  graficará dependiendo del objeto que le sea pasado como entrada."
+  Output: "Es importante saber que plot() es una función genérica, por lo que graficará dependiendo del objeto que le sea pasado como entrada."
 
 - Class: cmd_question
-  Output: "Ve qué pasa si ahora introduces plot(c(1, 2, 3), c(4, 5, 6)) en la
-  línea de comandos."
+  Output: "Ve qué pasa si ahora introduces plot(c(1, 2, 3), c(4, 5, 6)) en la línea de comandos."
   CorrectAnswer: plot(c(1, 2, 3), c(4, 5, 6))
   AnswerTests: omnitest(correctExpr='plot(c(1, 2, 3), c(4, 5, 6))')
 
 - Class: text
-  Output: "Como notarás, esta vez introdujiste dos vectores como entrada, cada
-  uno con tres elementos. Entonces la gráfica fue construida tomando un elemento
-  del primer vector (posición x) y un elemento del segundo vector (posición y)
-  para construir cada punto, los cuales son: (1, 4), (2, 5) y (3, 6)."
+  Output: "Como notarás, esta vez introdujiste dos vectores como entrada, cada uno con tres elementos. Entonces la gráfica fue construida tomando un elemento del primer vector (posición x) y un elemento del segundo vector (posición y) para construir cada punto, los cuales son: (1, 4), (2, 5) y (3, 6)."
 
 - Class: cmd_question
-  Output: "Conoce más del uso de plot(). Ingresa ?plot en la línea de
-  comandos."
+  Output: "Conoce más del uso de plot(). Ingresa ?plot en la línea de comandos."
   CorrectAnswer: ?plot
   AnswerTests: any_of_exprs('help(plot)', '?plot', 'help("plot")', '?"plot"')
 
 - Class: text
-  Output: "Como ya te habrás dado cuenta plot() recibe dos argumentos
-  principales."
+  Output: "Como ya te habrás dado cuenta plot() recibe dos argumentos principales."
 
 - Class: text
-  Output: "El primero, x, representa las coordenadas en el eje X de los puntos
-  en la gráfica, o alternativamente una única estructura para graficar, una
-  función o cualquier objeto de R que provea un método para graficar."
+  Output: "El primero, x, representa las coordenadas en el eje X de los puntos en la gráfica, o alternativamente una única estructura para graficar, una función o cualquier objeto de R que provea un método para graficar."
 
 - Class: text
-  Output: "El segundo, y, representa las coordenadas en el eje Y de los puntos
-  de la gráfica. Pero este argumento es OPCIONAL, pues sólo es necesario si x no
-  es una estructura apropiada."
+  Output: "El segundo, y, representa las coordenadas en el eje Y de los puntos de la gráfica. Pero este argumento es OPCIONAL, pues sólo es necesario si x no es una estructura apropiada."
 
 - Class: text
-  Output: "Y esto explica por qué puedes graficar si le pasas uno o dos
-  vectores como entrada. En el primer caso (1:5) le envías una estructura
-  apropiada; en el segundo le envías las coordenadas de los puntos en 'x' y
-  'y' por medio de dos vectores (c(1, 2, 3) y c(4, 5, 6))."
+  Output: "Y esto explica por qué puedes graficar si le pasas uno o dos vectores como entrada. En el primer caso (1:5) le envías una estructura apropiada; en el segundo le envías las coordenadas de los puntos en 'x' y 'y' por medio de dos vectores (c(1, 2, 3) y c(4, 5, 6))."
 
 - Class: text
-  Output: "Además, plot() recibe '...' como argumento, pues no en todos los casos
-  recibirá los mismos argumentos adicionales; esto se debe a que plot() es una
-  función genérica."
+  Output: "Además, plot() recibe '...' como argumento, pues no en todos los casos recibirá los mismos argumentos adicionales; esto se debe a que plot() es una función genérica."
 
 - Class: text
-  Output: "Pero la mayoría de las veces acepta los siguientes argumentos:
-  type, main, sub, xlab, ylab y asp."
+  Output: "Pero la mayoría de las veces acepta los siguientes argumentos: type, main, sub, xlab, ylab y asp."
 
 - Class: text
-  Output: 'type sirve para especificar qué tipo de gráfica debe trazar.
-  Los valores que puede tomar son: "p" para puntos, "l" para líneas, "b" para
-  ambas (líneas y punto), "c" para la parte de líneas que se muestra usando "b",
-  "o" para ambas (líneas y puntos) ‘sobrepuestas’, "h" para ‘histograma’ como
-  líneas verticales (o ‘alta densidad’), "s" para escalonado, "S" para otro tipo
-  de escalonamiento y "n" para no graficar.'
+  Output: 'type sirve para especificar qué tipo de gráfica debe trazar. Los valores que puede tomar son: "p" para puntos, "l" para líneas, "b" para ambas (líneas y punto), "c" para la parte de líneas que se muestra usando "b", "o" para ambas (líneas y puntos) ‘sobrepuestas’, "h" para ‘histograma’ como líneas verticales (o ‘alta densidad’), "s" para escalonado, "S" para otro tipo de escalonamiento y "n" para no graficar.'
 
 - Class: cmd_question
-  Output: 'Como te habrás dado cuenta, cuando graficas plot(c(1, 2, 3), c(4, 5,
-  6)) el tipo de gráfica por defecto fue puntos. Ahora ingresa plot(c(1, 2, 3),
-  c(4, 5, 6), type="l") en la línea de comandos para usar líneas.'
+  Output: 'Como te habrás dado cuenta, cuando graficas plot(c(1, 2, 3), c(4, 5, 6)) el tipo de gráfica por defecto fue puntos. Ahora ingresa plot(c(1, 2, 3), c(4, 5, 6), type="l") en la línea de comandos para usar líneas.'
   CorrectAnswer: plot(c(1, 2, 3), c(4, 5, 6), type="l")
   AnswerTests: omnitest(correctExpr='plot(c(1, 2, 3),c(4, 5, 6), type="l")')
 
@@ -137,14 +97,12 @@
   AnswerTests: any_of_exprs('plot(6:10, type="s")', 'plot(6:10, type="S")')
 
 - Class: cmd_question
-  Output: 'Para continuar grafica el vector 1:10 usando ambas (líneas y
-  puntos).'
+  Output: 'Para continuar grafica el vector 1:10 usando ambas (líneas y puntos).'
   CorrectAnswer: plot(1:10, type="b")
   AnswerTests: omnitest(correctExpr='plot(1:10, type="b")')
 
 - Class: cmd_question
-  Output: 'El argumento main establece el título de la gráfica. ¡Pruébalo!
-  Introduce plot(1:5, main="Mi gráfica") en la línea de comandos.'
+  Output: 'El argumento main establece el título de la gráfica. ¡Pruébalo! Introduce plot(1:5, main="Mi gráfica") en la línea de comandos.'
   CorrectAnswer: plot(1:5, main="Mi gráfica")
   AnswerTests: omnitest(correctExpr='plot(1:5, main="Mi gráfica")')
 
@@ -152,9 +110,7 @@
   Output: "Análogamente sub establece el subtítulo de la gráfica."
 
 - Class: cmd_question
-  Output: 'El argumento xlab establece un título para el eje X de la gráfica.
-  Análogamente ylab para el eje Y. Establece "x" como título del eje X y "y" como
-  título del eje Y en la gráfica anterior.'
+  Output: 'El argumento xlab establece un título para el eje X de la gráfica. Análogamente ylab para el eje Y. Establece "x" como título del eje X y "y" como título del eje Y en la gráfica anterior.'
   CorrectAnswer: plot(1:5, main="Mi gráfica", xlab="x", ylab="y")
   AnswerTests: any_of_exprs('plot(1:5, xlab="x", ylab="y")', 'plot(1:5, main="Mi gráfica", xlab="x", ylab="y")', plot(1:5, ylab="y", xlab="x"))
 
@@ -162,111 +118,75 @@
   Output: 'asp se refiere a la proporción x/y.'
 
 - Class: text
-  Output: 'Algunas veces las funciones estándar para graficar no producirán
-  exactamente el tipo de gráfica que deseas. En estos casos las funciones para
-  graficar de bajo nivel pueden ser usadas para añadir información extra a la
-  actual gráfica, como lo son puntos, líneas o texto.'
+  Output: 'Algunas veces las funciones estándar para graficar no producirán exactamente el tipo de gráfica que deseas. En estos casos las funciones para graficar de bajo nivel pueden ser usadas para añadir información extra a la actual gráfica, como lo son puntos, líneas o texto.'
 
 - Class: cmd_question
-  Output: 'Una de ellas es la función points(). Con la función points() tú
-  puedes graficar puntos sobre una gráfica. Ingresa points(c(1, 5), c(4, 2),
-  col="green") en la línea de comandos para graficar los puntos (1, 4) y
-  (5, 2).'
+  Output: 'Una de ellas es la función points(). Con la función points() tú puedes graficar puntos sobre una gráfica. Ingresa points(c(1, 5), c(4, 2), col="green") en la línea de comandos para graficar los puntos (1, 4) y (5, 2).'
   CorrectAnswer: points(c(1, 5), c(4, 2), col="green")
   AnswerTests: omnitest(correctExpr='points(c(1, 5), c(4, 2),col="green")')
 
 - Class: text
-  Output: 'Como puedes notar, esto puede ser muy útil para añadir un conjunto
-  adicional de puntos a una gráfica existente. Usualmente con un color diferente
-  o un símbolo diferente.'
+  Output: 'Como puedes notar, esto puede ser muy útil para añadir un conjunto adicional de puntos a una gráfica existente. Usualmente con un color diferente o un símbolo diferente.'
 
 - Class: text
-  Output: "La mayoría de los argumentos de la función plot() aplican para
-  función points(), incluyendo 'x' y opcionalmente 'y'. Pero los argumentos más
-  útiles son: col para especificar el color del borde para los puntos a
-  graficar, bg para especificar el color de relleno de los puntos a graficar,
-  pch para especificar el símbolo que se usará para graficar al punto."
+  Output: "La mayoría de los argumentos de la función plot() aplican para función points(), incluyendo 'x' y opcionalmente 'y'. Pero los argumentos más útiles son: col para especificar el color del borde para los puntos a graficar, bg para especificar el color de relleno de los puntos a graficar, pch para especificar el símbolo que se usará para graficar al punto."
 
 - Class: cmd_question
-  Output: 'Otra función muy útil es la función lines(). Ingresa lines(c(1, 4),
-  c(2, 5), col="yellow") en la línea de comandos.'
+  Output: 'Otra función muy útil es la función lines(). Ingresa lines(c(1, 4), c(2, 5), col="yellow") en la línea de comandos.'
   CorrectAnswer: lines(c(1, 4), c(2, 5), col="yellow")
   AnswerTests: omnitest(correctExpr='lines(c(1, 4), c(2, 5), col="yellow")')
 
 - Class: text
-  Output: "La función lines() grafica un conjunto de segmentos de línea sobre
-  una gráfica existente. Al igual que la función points(), muchos argumentos de
-  plot() aplican para lines(). Los valores de 'x' y 'y' especifican las
-  intersecciones entre los segmentos de línea."
+  Output: "La función lines() grafica un conjunto de segmentos de línea sobre una gráfica existente. Al igual que la función points(), muchos argumentos de plot() aplican para lines(). Los valores de 'x' y 'y' especifican las intersecciones entre los segmentos de línea."
 
 - Class: cmd_question
-  Output: 'Para trazar una sola línea a través del área de la gráfica, puedes
-  utilizar la función abline(). Por lo general, se llama abline() para dibujar
-  una sola línea. Por ejemplo, ingresa abline(h=3,col="red",lty=2) en la línea de
-  comandos.'
+  Output: 'Para trazar una sola línea a través del área de la gráfica, puedes utilizar la función abline(). Por lo general, se llama abline() para dibujar una sola línea. Por ejemplo, ingresa abline(h=3,col="red",lty=2) en la línea de comandos.'
   CorrectAnswer: abline(h=3,col="red",lty=2)
   AnswerTests: omnitest(correctExpr='abline(h=3,col="red",lty=2)')
 
 - Class: text
-  Output: 'Como notarás, graficaste una línea horizontal en y=3. Para graficar
-  una línea vertical en x=3, basta con ingresar abline(v=3,col="red",lty=2) en
-  la línea de comandos.'
+  Output: 'Como notarás, graficaste una línea horizontal en y=3. Para graficar una línea vertical en x=3, basta con ingresar abline(v=3,col="red",lty=2) en la línea de comandos.'
 
 - Class: cmd_question
-  Output: 'También puedes especificar múltiples argumentos y abline() graficará
-  las líneas especificadas. Por ejemplo, ingresa abline(h=1:5,v=1:5,
-  col="purple") en la línea de comandos para graficar una cuadrícula de líneas
-  entre 1 y 10.'
+  Output: 'También puedes especificar múltiples argumentos y abline() graficará las líneas especificadas. Por ejemplo, ingresa abline(h=1:5,v=1:5, col="purple") en la línea de comandos para graficar una cuadrícula de líneas entre 1 y 10.'
   CorrectAnswer: abline(h=1:5,v=1:5, col="purple")
   AnswerTests: omnitest(correctExpr='abline(h=1:5,v=1:5, col="purple")')
 
 - Class: text
-  Output: 'Aunque si deseas graficar una cuadrícula en tu gráfica, es mejor que
-  uses la función grid().'
+  Output: 'Aunque si deseas graficar una cuadrícula en tu gráfica, es mejor que uses la función grid().'
 
 - Class: text
-  Output: 'Hasta ahora sólo has trabajado con datos ficticios. Para hacer esto
-  más interesante trabajarás con datos reales a partir de este momento.'
+  Output: 'Hasta ahora sólo has trabajado con datos ficticios. Para hacer esto más interesante trabajarás con datos reales a partir de este momento.'
 
 - Class: text
-  Output: 'Usarás el famoso conjunto de datos iris, el cual contiene las medidas
-  en centímetros de longitud y ancho de ambos sépalo y pétalo de tres especies de
-  iris (setosa, versicolor y virginica) con 50 ejemplares cada una.'
+  Output: 'Usarás el famoso conjunto de datos iris, el cual contiene las medidas en centímetros de longitud y ancho de ambos sépalo y pétalo de tres especies de iris (setosa, versicolor y virginica) con 50 ejemplares cada una.'
 
 - Class: cmd_question
-  Output: 'Para cargar el conjunto de datos iris, ingresa data("iris") en la
-  línea de comandos.'
+  Output: 'Para cargar el conjunto de datos iris, ingresa data("iris") en la línea de comandos.'
   CorrectAnswer: data("iris")
   AnswerTests: any_of_exprs('data("iris")', 'data(iris)')
 
 - Class: cmd_question
-  Output: 'Como notarás, el objeto iris fue cargado. Averigua qué tipo de objeto
-  es iris.'
+  Output: 'Como notarás, el objeto iris fue cargado. Averigua qué tipo de objeto es iris.'
   CorrectAnswer: class(iris)
   AnswerTests: omnitest(correctExpr='class(iris)')
   Hint: 'Ingresa  class(iris) en la línea de comandos.'
 
 - Class: cmd_question
-  Output: 'Como verás, iris es un data frame. Ingresa head(iris) en la línea de
-  comandos para ver las primeras seis líneas de contenido de iris.'
+  Output: 'Como verás, iris es un data frame. Ingresa head(iris) en la línea de comandos para ver las primeras seis líneas de contenido de iris.'
   CorrectAnswer: head(iris)
   AnswerTests: omnitest(correctExpr='head(iris)')
 
 - Class: text
-  Output: 'Sepal.Length y Sepal.Width representan la longitud y ancho del sépalo
-  respectivamente. Petal.Length y Petak.Width representan la longitud y ancho
-  del pétalo. Species representa a la especie (setosa, versicolor y virginica).'
+  Output: 'Sepal.Length y Sepal.Width representan la longitud y ancho del sépalo respectivamente. Petal.Length y Petak.Width representan la longitud y ancho del pétalo. Species representa a la especie (setosa, versicolor y virginica).'
 
 - Class: cmd_question
-  Output: 'Como ya sabes, plot() es una función genérica, por lo que también
-  puedes pedirle que te grafique un data frame completo. Por ejemplo, iris;
-  ingresa plot(iris) en la línea de comandos.'
+  Output: 'Como ya sabes, plot() es una función genérica, por lo que también puedes pedirle que te grafique un data frame completo. Por ejemplo, iris; ingresa plot(iris) en la línea de comandos.'
   CorrectAnswer: plot(iris)
   AnswerTests: omnitest(correctExpr='plot(iris)')
 
 - Class: cmd_question
-  Output: 'O bien, puedes tomar columnas y graficarla. Ingresa
-  plot(iris$Petal.Length, iris$Petal.Width) en la línea de comandos.'
+  Output: 'O bien, puedes tomar columnas y graficarla. Ingresa plot(iris$Petal.Length, iris$Petal.Width) en la línea de comandos.'
   CorrectAnswer: plot(iris$Petal.Length, iris$Petal.Width)
   AnswerTests: omnitest(correctExpr='plot(iris$Petal.Length, iris$Petal.Width)')
 
@@ -274,41 +194,26 @@
   Output: 'Pero no es necesario graficar pares de puntos.'
 
 - Class: text
-  Output: 'Un histograma es una representación visual de la distribución de un
-  conjunto de datos.'
+  Output: 'Un histograma es una representación visual de la distribución de un conjunto de datos.'
 
 - Class: cmd_question
-  Output: 'Ahora usa la función hist() para graficar un histograma de las
-  longitudes de los pétalos. Ingresa hist(iris$Petal.Length, col="red") en la
-  línea de comandos.'
+  Output: 'Ahora usa la función hist() para graficar un histograma de las longitudes de los pétalos. Ingresa hist(iris$Petal.Length, col="red") en la línea de comandos.'
   CorrectAnswer: hist(iris$Petal.Length, col="red")
   AnswerTests: omnitest(correctExpr='hist(iris$Petal.Length, col="red")')
 
 - Class: text
-  Output: 'La función hist() es una función de alto nivel y recibe un vector de
-  valores numéricos y grafica un histograma. Un histograma consiste de un eje X
-  y un eje Y, y varias barras de diferentes tamaños. La altura del eje Y te
-  muestra la frecuencia con la que aparecen los valores del eje X en el conjunto de
-  datos.'
+  Output: 'La función hist() es una función de alto nivel y recibe un vector de valores numéricos y grafica un histograma. Un histograma consiste de un eje X y un eje Y, y varias barras de diferentes tamaños. La altura del eje Y te muestra la frecuencia con la que aparecen los valores del eje X en el conjunto de datos.'
 
 - Class: text
-  Output: 'La forma de un histograma es una de sus características más
-  importantes, pues te permite ver relativamente donde se encuentra sitiada la
-  mayor y menor cantidad de información. Esto te permite encontrar valores
-  atípicos.'
+  Output: 'La forma de un histograma es una de sus características más importantes, pues te permite ver relativamente donde se encuentra sitiada la mayor y menor cantidad de información. Esto te permite encontrar valores atípicos.'
 
 - Class: cmd_question
-  Output: 'En caso de que quieras que te grafique frecuencias puedes usar el
-  parámetro freq = FALSE para que grafique probabilidades. Ingresa
-  hist(iris$Petal.Length, col="red", freq=FALSE) en la línea de comandos.'
+  Output: 'En caso de que quieras que te grafique frecuencias puedes usar el parámetro freq = FALSE para que grafique probabilidades. Ingresa hist(iris$Petal.Length, col="red", freq=FALSE) en la línea de comandos.'
   CorrectAnswer: hist(iris$Petal.Length, col="red", freq=FALSE)
   AnswerTests: omnitest(correctExpr='hist(iris$Petal.Length, col="red", freq=FALSE)')
 
 - Class: cmd_question
-  Output: 'También es posible cambiar el número de celdas del histograma. Para
-  eso usa el argumento breaks. Dependiendo del número de celdas especificadas
-  el gráfico puede ser de una forma u otra. Ingresa hist(iris$Petal.Length,
-  col="red", breaks=5) en la línea de comandos.'
+  Output: 'También es posible cambiar el número de celdas del histograma. Para eso usa el argumento breaks. Dependiendo del número de celdas especificadas el gráfico puede ser de una forma u otra. Ingresa hist(iris$Petal.Length, col="red", breaks=5) en la línea de comandos.'
   CorrectAnswer: hist(iris$Petal.Length, col="red", breaks = 5)
   AnswerTests: omnitest(correctExpr='hist(iris$Petal.Length, col="red", breaks = 5)')
 
@@ -316,62 +221,43 @@
   Output: 'Además de histogramas existen las gráficas de caja.'
 
 - Class: text
-  Output: 'La función boxplots(), también de alto nivel, genera gráficas de
-  caja. Una gráfica de caja es una forma compacta para mostrar la distribución
-  de una variable. La caja muestra el rango intercuartil.'
+  Output: 'La función boxplots(), también de alto nivel, genera gráficas de caja. Una gráfica de caja es una forma compacta para mostrar la distribución de una variable. La caja muestra el rango intercuartil.'
 
 - Class: cmd_question
-  Output: 'Ahora ingresa ?boxplot en la línea de comandos para conocer el uso de
-  la función boxplot().'
+  Output: 'Ahora ingresa ?boxplot en la línea de comandos para conocer el uso de la función boxplot().'
   CorrectAnswer: ?boxplot
   AnswerTests: any_of_exprs('?boxplot', 'help(boxplot)', '?"boxplot"', 'help("boxplot")')
 
 - Class: text
-  Output: "Como ya habrás notado, boxplot() además recibe un argumento 'formula',
-  el cual generalmente es una expresión con una tilde (~), la cual indica la
-  relación entre las variables de entrada. Eso te permite dar como fórmula algo
-  como Sepal.Width ~ Species para graficar la relación entre el ancho del sépalo
-  y la especie."
+  Output: "Como ya habrás notado, boxplot() además recibe un argumento 'formula', el cual generalmente es una expresión con una tilde (~), la cual indica la relación entre las variables de entrada. Eso te permite dar como fórmula algo como Sepal.Width ~ Species para graficar la relación entre el ancho del sépalo y la especie."
 
 - Class: cmd_question
-  Output: 'Ingresa boxplot(Sepal.Width ~ Species, data=iris, col=2:4) en la
-  línea de comandos.'
+  Output: 'Ingresa boxplot(Sepal.Width ~ Species, data=iris, col=2:4) en la línea de comandos.'
   CorrectAnswer: boxplot(Sepal.Width ~ Species, data=iris, col=2:4)
   AnswerTests: omnitest(correctExpr='boxplot(Sepal.Width ~ Species, data=iris, col=2:4)')
 
 - Class: text
-  Output: 'boxplot() te generó por cada especie (setosa, versicolor y
-  virginica) los valores de dispersión de los anchos del sépalo. La gráfica te
-  muestra que el ancho del sépalo de la especie setosa es mucho mayor que el de
-  las demás especies.'
+  Output: 'boxplot() te generó por cada especie (setosa, versicolor y virginica) los valores de dispersión de los anchos del sépalo. La gráfica te muestra que el ancho del sépalo de la especie setosa es mucho mayor que el de las demás especies.'
 
 - Class: text
-  Output: 'boxplot() puede ser usado para crear gráficas de caja para variables
-  individuales o para variables por grupo.'
+  Output: 'boxplot() puede ser usado para crear gráficas de caja para variables individuales o para variables por grupo.'
 
 - Class: text
-  Output: 'Al igual que con hist() puedes usar los mismos argumentos que usaste
-  en plot() para añadir títulos (título, subtítulo, eje x, eje y).'
+  Output: 'Al igual que con hist() puedes usar los mismos argumentos que usaste en plot() para añadir títulos (título, subtítulo, eje x, eje y).'
 
 - Class: text
   Output: "Además, existen las gráficas de pastel."
 
 - Class: text
-  Output: "Las gŕaficas de pastel no son recomendadas ya que sus características son algo limitadas. Los autores recomiendan usar gráficas
-  de barras o de puntos en vez de gráficas de pastel, debido a que las personas
-  son capaces de juzgar longitudes con mayor precisión que volúmenes."
+  Output: "Las gŕaficas de pastel no son recomendadas ya que sus características son algo limitadas. Los autores recomiendan usar gráficas de barras o de puntos en vez de gráficas de pastel, debido a que las personas son capaces de juzgar longitudes con mayor precisión que volúmenes."
 
 - Class: cmd_question
-  Output: "Las gráficas de pastel son creadas con la función pie(x, labels=),
-  donde x es un vector numérico positivo indicando el área de las rebanadas y
-  labels es un vector que indica el nombre de cada rebanada. Ingresa pie(c(50,
-  50, 50), label=levels(iris$Species)) en la línea de comandos."
+  Output: "Las gráficas de pastel son creadas con la función pie(x, labels=), donde x es un vector numérico positivo indicando el área de las rebanadas y labels es un vector que indica el nombre de cada rebanada. Ingresa pie(c(50, 50, 50), label=levels(iris$Species)) en la línea de comandos."
   CorrectAnswer: pie(c(50, 50, 50), label=levels(iris$Species))
   AnswerTests: omnitest(correctExpr='pie(c(50, 50, 50), label=levels(iris$Species))')
 
 - Class: mult_question
-  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
-  Coursera que has completado esta lección?"
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a Coursera que has completado esta lección?"
   CorrectAnswer: NULL
   AnswerChoices: Si;No
   AnswerTests: coursera_on_demand()

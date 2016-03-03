@@ -7,24 +7,16 @@
   Version: 2.2.21
 
 - Class: text
-  Output: "En esta lección verás los parámetros del sistema de gráficos a más
-  detalle."
+  Output: "En esta lección verás los parámetros del sistema de gráficos a más detalle."
 
 - Class: text
-  Output: "Cuando creas gráficas, las opciones por defecto de R no siempre
-  producirán exactamente lo que deseas. Sin embargo, puedes modificar casi
-  cualquier aspecto de la gráfica usando los parámetros del sistema de
-  gráficos."
+  Output: "Cuando creas gráficas, las opciones por defecto de R no siempre producirán exactamente lo que deseas. Sin embargo, puedes modificar casi cualquier aspecto de la gráfica usando los parámetros del sistema de gráficos."
 
 - Class: text
-  Output: "Los parámetros del sistema de gráficos pueden establecerse de dos
-  maneras:  de forma permanente (que afecta a todas las funciones de gráficos) o
-  temporal (que afecta sólo a la función llamada como lo viste en la lección
-  Graficación)."
+  Output: "Los parámetros del sistema de gráficos pueden establecerse de dos maneras:  de forma permanente (que afecta a todas las funciones de gráficos) o temporal (que afecta sólo a la función llamada como lo viste en la lección Graficación)."
 
 - Class: text
-  Output: "La función par() es usada para acceder y modificar la lista de
-  parámetros de forma permanente."
+  Output: "La función par() es usada para acceder y modificar la lista de parámetros de forma permanente."
 
 - Class: cmd_question
   Output: "Para ver más detalles introduce ?par en la línea de comandos."
@@ -32,190 +24,130 @@
   AnswerTests: any_of_exprs('?par', '?"par"', 'help(par)', 'help("par")')
 
 - Class: text
-  Output: "
-  Las nuevas configuraciones establecidas en la función par() serán los valores
-  por defecto para cualquier gráfica nueva hasta que la sesión sea finalizada."
+  Output: "Las nuevas configuraciones establecidas en la función par() serán los valores por defecto para cualquier gráfica nueva hasta que la sesión sea finalizada."
 
 - Class: text
-  Output: "La función par() puede ser muy útil si deseas establecer los
-  parámetros una vez y luego graficar múltiples veces con ellos."
+  Output: "La función par() puede ser muy útil si deseas establecer los parámetros una vez y luego graficar múltiples veces con ellos."
 
 - Class: text
-  Output: "Puedes checar o establecer los valores de los parámetros de sistema
-  de gráficos con la función par()."
+  Output: "Puedes checar o establecer los valores de los parámetros de sistema de gráficos con la función par()."
 
 - Class: cmd_question
-  Output: "Para obtener una lista mostrando todos los parámetros del sistema de
-  gráficos, simplemente llama a la función par() sin argumentos. ¡Inténtalo!"
+  Output: "Para obtener una lista mostrando todos los parámetros del sistema de gráficos, simplemente llama a la función par() sin argumentos. ¡Inténtalo!"
   CorrectAnswer: par()
   AnswerTests: omnitest(correctExpr=' par()')
 
 - Class: cmd_question
-  Output: "Puedes guardar todos los valores de par() en un objeto. Ingresa
-  par_orig <- par() en la línea de comandos para guardar los valores en la
-  variable par_orig."
+  Output: "Puedes guardar todos los valores de par() en un objeto. Ingresa par_orig <- par() en la línea de comandos para guardar los valores en la variable par_orig."
   CorrectAnswer: par_orig <- par()
   AnswerTests: omnitest(correctExpr='par_orig <- par()')
 
 - Class: text
-  Output: "Esto puede ser útil, ya que puedes volver a utilizar estos valores
-  después de haberlos modificado."
+  Output: "Esto puede ser útil, ya que puedes volver a utilizar estos valores después de haberlos modificado."
 
 - Class: cmd_question
-  Output: 'Si deseas checar el valor de un parámetro con la función par(), usa
-  el nombre del parámetro como argumento (en cadena). Por ejemplo, ingresa
-  par("col") en la línea de comandos para conocer el valor por defecto del
-  parámetro col (color).'
+  Output: 'Si deseas checar el valor de un parámetro con la función par(), usa el nombre del parámetro como argumento (en cadena). Por ejemplo, ingresa par("col") en la línea de comandos para conocer el valor por defecto del parámetro col (color).'
   CorrectAnswer: par("col")
   AnswerTests: omnitest(correctExpr='par("col")')
 
 - Class: cmd_question
-  Output: 'Para establecer el valor de un parámetro, basta con usar el nombre
-  del parámetro como argumento de la función par(). Por ejemplo, puedes usar la
-  función par() para cambiar el valor del parámetro col. Ingresa par(col="blue")
-  en la línea de comandos.'
+  Output: 'Para establecer el valor de un parámetro, basta con usar el nombre del parámetro como argumento de la función par(). Por ejemplo, puedes usar la función par() para cambiar el valor del parámetro col. Ingresa par(col="blue") en la línea de comandos.'
   CorrectAnswer: par(col="blue")
   AnswerTests: omnitest(correctExpr='par(col="blue")')
 
 - Class: cmd_question
-  Output: 'Para probar que los cambios se han efectuado, en esta lección
-  volverás a trabajar con el conjunto de datos iris. Carga el conjunto de
-  datos iris.'
+  Output: 'Para probar que los cambios se han efectuado, en esta lección volverás a trabajar con el conjunto de datos iris. Carga el conjunto de datos iris.'
   CorrectAnswer: data("iris")
   AnswerTests: any_of_exprs('data("iris")', 'data(iris)')
-  Hint: 'Ingresa data("iris") en la línea de comandos para cargar el conjunto de
-  datos iris.'
+  Hint: 'Ingresa data("iris") en la línea de comandos para cargar el conjunto de datos iris.'
 
 - Class: cmd_question
-  Output: "Ahora prueba que el color por defecto ha sido cambiado a azul.
-  Ingresa plot(iris) en la línea de comandos para verificar esto."
+  Output: "Ahora prueba que el color por defecto ha sido cambiado a azul. Ingresa plot(iris) en la línea de comandos para verificar esto."
   CorrectAnswer: plot(iris)
   AnswerTests: omnitest(correctExpr='plot(iris)')
 
 - Class: cmd_question
-  Output: 'Y si revisas nuevamente el valor de col usando par() encontrarás
-  que ha sido establecido a azul ("blue"). Revisa el valor de col.'
+  Output: 'Y si revisas nuevamente el valor de col usando par() encontrarás que ha sido establecido a azul ("blue"). Revisa el valor de col.'
   CorrectAnswer: par("col")
   AnswerTests: omnitest(correctExpr='par("col")')
   Hint: 'Ingresa par("col") en la línea de comandos.'
 
 
 - Class: cmd_question
-  Output: "Cuando graficas el data frame iris usando plot(iris), los colores
-  mostrados no dicen mucho acerca de las diferentes especies. Así que le puedes
-  decir a R que grafique usando un color diferente por cada una de la especies
-  usando col=iris$Species. Ingresa plot(iris, col=iris$Species) en la línea de
-  comandos."
+  Output: "Cuando graficas el data frame iris usando plot(iris), los colores mostrados no dicen mucho acerca de las diferentes especies. Así que le puedes decir a R que grafique usando un color diferente por cada una de la especies usando col=iris$Species. Ingresa plot(iris, col=iris$Species) en la línea de comandos."
   CorrectAnswer: plot(iris, col=iris$Species)
   AnswerTests: omnitest(correctExpr='plot(iris, col=iris$Species)')
 
 - Class: cmd_question
-  Output: "Para continuar es importante recordar los nombres de las columnas de
-  iris. ¡Inténtalo!"
+  Output: "Para continuar es importante recordar los nombres de las columnas de iris. ¡Inténtalo!"
   CorrectAnswer: names(iris)
   AnswerTests: omnitest(correctExpr='names(iris)')
 
 - Class: cmd_question
-  Output: 'Comienza viendo las columnas Sepal.Length y Petal.Length. Otra vez
-  especifica un color por especie. Ingresa plot(iris$Sepal.Length,
-  iris$Petal.Length, col = iris$Species) en la línea de comandos.'
+  Output: 'Comienza viendo las columnas Sepal.Length y Petal.Length. Otra vez especifica un color por especie. Ingresa plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species) en la línea de comandos.'
   CorrectAnswer: plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species)
   AnswerTests: omnitest(correctExpr='plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species)')
 
 - Class: text
-  Output: "Los puntos usados para graficar son difíciles de ver. Escoge otros
-  diferentes."
+  Output: "Los puntos usados para graficar son difíciles de ver. Escoge otros diferentes."
 
 - Class: text
-  Output: "Un parámetro importante es el símbolo que se usa para graficar
-  puntos; éstos se cambian usando el parámetro pch. Este parámetro puede recibir
-  valores de dos maneras."
+  Output: "Un parámetro importante es el símbolo que se usa para graficar puntos; éstos se cambian usando el parámetro pch. Este parámetro puede recibir valores de dos maneras."
 
 - Class: cmd_question
-  Output: "Una manera es usando un código numérico, donde cada código numérico
-  corresponde a un símbolo. Pruébalo usando pch=15. Ingresa par(pch=15) en la
-  línea de comandos."
+  Output: "Una manera es usando un código numérico, donde cada código numérico corresponde a un símbolo. Pruébalo usando pch=15. Ingresa par(pch=15) en la línea de comandos."
   CorrectAnswer: par(pch=15)
   AnswerTests: omnitest(correctExpr='par(pch=15)')
 
 - Class: cmd_question
-  Output: "El código numérico 15 representa cuadrados. Verifica el nuevo valor
-  que estableciste. Ingresa plot(iris$Sepal.Length, iris$Petal.Length, col =
-  iris$Species) en la línea de comandos."
+  Output: "El código numérico 15 representa cuadrados. Verifica el nuevo valor que estableciste. Ingresa plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species) en la línea de comandos."
   CorrectAnswer: plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species)
   AnswerTests: omnitest(correctExpr='plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species)')
 
 - Class: cmd_question
-  Output: 'La otra manera es utilizando una cadena. Ingresa
-  plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch="A") en la
-  línea de comandos.'
+  Output: 'La otra manera es utilizando una cadena. Ingresa plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch="A") en la línea de comandos.'
   CorrectAnswer: plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch="A")
   AnswerTests: omnitest(correctExpr='plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch="A")')
 
 - Class: cmd_question
-  Output: " Como te podrás imaginar, cambiaste el valor del parámetro pch
-  temporalmente, al haberlo modificado en la función de plot() y no por
-  medio de la función par(). Si nuevamente graficas sin especificar pch,
-  verás que el símbolo graficado nuevamente es un cuadrado. ¡Verifica esto!
-  Ingresa plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species) en la
-  línea de comandos."
+  Output: " Como te podrás imaginar, cambiaste el valor del parámetro pch temporalmente, al haberlo modificado en la función de plot() y no por medio de la función par(). Si nuevamente graficas sin especificar pch, verás que el símbolo graficado nuevamente es un cuadrado. ¡Verifica esto! Ingresa plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species) en la línea de comandos."
   CorrectAnswer: plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species)
   AnswerTests: omnitest(correctExpr='plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species)')
 
 - Class: cmd_question
-  Output: "Los códigos numéricos que puedes usar son los números del 0 al 25.
-  Para conocer los símbolos disponibles ingresa plot(1:26, pch=0:25) en la línea
-  de comandos."
+  Output: "Los códigos numéricos que puedes usar son los números del 0 al 25. Para conocer los símbolos disponibles ingresa plot(1:26, pch=0:25) en la línea de comandos."
   CorrectAnswer: plot(1:26, pch=0:25)
   AnswerTests: omnitest(correctExpr='plot(1:26, pch=0:25)')
 
 - Class: cmd_question
-  Output: 'En particular a los símbolos del 21 al 25 les puedes cambiar el color
-  de la orilla y el de relleno. Esto se hace usando los parámetros col y bg.
-  Ingresa plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch =
-  21, bg = "blue") en la línea de comandos.'
+  Output: 'En particular a los símbolos del 21 al 25 les puedes cambiar el color de la orilla y el de relleno. Esto se hace usando los parámetros col y bg. Ingresa plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 21, bg = "blue") en la línea de comandos.'
   CorrectAnswer: plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 21, bg = "blue")
   AnswerTests: omnitest(correctExpr='plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, pch = 21, bg = "blue")')
 
 - Class: cmd_question
-  Output: "También puedes cambiar el tamaño de los símbolos usando el argumento cex.
-  Ingresa plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, cex =
-  2) en la línea de comandos."
+  Output: "También puedes cambiar el tamaño de los símbolos usando el argumento cex. Ingresa plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, cex = 2) en la línea de comandos."
   CorrectAnswer: plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, cex = 2)
   AnswerTests: omnitest(correctExpr='plot(iris$Sepal.Length, iris$Petal.Length, col = iris$Species, cex = 2)')
 
 - Class: cmd_question
-  Output: "Es difícil distinguir qué color pertenece a qué especie. Lo mejor
-  sería hacer una leyenda. La función legend() puede ser usada para añadir
-  leyendas a las gráficas. Ingresa legend(x = 4.5, y = 7, legend =
-  levels(iris$Species), col = c(1:3), pch = 16) para añadir una leyenda."
+  Output: "Es difícil distinguir qué color pertenece a qué especie. Lo mejor sería hacer una leyenda. La función legend() puede ser usada para añadir leyendas a las gráficas. Ingresa legend(x = 4.5, y = 7, legend = levels(iris$Species), col = c(1:3), pch = 16) para añadir una leyenda."
   CorrectAnswer: legend(x = 4.5, y = 7, legend = levels(iris$Species), col = c(1:3), pch = 16)
   AnswerTests: omnitest(correctExpr='legend(x = 4.5, y = 7, legend = levels(iris$Species), col = c(1:3), pch = 16)')
 
 - Class: text
-  Output: "Los parámetros ‘x’ y ‘y’ representan las coordenadas que serán usadas
-  para la leyenda; legend representa a las cadenas que aparecerán en la leyenda;
-  col indica el color de las líneas o símbolos que aparecerán en la leyenda; y
-  pch indica los caracteres o símbolos que aparecerán en la leyenda."
+  Output: "Los parámetros ‘x’ y ‘y’ representan las coordenadas que serán usadas para la leyenda; legend representa a las cadenas que aparecerán en la leyenda; col indica el color de las líneas o símbolos que aparecerán en la leyenda; y pch indica los caracteres o símbolos que aparecerán en la leyenda."
 
 - Class: text
-  Output: "Recuerda que todos los parámetros a los que modificaste su valor también
-  los puedes cambiar directamente desde las funciones para graficar de alto
-  nivel."
+  Output: "Recuerda que todos los parámetros a los que modificaste su valor también los puedes cambiar directamente desde las funciones para graficar de alto nivel."
 
 - Class: cmd_question
-  Output: "Por último, si deseas regresar a los valores de los parámetros por
-  omisión que tenías en el sistema base, basta con llamar a la función
-  par() pasándole como argumento el objeto donde guardaste los valores
-  originales. Regresa a los valores originales usando la función par()."
+  Output: "Por último, si deseas regresar a los valores de los parámetros por omisión que tenías en el sistema base, basta con llamar a la función par() pasándole como argumento el objeto donde guardaste los valores originales. Regresa a los valores originales usando la función par()."
   CorrectAnswer: par(par_orig)
   AnswerTests: omnitest(correctExpr='par(par_orig)')
-  Hint: 'Ingresa par(par_orig) en la línea de comandos para regresar a los
-  valores originales.'
+  Hint: 'Ingresa par(par_orig) en la línea de comandos para regresar a los valores originales.'
 
 - Class: mult_question
-  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
-  Coursera que has completado esta lección?"
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a Coursera que has completado esta lección?"
   CorrectAnswer: NULL
   AnswerChoices: Si;No
   AnswerTests: coursera_on_demand()
