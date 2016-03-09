@@ -44,7 +44,7 @@
   Output: 'Como podrás notar usaste el argumento fileEncoding; esto debido a que de no usarlo R no podría importar el archivo, puesto que la segunda cadena del archivo: año, no es una cadena válida para el tipo de codificación que read.table usa por defecto. Para poder leer el archivo basta con especificar el argumento fileEncoding. De no especificarlo R te indicará que hay un error.'
 
 - Class: cmd_question
-  Output: 'Intenta usar datos_2 <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=","). Debido a que el archivo inmigintnalpry.csv contiene caracteres especiales como la ñ, R TE MOSTRARÁ UN ERROR. Una vez que R te muestre el error, ingresa ok() en la línea de comandos para continuar.'
+  Output: 'Intenta usar datos_2 <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=","). Debido a que el archivo inmigintnalpry.csv contiene caracteres especiales como la ñ, R PUEDE MOSTRARTE UN ERROR. Si R te muestra el error, ingresa ok() en la línea de comandos para continuar.'
   CorrectAnswer: ok()
   AnswerTests: any_of_exprs('ok()', 'datos2 <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",")')
   Hint: 'Ingresa datos2 <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=","), después ingresa ok() para continuar.'
