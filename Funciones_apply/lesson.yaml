@@ -141,18 +141,18 @@
   AnswerTests: omnitest(correctExpr='class(mayusculas)')
 
 - Class: mult_question
-  Output: 'Si ahora ingresas lapply(c("Introducción", "a", "la",
-  "Programación", "Estadística", "con", "R"), toupper) en la línea de comandos,
-  ¿qué crees que ocurra?'
-  CorrectAnswer: Que te regrese una lista que contenga las cadenas "INTRODUCCIÓN", "A", "LA", "PROGRAMACIÓN", "ESTADÍSTICA", "CON", "R"
-  AnswerChoices: Que te regrese una lista que contenga las cadenas "INTRODUCCIÓN", "A", "LA", "PROGRAMACIÓN", "ESTADÍSTICA", "CON", "R"; Que te mande error; Que te regrese un vector que contenga las cadenas "INTRODUCCIÓN", "A", "LA", "PROGRAMACIÓN", "ESTADÍSTICA", "CON", "R"
-  AnswerTests: omnitest(correctVal='Que te regrese una lista que contenga las cadenas "INTRODUCCIÓN", "A", "LA", "PROGRAMACIÓN", "ESTADÍSTICA", "CON", "R"')
+  Output: 'Si ahora ingresas lapply(c("Introduccion", "a", "la", "Programacion",
+  "Estadistica", "con", "R"), toupper) en la línea de comandos, ¿qué crees que
+  ocurra?'
+  CorrectAnswer: Que te regrese una lista que contenga las cadenas "INTRODUCCION", "A", "LA", "PROGRAMACION", "ESTADISTICA", "CON", "R"
+  AnswerChoices: Que te regrese una lista que contenga las cadenas "INTRODUCCION", "A", "LA", "PROGRAMACION", "ESTADISTICA", "CON", "R"; Que te mande error; Que te regrese un vector que contenga las cadenas "INTRODUCCION", "A", "LA", "PROGRAMACION", "ESTADISTICA", "CON", "R"
+  AnswerTests: omnitest(correctVal='Que te regrese una lista que contenga las cadenas "INTRODUCCION", "A", "LA", "PROGRAMACION", "ESTADISTICA", "CON", "R"')
 
 - Class: text
-  Output: 'Te regresará una lista que contenga a las cadenas "INTRODUCCIÓN",
-  "A", "LA", "PROGRAMACIÓN", "ESTADÍSTICA", "CON", "R" pues si recuerdas la
-  función lapply() opera sobre listas y vectores y SIEMPRE regresa una lista;
-  es fácil que recuerdes esto si piensas que lista + apply = lapply.'
+  Output: 'Te regresará una lista que contenga a las cadenas "INTRODUCCION",
+  "A", "LA", "PROGRAMACION", "ESTADISTICA", "CON", "R" pues si recuerdas la
+  función lapply() opera sobre listas y vectores y SIEMPRE regresa una lista; es
+  fácil que recuerdes esto si piensas que lista + apply = lapply.'
 
 - Class: figure
   Output: 'A partir de ahora trabajarás con el archivo
