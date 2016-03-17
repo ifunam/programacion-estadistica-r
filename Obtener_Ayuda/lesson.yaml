@@ -69,7 +69,7 @@
   Output: 'R te permite buscar información sobre un tema usando ??. Por ejemplo,
   escribe ??regression en la línea de comandos.'
   CorrectAnswer: ??regression
-  AnswerTests: any_of_exprs('??regression', '??"regression"', 'help.search("regression")')
+  AnswerTests: any_of_exprs('??regression', '??"regression"', 'help.search("regression")', 'ok()')
 
 - Class: text
   Output: 'Esta herramienta es muy útil si no recuerdas el nombre de una
