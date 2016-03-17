@@ -7,117 +7,163 @@
   Version: 2.2.21
 
 - Class: text
-  Output: 'Esta lección asume que tienes familiaridad con algunas distribuciones de probabilidad. Aun si no tienes ninguna experiencia con estos conceptos, serás capaz de completar esta lección y entender las ideas generales.'
+  Output: 'Esta lección asume que tienes familiaridad con algunas distribuciones
+  de probabilidad. Aun si no tienes ninguna experiencia con estos conceptos,
+  serás capaz de completar esta lección y entender las ideas generales.'
 
 - Class: cmd_question
-  Output: "R contiene por defecto muchas distribuciones de probabilidad. Por ejemplo, si ingresas ?Normal, obtendrás información acerca de la distribución normal."
+  Output: "R contiene por defecto muchas distribuciones de probabilidad. Por
+  ejemplo, si ingresas ?Normal, obtendrás información acerca de la distribución
+  normal."
   CorrectAnswer: ?Normal
   AnswerTests: any_of_exprs('?Normal', 'help(Normal)', 'help("Normal")')
   Hint: "Ingresa ?Normal en la línea de comandos."
 
 - Class: text
-  Output: 'Usualmente cada distribución tendrá 4 funciones de la forma prefijo + apodo_distribucion. Cada prefijo indica:
+  Output: 'Usualmente cada distribución tendrá 4 funciones de la forma prefijo +
+  apodo_distribucion. Cada prefijo indica:
   r - la función para generar números aleatorios,
   p - la función de distribución,
   d - la función de densidad,
   q - la función que te da cuantiles.'
 
 - Class: text
-  Output: 'A todas estas funciones les puedes especificar la media y la varianza de la distribución.'
+  Output: 'A todas estas funciones les puedes especificar la media y la varianza
+  de la distribución.'
 
 - Class: text
-  Output: 'En general, la primera letra de la función determina qué información obtendrás acerca de la distribución y luego el apodo_distribución sigue directamente.'
+  Output: 'En general, la primera letra de la función determina qué información
+  obtendrás acerca de la distribución y luego el apodo_distribución sigue
+  directamente.'
 
 - Class:  figure
-  Output: 'Por ejemplo, si quisieras la función de densidad de la distribución Poisson usas dpois(). A continuación se muestran algunas distribuciones útiles.'
+  Output: 'Por ejemplo, si quisieras la función de densidad de la distribución
+  Poisson usas dpois(). A continuación se muestran algunas distribuciones
+  útiles.'
   Figure: showDistributions.R
   FigureType: new
 
 - Class: cmd_question
-  Output: "Para obtener una lista completa de las distribuciones disponibles en R, ingresa help(Distributions) en la línea de comandos."
+  Output: "Para obtener una lista completa de las distribuciones disponibles en
+  R, ingresa help(Distributions) en la línea de comandos."
   CorrectAnswer: help(Distributions)
   AnswerTests: any_of_exprs('help(Distributions)', 'help("Distributions")', '?Distributions')
 
 - Class: text
-  Output: 'Es importante que revises que las funciones definen a la distribución de la manera que tú esperas.'
+  Output: 'Es importante que revises que las funciones definen a la distribución
+  de la manera que tú esperas.'
 
 - Class: text
-  Output: 'Ahora verás cómo estas funciones te pueden ayudar para resolver un problema de simulación.'
+  Output: 'Ahora verás cómo estas funciones te pueden ayudar para resolver un
+  problema de simulación.'
 
 - Class: text
-  Output: 'Supón que quisieras encontrar la probabilidad de tener al menos 5 caras al lanzar 7 veces una moneda justa.'
+  Output: 'Supón que quisieras encontrar la probabilidad de tener al menos 5
+  caras al lanzar 7 veces una moneda justa.'
 
 - Class: text
-  Output: 'Recuerda que el lanzamiento de una moneda puede ser modelado por una variable aleatoria bernoulli.'
+  Output: 'Recuerda que el lanzamiento de una moneda puede ser modelado por una
+  variable aleatoria bernoulli.'
 
 - Class: text
-  Output: 'Es decir, donde p es la probabilidad de éxito; en este caso que caiga una cara, por lo que 1-p es la probabilidad de fracaso, es decir, que no caiga cara.'
+  Output: 'Es decir, donde p es la probabilidad de éxito; en este caso que caiga
+  una cara, por lo que 1-p es la probabilidad de fracaso, es decir, que no caiga
+  cara.'
 
 - Class: text
-  Output: 'Y ahora puedes usar una variable aleatoria binomial que te dice el número de éxitos en n repeticiones de experimentos bernoulli. Esta variable aleatoria la puedes modelar con la función rbinom(). No olvides que si n=1 el experimento que estarás observando es el lanzamiento de una moneda (el caso más simple).'
+  Output: 'Y ahora puedes usar una variable aleatoria binomial que te dice el
+  número de éxitos en n repeticiones de experimentos bernoulli. Esta variable aleatoria la puedes modelar con la función rbinom(). No olvides que si n=1 el experimento que estarás observando es el lanzamiento de una moneda (el caso más simple).'
 
 - Class: text
-  Output: 'En este caso puedes usar n=7 que son los 7 lanzamientos de la moneda.'
+  Output: 'En este caso puedes usar n=7 que son los 7 lanzamientos de la
+  moneda.'
 
 - Class: cmd_question
-  Output: "Ahora vas a generar esos números aleatorios usando la función rbinom(). Antes que nada ingresa ?rbinom en la línea de comandos para conocer su uso."
+  Output: "Ahora vas a generar esos números aleatorios usando la función
+  rbinom(). Antes que nada ingresa ?rbinom en la línea de comandos para conocer
+  su uso."
   CorrectAnswer: ?rbinom
   AnswerTests: any_of_exprs('?rbinom', 'help(rbinom)', 'help("rbinom")', '?"rbinom"')
 
 - Class: text
-  Output: 'Como te podrás dar cuenta rbinom() se encuentra definida así: rbinom(n, size, prob), donde n indica el número de veces que se va a llevar a cabo el experimento. size dice el número de intentos; en este caso el número de lanzamientos que se van a llevar a cabo. Y prob indica la probabilidad de éxito en cada intento; en este caso que caiga cara.'
+  Output: 'Como te podrás dar cuenta rbinom() se encuentra definida así:
+    rbinom(n, size, prob), donde n indica el número de veces que se va a llevar
+    a cabo el experimento. size dice el número de intentos; en este caso el
+    número de lanzamientos que se van a llevar a cabo. Y prob indica la
+    probabilidad de éxito en cada intento; en este caso que caiga cara.'
 
 - Class: cmd_question
-  Output: "Si quisieras llevar a cabo este experimento una única vez, es decir, lanzar 7 veces una moneda con probabilidad 1/2 de éxito (es decir, que la moneda sea justa), deberás llamar a rbinom() de la siguiente manera: ingresa rbinom(1, 7, 0.5) en la línea de comandos."
+  Output: "Si quisieras llevar a cabo este experimento una única vez, es decir,
+  lanzar 7 veces una moneda con probabilidad 1/2 de éxito (es decir, que la
+  moneda sea justa), deberás llamar a rbinom() de la siguiente manera: ingresa
+  rbinom(1, 7, 0.5) en la línea de comandos."
   CorrectAnswer: rbinom(1, 7, 0.5)
   AnswerTests: omnitest(correctExpr='rbinom(1, 7, 0.5)')
 
 - Class: text
-  Output: 'El resultado que obtuviste sólo te indica el número de éxitos que obtuviste en un único experimento, es decir, el número de caras que salieron.'
+  Output: 'El resultado que obtuviste sólo te indica el número de éxitos que
+  obtuviste en un único experimento, es decir, el número de caras que salieron.'
 
 - Class: text
-  Output: 'Si quisieras sacar la proporción de éxitos que tendrías, habría que llevar a cabo este experimento una gran cantidad de veces.'
+  Output: 'Si quisieras sacar la proporción de éxitos que tendrías, habría que
+  llevar a cabo este experimento una gran cantidad de veces.'
 
 - Class: cmd_question
-  Output: "Con R lo puedes justificar de manera intuitiva, aplicando este experimento muchas veces. En este caso repite el experimento 100 000 veces y guárdalo en la variable 'resultado'."
+  Output: "Con R lo puedes justificar de manera intuitiva, aplicando este
+  experimento muchas veces. En este caso repite el experimento 100 000 veces y
+  guárdalo en la variable 'resultado'."
   CorrectAnswer: resultado <- rbinom(100000, 7, 0.5)
   AnswerTests: omnitest(correctExpr='resultado <- rbinom(100000, 7, 0.5)')
-  Hint: "Ingresa resultado <- rbinom(100000, 7, 0.5) en la línea de comandos para repetir 100 000 veces el experimento."
+  Hint: "Ingresa resultado <- rbinom(100000, 7, 0.5) en la línea de comandos
+  para repetir 100 000 veces el experimento."
 
 - Class: cmd_question
-  Output: "Como ya te podrás imaginar, 'resultado' contiene el número de caras que salieron por cada experimento; en este caso 100 000. Ingresa tail(resultado) para conocer el resultado de los últimos 6 experimentos."
+  Output: "Como ya te podrás imaginar, 'resultado' contiene el número de caras
+  que salieron por cada experimento; en este caso 100 000. Ingresa
+  tail(resultado) para conocer el resultado de los últimos 6 experimentos."
   CorrectAnswer: tail(resultado)
   AnswerTests: omnitest(correctExpr='tail(resultado)')
 
 - Class: cmd_question
-  Output: "Una vez teniendo los resultados de aplicar este experimento 100 000 veces, puedes encontrar cuántos de esos experimentos tuvieron 5 veces o más éxito. Ingresa tail(resultado > 5) en la línea de comandos."
+  Output: "Una vez teniendo los resultados de aplicar este experimento 100 000
+  veces, puedes encontrar cuántos de esos experimentos tuvieron 5 veces o más
+  éxito. Ingresa tail(resultado > 5) en la línea de comandos."
   CorrectAnswer: tail(resultado > 5)
   AnswerTests: omnitest(correctExpr='tail(resultado > 5)')
 
 - Class: cmd_question
-  Output: "Teniendo este vector ahora puedes encontrar la proporción de verdaderos contra falsos sacando la media. Ingresa mean(resultado > 5) en la línea de comandos."
+  Output: "Teniendo este vector ahora puedes encontrar la proporción de
+  verdaderos contra falsos sacando la media. Ingresa mean(resultado > 5) en la
+  línea de comandos."
   CorrectAnswer: mean(resultado > 5)
   AnswerTests: omnitest(correctExpr='mean(resultado > 5)')
 
 - Class: text
-  Output: 'Con esto has encontrado la probabilidad de tener al menos 5 caras al lanzar 7 veces una moneda justa.'
+  Output: 'Con esto has encontrado la probabilidad de tener al menos 5 caras al
+  lanzar 7 veces una moneda justa.'
 
 - Class: text
-  Output: 'Te preguntarás cómo sacaste la media de un vector de valores lógicos; recuerda que esto es posible debido a la coerción.'
+  Output: 'Te preguntarás cómo sacaste la media de un vector de valores lógicos;
+  recuerda que esto es posible debido a la coerción.'
 
 - Class: cmd_question
-  Output: "Por último, es posible que desees que tus resultados sean replicables. La función set.seed() te permite  establecer el punto de inicio en la generación de números aleatorios. Ingresa ?set.seed en la línea de comandos."
+  Output: "Por último, es posible que desees que tus resultados sean
+  replicables. La función set.seed() te permite  establecer el punto de inicio
+  en la generación de números aleatorios. Ingresa ?set.seed en la línea de
+  comandos."
   CorrectAnswer: ?set.seed
   AnswerTests: any_of_exprs('?set.seed', 'help(set.seed)', 'help("set.seed")', '?"set.seed"')
 
 - Class: text
-  Output: 'Como verás, si estableces la misma semilla antes de generar números Aleatorios, siempre obtendrás los mismos números aleatorios.'
+  Output: 'Como verás, si estableces la misma semilla antes de generar números
+  Aleatorios, siempre obtendrás los mismos números aleatorios.'
 
 - Class: text
   Output: 'Ten en cuenta que no siempre es lo que puedas necesitar.'
 
 - Class: mult_question
-  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a Coursera que has completado esta lección?"
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
+  Coursera que has completado esta lección?"
   CorrectAnswer: NULL
   AnswerChoices: Si;No
   AnswerTests: coursera_on_demand()

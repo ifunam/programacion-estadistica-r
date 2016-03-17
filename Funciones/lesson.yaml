@@ -10,42 +10,67 @@
   Output: 'En esta lección conocerás las funciones del lenguaje R.'
 
 - Class: text
-  Output: 'En R las operaciones que hacen todo el trabajo son llamadas funciones.'
+  Output: 'En R las operaciones que hacen todo el trabajo son llamadas
+  funciones.'
 
 - Class: text
-  Output: 'Una función es un objeto en R, que puede tomar como entrada algunos objetos (llamados argumentos de función) y puede regresar un objeto de salida.'
+  Output: 'Una función es un objeto en R, que puede tomar como entrada algunos
+  objetos (llamados argumentos de función) y puede regresar un objeto de
+  salida.'
 
 - Class: text
-  Output: 'Las mayoría de las funciones son de la siguiente forma: f(argumento_1, argumento_2, ...). Donde f es el nombre de la función y argumento_1, argumento_2, ... son argumentos para la función.'
+  Output: 'Las mayoría de las funciones son de la siguiente forma:
+    f(argumento_1, argumento_2, ...). Donde f es el nombre de la función y
+    argumento_1, argumento_2, ... son argumentos para la función.'
 
 - Class: text
-  Output: 'Has usado alguna función anteriormente, ya que no se puede hacernada interesante sin ellas. Todo el trabajo en R es hecho por funciones.'
+  Output: 'Has usado alguna función anteriormente, ya que no se puede hacer nada
+  interesante sin ellas. Todo el trabajo en R es hecho por funciones.'
 
 - Class: cmd_question
-  Output: 'Una función que has estado usando a lo largo del curso es la función c(), la cual crea un vector de los elementos que le sean pasados como argumentos. Por ejemplo introduce c(1, 03, 2016) en la línea de comandos.'
+  Output: 'Una función que has estado usando a lo largo del curso es la función
+  c(), la cual crea un vector de los elementos que le sean pasados como
+  argumentos. Por ejemplo introduce c(1, 03, 2016) en la línea de comandos.'
   CorrectAnswer: c(1, 03, 2016)
   AnswerTests: omnitest(correctExpr='c(1, 3, 2016)')
 
 - Class: text
-  Output: 'La mayoría de las funciones en R regresan un valor; este valor puede ser calculado con base en el ambiente de la computadora o con base en la entrada (argumentos), como en este caso, en donde el valor regresado es el vector que contiene a 1, 3 y 2016.'
+  Output: 'La mayoría de las funciones en R regresan un valor; este valor puede
+  ser calculado con base en el ambiente de la computadora o con base en la
+  entrada (argumentos), como en este caso, en donde el valor regresado es el
+  vector que contiene a 1, 3 y 2016.'
 
 - Class: text
-  Output: 'Cada inicialización de variables en R, operaciones aritméticas, hasta repetir código en un loop, puede ser escrita como una función.'
+  Output: 'Cada inicialización de variables en R, operaciones aritméticas, hasta
+  repetir código en un loop, puede ser escrita como una función.'
 
 - Class: text
-  Output: 'Las funciones son creadas usando la función especial function() y una vez creadas son guardadas como objetos de R de clase tipo function.'
+  Output: 'Las funciones son creadas usando la función especial function() y una
+  vez creadas son guardadas como objetos de R de clase tipo function.'
 
 - Class: text
-  Output: 'En la siguiente pregunta se te pedirá que modifiques un script que aparecerá en cuanto pases a la siguiente pregunta. Las instrucciones de lo que debes hacer se encontrarán en el script. Una vez que hayas acabado de modificar el script, guarda tus cambios en el script e ingresa submit() en la línea de comandos y asi el script será evaluado. Si después de hacer esto debes corregir tu script siéntete libre de hacerlo, solo no olvides ingresar submit() una vez guardados tus cambios.'
+  Output: 'En la siguiente pregunta se te pedirá que modifiques un script que
+  aparecerá en cuanto pases a la siguiente pregunta. Las instrucciones de lo que
+  debes hacer se encontrarán en el script. Una vez que hayas acabado de
+  modificar el script, guarda tus cambios en el script e ingresa submit() en la
+  línea de comandos y asi el script será evaluado. Si después de hacer esto
+  debes corregir tu script siéntete libre de hacerlo, solo no olvides ingresar
+  submit() una vez guardados tus cambios.'
 
 - Class: script
-  Output: "Generalmente el cuerpo de la función es encerrado entre llaves {}, pero no es necesario si el cuerpo es una simple expresión. Por ejemplo, la expresión sucesor <- function(x) x+1 es equivalente a la que se encuentra en el script."
+  Output: "Generalmente el cuerpo de la función es encerrado entre llaves {},
+  pero no es necesario si el cuerpo es una simple expresión. Por ejemplo, la
+  expresión sucesor <- function(x) x+1 es equivalente a la que se encuentra en
+  el script."
   AnswerTests: test_func1()
-  Hint: "Asegúrate de haber borrado el símbolo # enfrente de la x, para que la última expresión sea x + 1."
+  Hint: "Asegúrate de haber borrado el símbolo # enfrente de la x, para que la
+  última expresión sea x + 1."
   Script: sucesor.R
 
 - Class: cmd_question
-  Output: "¡Ahora que has creado tu primera función ¡pruébala! Ingresa sucesor(5) en la línea de comandos. Si tu función funciona, debería de regresar únicamente el valor 6."
+  Output: "¡Ahora que has creado tu primera función ¡pruébala! Ingresa
+  sucesor(5) en la línea de comandos. Si tu función funciona, debería de
+  regresar únicamente el valor 6."
   CorrectAnswer: sucesor(5)
   AnswerTests: omnitest(correctExpr="sucesor(5)")
   Hint: "Prueba sucesor al ingresar sucesor(5) en la línea de comandos."
@@ -54,93 +79,136 @@
   Output: "¡Felicidades!, has escrito tu primera función."
 
 - Class: cmd_question
-  Output: "Es importante que sepas que si deseas ver el código fuente de cualquier función, solo debes de teclear el nombre de la función sin argumentos ni paréntesis. Ahora ve el código fuente de la función que acabas de crear. Ingresa sucesor en la línea de comandos."
+  Output: "Es importante que sepas que si deseas ver el código fuente de
+  cualquier función, solo debes de teclear el nombre de la función sin
+  argumentos ni paréntesis. Ahora ve el código fuente de la función que acabas
+  de crear. Ingresa sucesor en la línea de comandos."
   CorrectAnswer: sucesor
   AnswerTests: omnitest(correctExpr='sucesor')
-  Hint: "Para ver el código fuente de la función sucesor() ingresa sucesor en la línea de comandos."
+  Hint: "Para ver el código fuente de la función sucesor() ingresa sucesor en
+  la línea de comandos."
 
 - Class: text
-  Output: "La definición de una función en R incluye los nombres de los argumentos, como en el caso anterior que nombraste a 'x'.Si especificas un valor por defecto para un argumento, entonces el argumento será considerado opcional."
+  Output: "La definición de una función en R incluye los nombres de los
+  argumentos, como en el caso anterior que nombraste a 'x'.Si especificas un
+  valor por defecto para un argumento, entonces el argumento será considerado
+  opcional."
 
 - Class: script
-  Output: "Ahora harás un función ligeramente más complicada, donde usarás argumentos por defecto. Crearás una función llamada diferencia_cuadrada(). Recuerda que para elevar un número a cierta potencia se usa el operador binario `^`. Asegúrate de guardar tus cambios antes de ingresar submit() en la línea de comandos."
+  Output: "Ahora harás un función ligeramente más complicada, donde usarás
+  argumentos por defecto. Crearás una función llamada diferencia_cuadrada().
+  Recuerda que para elevar un número a cierta potencia se usa el operador
+  binario `^`. Asegúrate de guardar tus cambios antes de ingresar submit() en la
+  línea de comandos."
   AnswerTests: test_func2()
   Hint: "Recuerda establecer el valor por defecto adecuado."
   Script: diferencia_cuadrada.R
 
 - Class: cmd_question
-  Output: "Ahora prueba tu función diferencia_cuadrada(). Ingresa diferencia_cuadrada(3) en la línea de comandos."
+  Output: "Ahora prueba tu función diferencia_cuadrada(). Ingresa
+  diferencia_cuadrada(3) en la línea de comandos."
   CorrectAnswer: diferencia_cuadrada(3)
   AnswerTests: omnitest(correctExpr='diferencia_cuadrada(3)')
   Hint: "Ingresa diferencia_cuadrada(3) en la línea de comandos."
 
 - Class: text
-  Output: "¿Qué ha pasado? Como proveíste un solo argumento a la función, R cazó ese argumento a 'x', debido a que 'x' es el primer argumento. Por lo que 'y' usó el valor por defecto que definiste (2)."
+  Output: "¿Qué ha pasado? Como proveíste un solo argumento a la función, R cazó
+  ese argumento a 'x', debido a que 'x' es el primer argumento. Por lo que 'y'
+  usó el valor por defecto que definiste (2)."
 
 - Class: cmd_question
-  Output: "Recordarás que en un llamada a función puedes sobrescribir los valores por defecto. Así que ahora prueba diferencia_cuadrada() con dos argumentos. Ingresa diferencia_cuadrada(10, 5) en la línea de comandos."
+  Output: "Recordarás que en un llamada a función puedes sobrescribir los
+  valores por defecto. Así que ahora prueba diferencia_cuadrada() con dos
+  argumentos. Ingresa diferencia_cuadrada(10, 5) en la línea de comandos."
   CorrectAnswer: diferencia_cuadrada(10, 5)
   AnswerTests: omnitest(correctExpr='diferencia_cuadrada(10, 5)')
   Hint: "Ingresa diferencia_cuadrada(10, 5) en la línea de comandos."
 
 - Class: cmd_question
-  Output: "En R puedes explícitamente nombrar a los argumentos. Por ejemplo ingresa diferencia_cuadrada(y = 10, x = 5) en la línea de comandos."
+  Output: "En R puedes explícitamente nombrar a los argumentos. Por ejemplo
+  ingresa diferencia_cuadrada(y = 10, x = 5) en la línea de comandos."
   CorrectAnswer: diferencia_cuadrada(y = 10, x = 5)
   AnswerTests: omnitest(correctExpr='diferencia_cuadrada(y = 10, x = 5)')
   Hint: "Ingresa diferencia_cuadrada(y = 10, x = 5) en la línea de comandos."
 
 - Class: text
-  Output: "Como podrás notar es diferente ingresar diferencia_cuadrada(10, 5) a diferencia_cuadrada(y = 10, x = 5)."
+  Output: "Como podrás notar es diferente ingresar diferencia_cuadrada(10, 5) a
+  diferencia_cuadrada(y = 10, x = 5)."
 
 - Class: text
-  Output: "R también caza parcialmente los argumentos; es decir, ingresar diferencia_cuadrada(10, y = 5) resulta en lo mismo que ingresar diferencia_cuadrada(x = 10, y = 5) o diferencia_cuadrada(10, 5)."
+  Output: "R también caza parcialmente los argumentos; es decir, ingresar
+  diferencia_cuadrada(10, y = 5) resulta en lo mismo que ingresar
+  diferencia_cuadrada(x = 10, y = 5) o diferencia_cuadrada(10, 5)."
 
 - Class: text
-  Output: "Si no especificas un valor por defecto para un argumento, y si no especificas el valor de ese argumento cuando llamas a la función, obtendrás un error si la función intenta usar ese argumento."
+  Output: "Si no especificas un valor por defecto para un argumento, y si no
+  especificas el valor de ese argumento cuando llamas a la función, obtendrás un
+  error si la función intenta usar ese argumento."
 
 - Class: text
-  Output: "Si deseas escribir una función que acepte un número variable de argumentos, en R puedes usar '...'; para hacer esto se especifica '...' en los argumentos de la función."
+  Output: "Si deseas escribir una función que acepte un número variable de
+  argumentos, en R puedes usar '...'; para hacer esto se especifica '...' en los
+  argumentos de la función."
 
 - Class: script
-  Output: "Ahora escribirás una función usando '...'. Cerciórate de guardar tus cambios en el script antes de que introduzcas submit()."
+  Output: "Ahora escribirás una función usando '...'. Cerciórate de guardar tus
+  cambios en el script antes de que introduzcas submit()."
   AnswerTests: test_func3()
   Script: numeros_por_vocales.R
 
 - Class: cmd_question
-  Output: "Ahora prueba tu función numeros_por_vocales. Usa la función numeros_por_vocales pasándole como argumentos las cadenas que desees."
+  Output: "Ahora prueba tu función numeros_por_vocales. Usa la función
+  numeros_por_vocales pasándole como argumentos las cadenas que desees."
   CorrectAnswer: numeros_por_vocales()
   AnswerTests: expr_uses_func('numeros_por_vocales')
-  Hint: 'Usa la función numeros_por_vocales  pasándole como argumentos las cadenas que desees que desees'
+  Hint: 'Usa la función numeros_por_vocales  pasándole como argumentos las
+  cadenas que desees que desees'
 
 - Class: text
-  Output: "Muchas funciones en R pueden recibir otras funciones como argumentos. Por ejemplo, si deseas saber los argumentos de una función puedes hacer uso de las funciones args() o formals(), las cuales reciben como argumento el nombre de la función de la que deseas conocer los argumentos."
+  Output: "Muchas funciones en R pueden recibir otras funciones como
+  argumentos. Por ejemplo, si deseas saber los argumentos de una función puedes
+  hacer uso de las funciones args() o formals(), las cuales reciben como
+  argumento el nombre de la función de la que deseas conocer los argumentos."
 
 - Class: cmd_question
-  Output: "Ahora muestra los argumentos de la función mean(), la cual regresa el promedio de los elementos que recibe como argumentos. Usa cualquiera de la funciones antes mencionadas."
+  Output: "Ahora muestra los argumentos de la función mean(), la cual regresa el
+  promedio de los elementos que recibe como argumentos. Usa cualquiera de la
+  funciones antes mencionadas."
   CorrectAnswer: formals(mean)
   AnswerTests: any_of_exprs("formals(mean)", "args(mean)")
-  Hint: 'Usa formals() o args() para conocer los argumentos de la función mean(); recuerda que args() y formals() reciben el nombre de la función sin paréntesis.'
+  Hint: 'Usa formals() o args() para conocer los argumentos de la función
+  mean(); recuerda que args() y formals() reciben el nombre de la función sin
+  paréntesis.'
 
 - Class: text
-  Output: "Es importante que sepas que la función args() es usada principalmente de modo interactivo para imprimir los argumentos de una función. Para uso en programación considera mejor usar formals()."
+  Output: "Es importante que sepas que la función args() es usada principalmente
+  de modo interactivo para imprimir los argumentos de una función. Para uso en
+  programación considera mejor usar formals()."
 
 - Class: script
-  Output: 'El concepto de pasar funciones como argumentos es muy poderoso. Completa la función operador_binario() para ver cómo funciona. Recuerda guardar tus cambios en el script antes de que introduzcas submit().'
+  Output: 'El concepto de pasar funciones como argumentos es muy poderoso.
+  Completa la función operador_binario() para ver cómo funciona. Recuerda
+  guardar tus cambios en el script antes de que introduzcas submit().'
   AnswerTests: test_func4()
   Script: operador_binario.R
   Hint: "No olvides que el orden en que pases los argumentos es muy importante."
 
 - Class: cmd_question
-  Output: "Ahora prueba tu función operador_binario(). Ingresa operador_binario(`%/%`, 7, 3) en la línea de comandos. Recuerda que el operador `%/%` no es más que la división entera en R."
+  Output: "Ahora prueba tu función operador_binario(). Ingresa
+  operador_binario(`%/%`, 7, 3) en la línea de comandos. Recuerda que el
+  operador `%/%` no es más que la división entera en R."
   CorrectAnswer: operador_binario(`%/%`, 7, 3)
   AnswerTests: omnitest(correctExpr='operador_binario(`%/%`, 7, 3)')
   Hint: 'Ingresa operador_binario(`%/%`, 7, 3) en la línea de comandos.'
 
 - Class: text
-  Output: "Por último, recuerda que todas las funciones en R regresan un valor. Algunas funciones en R además hacen otras cosas, como cambiar el estado de las variables, graficar, cargar o guardar archivos, o hasta acceder a la red."
+  Output: "Por último, recuerda que todas las funciones en R regresan un valor.
+  Algunas funciones en R además hacen otras cosas, como cambiar el estado de las
+  variables, graficar, cargar o guardar archivos, o hasta acceder a la red."
 
 - Class: mult_question
-  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a Coursera que has completado esta lección?"
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
+  Coursera que has completado esta lección?"
   CorrectAnswer: NULL
   AnswerChoices: Si;No
   AnswerTests: coursera_on_demand()

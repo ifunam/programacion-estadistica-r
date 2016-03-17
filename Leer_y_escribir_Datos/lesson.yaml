@@ -7,56 +7,96 @@
   Version: 2.2.21
 
 - Class: text
-  Output: 'En esta lección conocerás cómo cargar conjuntos de datos en R y guardar estos conjuntos desde R.'
+  Output: 'En esta lección conocerás cómo cargar conjuntos de datos en R y
+  guardar estos conjuntos desde R.'
 
 - Class: text
-  Output: 'Una de las mejores cosas acerca de R es lo fácil que es añadir información desde otros programas.'
+  Output: 'Una de las mejores cosas acerca de R es lo fácil que es añadir
+  información desde otros programas.'
 
 - Class: text
-  Output: 'R puede importar conjuntos de datos desde archivos de texto, otros softwares de estadística y hasta hojas de cálculo. No es necesario tener una copia local del archivo. Tú puedes especificar la ubicación del archivo desde una url y R buscará el archivo en Internet.'
+  Output: 'R puede importar conjuntos de datos desde archivos de texto, otros
+  softwares de estadística y hasta hojas de cálculo. No es necesario tener una
+  copia local del archivo. Tú puedes especificar la ubicación del archivo desde una url y R buscará el archivo en Internet.'
 
 - Class: text
-  Output: 'La mayoría de los archivos que contienen información tienen un formato similar. Generalmente cada línea del archivo representa una observación o registro, por lo que cada línea contiene un conjunto de diferentes variables asociadas con la observación.'
+  Output: 'La mayoría de los archivos que contienen información tienen un
+  formato similar. Generalmente cada línea del archivo representa una
+  observación o registro, por lo que cada línea contiene un conjunto de
+  diferentes variables asociadas con la observación.'
 
 - Class: text
-  Output: 'Algunas veces, diferentes variables son separadas por un carácter especial, llamado delimitador. Otra veces las variables son diferenciadas por su ubicación en cada línea.'
+  Output: 'Algunas veces, diferentes variables son separadas por un carácter
+  especial, llamado delimitador. Otra veces las variables son diferenciadas por
+  su ubicación en cada línea.'
 
 - Class:  figure
-  Output: 'En esta lección trabajarás con el archivo inmigintnalpry.csv el cual contiene la estimación de personas provenientes de otros países que llegan a cada uno de los estados de México. Si tienes suerte, el archivo se mostrará en algún editor; de lo contrario búscalo en el subdirectorio swirl_temp de tu directorio de trabajo y velo en una aplicación separada.'
+  Output: 'En esta lección trabajarás con el archivo inmigintnalpry.csv el cual
+  contiene la estimación de personas provenientes de otros países que llegan a
+  cada uno de los estados de México. Si tienes suerte, el archivo se mostrará en
+  algún editor; de lo contrario búscalo en el subdirectorio swirl_temp de tu
+  directorio de trabajo y velo en una aplicación separada.'
   Figure: showInmigintnalpry.R
   FigureType: new
 
 - Class: text
-  Output: 'Como podrás notar el primer renglón del archivo contiene los nombres de las columnas, en este caso los nombres de cada una de las variables de la observación; además, el archivo tiene delimitada cada variable de la observación por una coma.'
+  Output: 'Como podrás notar el primer renglón del archivo contiene los nombres
+  de las columnas, en este caso los nombres de cada una de las variables de la
+  observación; además, el archivo tiene delimitada cada variable de la
+  observación por una coma.'
 
 - Class: text
-  Output: 'Para cargar este archivo a R, debes especificar que el primer renglón contiene los nombres de las columnas y que el delimitador es una coma.'
+  Output: 'Para cargar este archivo a R, debes especificar que el primer renglón
+  contiene los nombres de las columnas y que el delimitador es una coma.'
 
 - Class: text
-  Output: 'Para hacer esto necesitarás especificar los argumentos header y sep en la función read.table. Header para especificar que el primer renglón contiene los nombres de la columnas (header=TRUE) y sep para especificar el delimitador (sep=",").'
+  Output: 'Para hacer esto necesitarás especificar los argumentos header y sep
+  en la función read.table. Header para especificar que el primer renglón
+  contiene los nombres de la columnas (header=TRUE) y sep para especificar el
+  delimitador (sep=",").'
 
 - Class: cmd_question
-  Output: '¡Importa el archivo inmigintnalpry.csv! Ingresa datos <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",", fileEncoding = "latin1") en la línea de comandos.'
+  Output: '¡Importa el archivo inmigintnalpry.csv! Ingresa datos <-
+  read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",",
+  fileEncoding = "latin1") en la línea de comandos.'
   CorrectAnswer: datos <- read.table("swirl_temp/inmigintnalpry.csv",header=TRUE, sep=",", fileEncoding = "latin1")
   AnswerTests: omnitest(correctExpr='datos <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",", fileEncoding="latin1")')
 
 - Class: text
-  Output: 'Como podrás notar usaste el argumento fileEncoding; esto debido a que de no usarlo R no podría importar el archivo, puesto que la segunda cadena del archivo: año, no es una cadena válida para el tipo de codificación que read.table usa por defecto. Para poder leer el archivo basta con especificar el argumento fileEncoding. De no especificarlo R te indicará que hay un error.'
+  Output: 'Como podrás notar usaste el argumento fileEncoding; esto debido a que
+  de no usarlo R no podría importar el archivo, puesto que la segunda cadena del
+  archivo: año, no es una cadena válida para el tipo de codificación que
+  read.table usa por defecto. Para poder leer el archivo basta con especificar
+  el argumento fileEncoding. De no especificarlo R te indicará que hay un
+  error.'
 
 - Class: cmd_question
-  Output: 'Intenta usar datos_2 <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=","). Debido a que el archivo inmigintnalpry.csv contiene caracteres especiales como la ñ, R PUEDE MOSTRARTE UN ERROR. Si R te muestra el error, ingresa ok() en la línea de comandos para continuar.'
+  Output: 'Intenta usar datos_2 <- read.table("swirl_temp/inmigintnalpry.csv",
+  header=TRUE, sep=","). Debido a que el archivo inmigintnalpry.csv contiene
+  caracteres especiales como la ñ, R PUEDE MOSTRARTE UN ERROR. Si R te muestra
+  el error, ingresa ok() en la línea de comandos para continuar.'
   CorrectAnswer: ok()
   AnswerTests: any_of_exprs('ok()', 'datos2 <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",")')
   Hint: 'Ingresa datos2 <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=","), después ingresa ok() para continuar.'
 
 - Class: text
-  Output: 'Este error es muy común cuando intentas leer archivos que su contenido está en español; esto se debe a que usa otra codificación para poder abarcar más símbolos que no usan otros idiomas, como en este caso la ñ. Para poder leer archivos que contengan ñ, basta con especificar el argumento fileEncoding, el cual indica la codificación del archivo a importar; en este caso, usarás fileEncoding = "latin1".'
+  Output: 'Este error es muy común cuando intentas leer archivos que su
+  contenido está en español; esto se debe a que usa otra codificación para poder
+  abarcar más símbolos que no usan otros idiomas, como en este caso la ñ. Para
+  poder leer archivos que contengan ñ, basta con especificar el argumento
+  fileEncoding, el cual indica la codificación del archivo a importar; en este
+  caso, usarás fileEncoding = "latin1".'
 
 - Class: text
-  Output: 'Comúnmente las opciones más importantes son sep y header. Casi siempre debes saber el campo separador y si hay un campo header.'
+  Output: 'Comúnmente las opciones más importantes son sep y header. Casi
+  siempre debes saber el campo separador y si hay un campo header.'
 
 - Class: cmd_question
-  Output: "Ahora ve lo que contiene 'datos'. Para hacer esto usarás la función View(). Si te encuentras en Rstudio simplemente puedes presionar el nombre de la variable datos en el apartado Entorno ('Environment') y te mostrará su contenido. Presiona la variable datos en Rstudio o ingresa View(datos) en la línea de comandos."
+  Output: "Ahora ve lo que contiene 'datos'. Para hacer esto usarás la función
+  View(). Si te encuentras en Rstudio simplemente puedes presionar el nombre de
+  la variable datos en el apartado Entorno ('Environment') y te mostrará su
+  contenido. Presiona la variable datos en Rstudio o ingresa View(datos) en la
+  línea de comandos."
   CorrectAnswer: View(datos)
   AnswerTests: omnitest(correctExpr='View(datos)')
 
@@ -64,25 +104,47 @@
   Output: '¡Como podrás notar el archivo contiene 302060 observaciones!'
 
 - Class: text
-  Output: 'Es importante saber que no solo existe read.table(). R además incluye un conjunto de funciones que llaman a read.table() con diferentes opciones por defecto para valores como sep y header, y algunos otros. En la mayoría de los casos encontrarás que puedes usar read.csv() para archivos separados por comas o read.delim() para archivos delimitados por TAB sin especificar otras opciones.'
+  Output: 'Es importante saber que no solo existe read.table(). R además incluye
+  un conjunto de funciones que llaman a read.table() con diferentes opciones por
+  defecto para valores como sep y header, y algunos otros. En la mayoría de los
+  casos encontrarás que puedes usar read.csv() para archivos separados por comas
+  o read.delim() para archivos delimitados por TAB sin especificar otras
+  opciones.'
 
 - Class: text
-  Output: 'La mayoría de las veces deberías ser capaz de cargar archivos de texto en R con la función read.table(). Pero algunas veces serás proveído con un archivo de texto que no pueda ser leído correctamente con esta función.'
+  Output: 'La mayoría de las veces deberías ser capaz de cargar archivos de
+  texto en R con la función read.table(). Pero algunas veces serás proveído con
+  un archivo de texto que no pueda ser leído correctamente con esta función.'
 
 - Class: text
-  Output: 'Si estás en Europa y usas comas para indicar punto decimal en los números, entonces puedes usar read.cvs2() y read.delim2().'
+  Output: 'Si estás en Europa y usas comas para indicar punto decimal en los
+  números, entonces puedes usar read.cvs2() y read.delim2().'
 
 - Class: text
-  Output: 'Una manera de agilizar la lectura de datos es usando el parámetro colClasses de la función read.table().'
+  Output: 'Una manera de agilizar la lectura de datos es usando el parámetro
+  colClasses de la función read.table().'
 
 - Class: text
-  Output: 'Este parámetro recibe un vector, el cual describe cada uno de los tipos por columna que va a leer. Esto agiliza la lectura debido a que read.table() normalmente lee toda la información y después revisa cada una de las columnas, y decide conforme a lo que vio de qué tipo es cada columna, y al indicar el parámetro colClasses le dices a la función read.table() de qué tipo son los datos que va a ver, con lo que te evitas el chequeo para saber el tipo de cada columna.'
+  Output: 'Este parámetro recibe un vector, el cual describe cada uno de los
+  tipos por columna que va a leer. Esto agiliza la lectura debido a que
+  read.table() normalmente lee toda la información y después revisa cada una de
+  las columnas, y decide conforme a lo que vio de qué tipo es cada columna, y al
+  indicar el parámetro colClasses le dices a la función read.table() de qué tipo
+  son los datos que va a ver, con lo que te evitas el chequeo para saber el tipo
+  de cada columna.'
 
 - Class: text
-  Output: 'Puedes averiguar la clase de las columnas de manera fácil cuando tienes archivos grandes.'
+  Output: 'Puedes averiguar la clase de las columnas de manera fácil cuando
+  tienes archivos grandes.'
 
 - Class: cmd_question
-  Output: 'Lo que puedes hacer es indicarle a read.table() que solo lea los primeros 100 renglones del archivo; esto lo haces indicando el parámetro nrow. Cabe recordar que debes especificar la codificación del archivo, debido a que usa caracteres especiales, también que el primer renglón son los nombres de la columnas y que el delimitador es una coma. Ingresa inicial <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",", fileEncoding = "latin1", nrow = 100) en la línea de comandos.'
+  Output: 'Lo que puedes hacer es indicarle a read.table() que solo lea los
+  primeros 100 renglones del archivo; esto lo haces indicando el parámetro nrow.
+  Cabe recordar que debes especificar la codificación del archivo, debido a que
+  usa caracteres especiales, también que el primer renglón son los nombres de la
+  columnas y que el delimitador es una coma. Ingresa inicial <-
+  read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",", fileEncoding
+  = "latin1", nrow = 100) en la línea de comandos.'
   CorrectAnswer: inicial <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",", fileEncoding = "latin1", nrow = 100)
   AnswerTests: omnitest(correctExpr='inicial <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",", fileEncoding = "latin1", nrow = 100)')
 
@@ -90,93 +152,144 @@
   Output: 'Con esto has conseguido leer las primeras 100 observaciones.'
 
 - Class: cmd_question
-  Output: 'Después usa la función sapply mandándole como parámetros el objeto inicial (el cual contiene las 100 observaciones) y la función class(). Ingresa clases <- sapply(inicial, class) en la línea de comandos.'
+  Output: 'Después usa la función sapply mandándole como parámetros el objeto
+  inicial (el cual contiene las 100 observaciones) y la función class(). Ingresa
+  clases <- sapply(inicial, class) en la línea de comandos.'
   CorrectAnswer: clases <- sapply(inicial, class)
   AnswerTests: omnitest(correctExpr='clases <- sapply(inicial, class)')
 
 - Class: text
-  Output: 'Con esto lo que conseguiste fue aplicar la función class() a cada una de las columnas del objeto inicial. La función class() es una función que determina la clase o tipo de un objeto. Entonces los tipos de cada una de las columnas fueron guardados en el objeto clases.'
+  Output: 'Con esto lo que conseguiste fue aplicar la función class() a cada una
+  de las columnas del objeto inicial. La función class() es una función que
+  determina la clase o tipo de un objeto. Entonces los tipos de cada una de las
+  columnas fueron guardados en el objeto clases.'
 
 - Class: cmd_question
-  Output: "Para ver el contenido del objeto 'clases', basta con escribir clases en la línea de comandos."
+  Output: "Para ver el contenido del objeto 'clases', basta con escribir clases
+  en la línea de comandos."
   CorrectAnswer: clases
   AnswerTests: any_of_exprs('clases', 'print(clases)')
 
 - Class: cmd_question
-  Output: 'Por último, con este vector de clases, leerás todo el archivo usando la función read.table, pero pasándole el argumento colClasses. Ingresa datos <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",", fileEncoding = "latin1", colClasses=clases) en la línea de comandos.'
+  Output: 'Por último, con este vector de clases, leerás todo el archivo usando
+  la función read.table, pero pasándole el argumento colClasses. Ingresa datos
+  <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",",
+  fileEncoding = "latin1", colClasses=clases) en la línea de comandos.'
   CorrectAnswer: datos <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",", fileEncoding = "latin1", colClasses=clases)
   AnswerTests: omnitest(correctExpr='datos <- read.table("swirl_temp/inmigintnalpry.csv", header=TRUE, sep=",", fileEncoding = "latin1", colClasses=clases)')
 
 - Class: text
-  Output: 'Como podrás notar el tiempo de lectura mejoró significativamente usando este truco.'
+  Output: 'Como podrás notar el tiempo de lectura mejoró significativamente
+  usando este truco.'
 
 - Class: cmd_question
-  Output: 'Si deseas guardar objetos, la manera más simple es usando la función save(). Por ejemplo, puedes usar el siguiente comando para salvar el objeto ‘datos’ y el objeto ‘clases’ en el archivo swirl_temp/datos_inmigrates.RData. Ingresa save(datos, clases, file="swirl_temp/datos_inmigrates.RData") en la línea de comandos.'
+  Output: 'Si deseas guardar objetos, la manera más simple es usando la función
+  save(). Por ejemplo, puedes usar el siguiente comando para salvar el objeto
+  ‘datos’ y el objeto ‘clases’ en el archivo swirl_temp/datos_inmigrates.RData.
+  Ingresa save(datos, clases, file="swirl_temp/datos_inmigrates.RData") en la
+  línea de comandos.'
   CorrectAnswer: save(datos, clases,file="swirl_temp/datos_inmigrates.RData")
   AnswerTests: omnitest(correctExpr='save(datos, clases,file="swirl_temp/datos_inmigrates.RData")')
 
 - Class: text
-  Output: 'La función save() escribe una representación externa de los objetos especificados a un archivo señalado. Además, como ya te habrás dado cuenta, tú puedes guardar múltiples objetos en el mismo archivo, tan solo al listarlos en la función save().'
+  Output: 'La función save() escribe una representación externa de los objetos
+  especificados a un archivo señalado. Además, como ya te habrás dado cuenta,
+  tú puedes guardar múltiples objetos en el mismo archivo, tan solo al listarlos
+  en la función save().'
 
 - Class: text
-  Output: 'Es importante notar que en R, las rutas de archivo siempre son especificadas con  diagonales ("/"), aun estando en Microsoft Windows. Así que para salvar este archivo al directorio "C:\Documents and Settings\Mi Usuario\Mis Documentos\datos_inmigrates.RData, solo usarías el siguiente comando: save(datos,file="C:/Documents and Settings/Mi Usuario/Mis Documentos/datos_inmigrates.RData").'
+  Output: 'Es importante notar que en R, las rutas de archivo siempre son
+  especificadas con  diagonales ("/"), aun estando en Microsoft Windows. Así que
+  para salvar este archivo al directorio "C:\Documents and Settings\Mi
+  Usuario\Mis Documentos\datos_inmigrates.RData, solo usarías el siguiente
+  comando: save(datos,file="C:/Documents and Settings/Mi Usuario/Mis
+  Documentos/datos_inmigrates.RData").'
 
 - Class: text
-  Output: 'También es importante notar que el argumento file debe ser explícitamente nombrado.'
+  Output: 'También es importante notar que el argumento file debe ser
+  explícitamente nombrado.'
 
 - Class: cmd_question
-  Output: "Ahora que has guardado los objetos 'datos' y 'clases' en un archivo, puedes borrarlos. Introduce rm(datos,clases) en la línea de comandos."
+  Output: "Ahora que has guardado los objetos 'datos' y 'clases' en un archivo,
+  puedes borrarlos. Introduce rm(datos,clases) en la línea de comandos."
   CorrectAnswer: rm(datos,clases)
   AnswerTests: omnitest(correctExpr='rm(datos,clases)')
 
 - Class: cmd_question
-  Output: 'Y si ahora usas la función ls(), la cual como recordarás muestra qué conjuntos de datos y funciones un usuario ha definido, verás que no están presentes los objetos datos y clases. Ingresa ls() en la línea de comandos.'
+  Output: 'Y si ahora usas la función ls(), la cual como recordarás muestra qué
+  conjuntos de datos y funciones un usuario ha definido, verás que no están
+  presentes los objetos datos y clases. Ingresa ls() en la línea de comandos.'
   CorrectAnswer: ls()
   AnswerTests: omnitest(correctExpr='ls()')
 
 - Class: cmd_question
-  Output: 'Ahora, puedes fácilmente cargar los objetos ‘datos’ y ‘clases’ devuelta a R con la función load(). Solo debes especificar el nombre del archivo donde los guardaste. Ingresa load("swirl_temp/datos_inmigrates.RData") en la línea de comandos.'
+  Output: 'Ahora, puedes fácilmente cargar los objetos ‘datos’ y ‘clases’
+  devuelta a R con la función load(). Solo debes especificar el nombre del
+  archivo donde los guardaste. Ingresa load("swirl_temp/datos_inmigrates.RData")
+  en la línea de comandos.'
   CorrectAnswer: load("swirl_temp/datos_inmigrates.RData")
   AnswerTests: omnitest(correctExpr='load("swirl_temp/datos_inmigrates.RData")')
 
 - Class: cmd_question
-  Output: "Y si ahora usas la función ls(), verás que están presentes los objetos 'datos' y 'clases'. Ingresa ls() en la línea de comandos."
+  Output: "Y si ahora usas la función ls(), verás que están presentes los
+  objetos 'datos' y 'clases'. Ingresa ls() en la línea de comandos."
   CorrectAnswer: ls()
   AnswerTests: omnitest(correctExpr='ls()')
 
 - Class: text
-  Output: 'Es importante saber que los archivos guardados en R funcionarán en todas las plataformas; es decir, archivos guardados en Linux funcionarán si son cargados desde Windows o Mac OS X.'
+  Output: 'Es importante saber que los archivos guardados en R funcionarán en
+  todas las plataformas; es decir, archivos guardados en Linux funcionarán si
+  son cargados desde Windows o Mac OS X.'
 
 - Class: text
-  Output: 'Si deseas guardar cada uno de los objetos de tu espacio de trabajo (workspace), puedes hacerlo usando la función save.image(). De hecho, cuando salgas de la session de R, se te preguntará si deseas salvar tu actual espacio de trabajo (workspace). Si señalas que sí lo deseas, tu espacio de trabajo será guardado de la misma manera que usar esta función.'
+  Output: 'Si deseas guardar cada uno de los objetos de tu espacio de trabajo
+  (workspace), puedes hacerlo usando la función save.image(). De hecho, cuando
+  salgas de la session de R, se te preguntará si deseas salvar tu actual espacio
+  de trabajo (workspace). Si señalas que sí lo deseas, tu espacio de trabajo
+  será guardado de la misma manera que usar esta función.'
 
 - Class: text
-  Output: 'Por último, al igual que para importar datos existe la función read.table(), para exportar datos a un archivo de texto existe la función write.table().'
+  Output: 'Por último, al igual que para importar datos existe la función
+  read.table(), para exportar datos a un archivo de texto existe la función
+  write.table().'
 
 - Class: text
   Output: 'Normalmente los datos a exportar son data frames y matrices.'
 
 - Class: cmd_question
-  Output: 'Para exportar un objeto a un archivo basta con escribir la función write.table() y como argumento el nombre del objeto, además del nombre del archivo donde se guardará. Ingresa write.table(datos, file="swirl_temp/datos.txt") en la línea de comandos.'
+  Output: 'Para exportar un objeto a un archivo basta con escribir la función
+  write.table() y como argumento el nombre del objeto, además del nombre del
+  archivo donde se guardará. Ingresa write.table(datos,
+  file="swirl_temp/datos.txt") en la línea de comandos.'
   CorrectAnswer: write.table(datos, file="swirl_temp/datos.txt")
   AnswerTests: omnitest(correctExpr='write.table(datos, file="swirl_temp/datos.txt")')
 
 - Class:  figure
-  Output: 'Si tienes suerte, te mostraré el archivo datos.txt en algún editor; de lo contrario, búscalo en el subdirectorio swirl_temp de tu directorio de trabajo y velo en una aplicación separada.'
+  Output: 'Si tienes suerte, te mostraré el archivo datos.txt en algún editor;
+  de lo contrario, búscalo en el subdirectorio swirl_temp de tu directorio de
+  trabajo y velo en una aplicación separada.'
   Figure: showDatos.R
   FigureType: new
 
 - Class: text
-  Output: 'Como podrás notar el archivo datos.txt no es igual al archivo inmigintnalpry.csv que al inicio de esta lección te mostré. Una de las principales razones es que para escribir el objeto datos no especificaste un delimitador (sep) y por defecto R delimitó con espacios.'
+  Output: 'Como podrás notar el archivo datos.txt no es igual al archivo
+  inmigintnalpry.csv que al inicio de esta lección te mostré. Una de las
+  principales razones es que para escribir el objeto datos no especificaste un
+  delimitador (sep) y por defecto R delimitó con espacios.'
 
 - Class: text
-  Output: 'Al igual que con la función read.table(), R incluye un conjunto de funciones que llaman a write.table() con diferentes opciones por defecto, como lo son write.csv() y write.csv2().'
+  Output: 'Al igual que con la función read.table(), R incluye un conjunto de
+  funciones que llaman a write.table() con diferentes opciones por defecto,
+  como lo son write.csv() y write.csv2().'
 
 - Class: text
-  Output: 'Si deseas, puedes jugar con las funciones write.*() para lograr que datos.txt sea identico a inmigintnalpry.csv. Recuerda que para ver los parámetros de write.*() puedes usar help(); por ejemplo, help(write.csv).'
+  Output: 'Si deseas, puedes jugar con las funciones write.*() para lograr que
+  datos.txt sea identico a inmigintnalpry.csv. Recuerda que para ver los
+  parámetros de write.*() puedes usar help(); por ejemplo, help(write.csv).'
 
 - Class: mult_question
-  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a Coursera que has completado esta lección?"
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
+  Coursera que has completado esta lección?"
   CorrectAnswer: NULL
   AnswerChoices: Si;No
   AnswerTests: coursera_on_demand()

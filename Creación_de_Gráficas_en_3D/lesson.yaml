@@ -10,35 +10,45 @@
   Output: "En esta lección verás cómo crear gráficas en 3D."
 
 - Class: text
-  Output: "Este tipo de gráficas no están implementadas en el sistema de base, por lo que usarás rgl."
+  Output: "Este tipo de gráficas no están implementadas en el sistema de base,
+  por lo que usarás rgl."
 
 - Class: cmd_question
-  Output: 'Para ejemplificar esta práctica continuarás usando el conjunto de datos iris. Carga el conjunto de datos iris.'
+  Output: 'Para ejemplificar esta práctica continuarás usando el conjunto de
+  datos iris. Carga el conjunto de datos iris.'
   CorrectAnswer: data(iris)
   AnswerTests: any_of_exprs('data(iris)', 'data("iris")')
   Hint: "Ingresa data(iris) en la línea de comandos."
 
 - Class: cmd_question
-  Output: 'Usa head(iris) para ver las primeras seis líneas de contenido de iris.'
+  Output: 'Usa head(iris) para ver las primeras seis líneas de contenido de
+  iris.'
   CorrectAnswer: head(iris)
   AnswerTests: omnitest(correctExpr='head(iris)')
 
 - Class: text
-  Output: "Con esto recordarás que el conjunto de datos de iris contiene las medidas de longitud y anchura del sépalo y pétalo, respectivamente, por 50 flores de cada una de las tres especies de iris. Las especies de iris son: setosa, versicolor y virginica."
+  Output: "Con esto recordarás que el conjunto de datos de iris contiene las
+  medidas de longitud y anchura del sépalo y pétalo, respectivamente, por 50
+  flores de cada una de las tres especies de iris. Las especies de iris son:
+  setosa, versicolor y virginica."
 
 - Class: cmd_question
-  Output: 'Ingresa x <- iris$Sepal.Length en la línea de comandos para guardar la columna que contiene las longitudes de sépalo de las muestras en la variable x.'
+  Output: 'Ingresa x <- iris$Sepal.Length en la línea de comandos para guardar
+  la columna que contiene las longitudes de sépalo de las muestras en la
+  variable x.'
   CorrectAnswer: x <- iris$Sepal.Length
   AnswerTests: omnitest(correctExpr='x <- iris$Sepal.Length')
 
 - Class: cmd_question
-  Output: 'Repite el proceso anterior, pero guarda en la variable y, la columna que contiene las longitudes de pétalo.'
+  Output: 'Repite el proceso anterior, pero guarda en la variable y, la columna
+  que contiene las longitudes de pétalo.'
   CorrectAnswer: y <- iris$Petal.Length
   AnswerTests: omnitest(correctExpr='y <- iris$Petal.Length')
   Hint: 'Ingresa y <- iris$Petal.Length en la línea de comandos.'
 
 - Class: cmd_question
-  Output: 'Nuevamente repite el proceso, pero ahora guarda en la variable z la columna que contiene las anchuras de sépalo.'
+  Output: 'Nuevamente repite el proceso, pero ahora guarda en la variable z la
+  columna que contiene las anchuras de sépalo.'
   CorrectAnswer: z <- iris$Sepal.Width
   AnswerTests: omnitest(correctExpr='z <- iris$Sepal.Width')
   Hint: 'Ingresa z <- iris$Sepal.Width en la línea de comandos.'
@@ -47,70 +57,108 @@
   Output: "Bien; ahora puedes continuar..."
 
 - Class: cmd_question
-  Output: 'rgl es un paquete de gráficos 3D que produce gráficas interactivas en 3D en tiempo real. Permite rotar de forma interactiva, ampliar los gráficos, etc. Ingresa ?rgl en la línea de comandos para conocer un poco más del paquete rgl.'
+  Output: 'rgl es un paquete de gráficos 3D que produce gráficas interactivas en
+  3D en tiempo real. Permite rotar de forma interactiva, ampliar los gráficos,
+  etc. Ingresa ?rgl en la línea de comandos para conocer un poco más del paquete
+  rgl.'
   CorrectAnswer: ?rgl
   AnswerTests: any_of_exprs('?rgl', 'help("rgl")', '?"rgl"', 'help(rgl)')
 
 - Class: text
-  Output: "rgl incluye una interfaz de nivel superior llamada r3d. Esta interfaz está diseñada para actuar como los gráficos clásicos 2D de R."
+  Output: "rgl incluye una interfaz de nivel superior llamada r3d. Esta interfaz
+  está diseñada para actuar como los gráficos clásicos 2D de R."
 
 - Class: cmd_question
-  Output: 'Para inicializar la interfaz 3D usa la función open3d(). La función open3d() intenta abrir una nueva ventana RGL, utilizando los valores predeterminados especificados por el usuario. Ingresa open3d() en la línea de comandos.'
+  Output: 'Para inicializar la interfaz 3D usa la función open3d(). La función
+  open3d() intenta abrir una nueva ventana RGL, utilizando los valores
+  predeterminados especificados por el usuario. Ingresa open3d() en la línea de
+  comandos.'
   CorrectAnswer: open3d()
   AnswerTests: omnitest(correctExpr='open3d()')
 
 - Class: text
-  Output: "Ahora puedes utilizar la función plot3d(); ésta funciona de manera similar a la función plot() del sistema base de R. En este caso, como es en tres dimensiones, recibe una tripleta de valores, 'x', 'y', 'z', y una vez recibida esta tripleta dibuja el punto que deseas visualizar."
+  Output: "Ahora puedes utilizar la función plot3d(); ésta funciona de manera
+  similar a la función plot() del sistema base de R. En este caso, como es en
+  tres dimensiones, recibe una tripleta de valores, 'x', 'y', 'z', y una vez
+  recibida esta tripleta dibuja el punto que deseas visualizar."
 
 - Class: cmd_question
-  Output: 'Ingresa plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width) en la línea de comandos.'
+  Output: 'Ingresa plot3d(iris$Sepal.Length, iris$Petal.Length,
+  iris$Sepal.Width) en la línea de comandos.'
   CorrectAnswer: plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width)
   AnswerTests: omnitest(correctExpr='plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width)')
 
 - Class: text
-  Output: "Al igual que con la función plot(), la gráfica fue construida tomando un elemento de cada vector; es decir, para construir cada punto plot3d() tomo un elemento del primer vector (posición x), un elemento del segundo vector (posición y) y un elemento del tercer vector (posición z)."
+  Output: "Al igual que con la función plot(), la gráfica fue construida tomando
+  un elemento de cada vector; es decir, para construir cada punto plot3d() tomo
+  un elemento del primer vector (posición x), un elemento del segundo vector
+  (posición y) y un elemento del tercer vector (posición z)."
 
 - Class: text
-  Output: "Notarás que algunos valores por defecto son el tipo de gráfica (puntos) y el color negro."
+  Output: "Notarás que algunos valores por defecto son el tipo de gráfica
+  (puntos) y el color negro."
 
 - Class: cmd_question
-  Output: 'Al igual que con plot() puedes especificar el tipo de gráfica usando el parámetro type. Ingresa plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s") en la línea de comandos.'
+  Output: 'Al igual que con plot() puedes especificar el tipo de gráfica usando
+  el parámetro type. Ingresa plot3d(iris$Sepal.Length, iris$Petal.Length,
+  iris$Sepal.Width, type="s") en la línea de comandos.'
   CorrectAnswer: plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s")
   AnswerTests: omnitest(correctExpr='plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s")')
 
 - Class: text
-  Output: "Los tipos soportados son 'p' para puntos, 's' para esferas, 'l' para líneas, 'h' para segmentos de línea con z = 0, y 'n' para nada."
+  Output: "Los tipos soportados son 'p' para puntos, 's' para esferas, 'l' para
+  líneas, 'h' para segmentos de línea con z = 0, y 'n' para nada."
 
 - Class: cmd_question
-  Output: 'Asimismo, puedes especificar el color usado para graficar a los elementos usando el parámetro col. Ingresa plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s", col=rainbow(150)) en la línea de comandos.'
+  Output: 'Asimismo, puedes especificar el color usado para graficar a los
+  elementos usando el parámetro col. Ingresa plot3d(iris$Sepal.Length,
+  iris$Petal.Length, iris$Sepal.Width, type="s", col=rainbow(150)) en la línea
+  de comandos.'
   CorrectAnswer: plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s", col=rainbow(150))
   AnswerTests: omnitest(correctExpr='plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s", col=rainbow(150))')
 
 - Class: cmd_question
-  Output: 'Algo que debes saber es que si deseas graficar elemento por especie no podrás enviarle al parámetro col iris$Species como lo habías estado haciendo con la función plot(). Esta vez tendrás que tratar a iris$Species como enteros. Para hacer esto ingresa plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s", col=as.integer(iris$Species)) en la línea de comandos.'
+  Output: 'Algo que debes saber es que si deseas graficar elemento por especie
+  no podrás enviarle al parámetro col iris$Species como lo habías estado
+  haciendo con la función plot(). Esta vez tendrás que tratar a iris$Species
+  como enteros. Para hacer esto ingresa plot3d(iris$Sepal.Length,
+  iris$Petal.Length, iris$Sepal.Width, type="s", col=as.integer(iris$Species))
+  en la línea de comandos.'
   CorrectAnswer: plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s", col=as.integer(iris$Species))
   AnswerTests: omnitest(correctExpr='plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s", col=as.integer(iris$Species))')
 
 - Class: cmd_question
-  Output: 'A diferencia de la función plot() donde si querías cambiar el tamaño del elemento graficado usabas el parámetro cex, en plot3d() si deseas cambiar el tamaño de las esferas debes usar el parámetro radius. Ingresa plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s", col=as.integer(iris$Species), radius=1.5) en la linea de comandos.'
+  Output: 'A diferencia de la función plot() donde si querías cambiar el tamaño
+  del elemento graficado usabas el parámetro cex, en plot3d() si deseas cambiar
+  el tamaño de las esferas debes usar el parámetro radius. Ingresa
+  plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s",
+  col=as.integer(iris$Species), radius=1.5) en la linea de comandos.'
   CorrectAnswer: plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s", col=as.integer(iris$Species), radius=1.5)
   AnswerTests: omnitest(correctExpr='plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="s", col=as.integer(iris$Species), radius=1.5)')
 
 - Class: text
-  Output: "Si graficas líneas o puntos y deseas cambiar su tamaño, el parámetro radius no te servirá. Para cambiar el tamaño de las líneas plot3d() usa el parámetro lwd y size para cambiar el de los puntos."
+  Output: "Si graficas líneas o puntos y deseas cambiar su tamaño, el parámetro
+  radius no te servirá. Para cambiar el tamaño de las líneas plot3d() usa el
+  parámetro lwd y size para cambiar el de los puntos."
 
 - Class: cmd_question
-  Output: 'Al igual que con la función plot(), usando plot3d() puedes cambiar el título de los ejes usando xlab, ylab y zlab. Ingresa plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="l", col=as.integer(iris$Species), xlab ="Sepal.Length",  ylab = "Petal.Length", zlab = "Sepal.Width") en la línea de comandos.'
+  Output: 'Al igual que con la función plot(), usando plot3d() puedes cambiar el
+  título de los ejes usando xlab, ylab y zlab. Ingresa plot3d(iris$Sepal.Length,
+  iris$Petal.Length, iris$Sepal.Width, type="l", col=as.integer(iris$Species),
+  xlab ="Sepal.Length",  ylab = "Petal.Length", zlab = "Sepal.Width") en la
+  línea de comandos.'
   CorrectAnswer: plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="l", col=as.integer(iris$Species), xlab ="Sepal.Length",  ylab = "Petal.Length", zlab = "Sepal.Width")
   AnswerTests: omnitest(correctExpr='plot3d(iris$Sepal.Length, iris$Petal.Length, iris$Sepal.Width, type="l", col=as.integer(iris$Species), xlab ="Sepal.Length",  ylab = "Petal.Length", zlab = "Sepal.Width")')
 
 - Class: cmd_question
-  Output: 'Para conocer más opciones de la función plot3d(), ve su página de ayuda.'
+  Output: 'Para conocer más opciones de la función plot3d(), ve su página de
+  ayuda.'
   CorrectAnswer: ?plot3d
   AnswerTests: any_of_exprs('?plot3d', 'help(plot3d)', '?"plot3d"', 'help("plot3d")')
 
 - Class: mult_question
-  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a Coursera que has completado esta lección?"
+  Output: "Has concluido la lección. ¿Te gustaría que se le notificará a
+  Coursera que has completado esta lección?"
   CorrectAnswer: NULL
   AnswerChoices: Si;No
   AnswerTests: coursera_on_demand()
