@@ -86,7 +86,7 @@
   que describe cómo se usa un paquete. Puedes ver una viñetas usando la función
   vignette(). Pruébalo: escribe vignette("tests") en la línea de comandos.'
   CorrectAnswer: vignette("tests")
-  AnswerTests: omnitest(correctExpr= 'vignette("tests")')
+  AnswerTests: any_of_exprs('vignette("tests")', 'ok()')
 
 - Class: text
   Output: 'Por último si deseas ver la lista de viñetas disponibles puedes
