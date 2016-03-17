@@ -30,7 +30,7 @@
   Output: 'Con esto graficaste la cadena "¡Hola Mundo!" en las coordenadas (5,
   5). Para conocer más acerca de text() ve su página de ayuda.'
   CorrectAnswer: ?text
-  AnswerTests: omnitest(correctExpr='?text')
+  AnswerTests: any_of_exprs('?text', 'help(text)', '?"text"', 'help("text")')
   Hint: "Ingresa ?text en la línea de comandos."
 
 - Class: text
