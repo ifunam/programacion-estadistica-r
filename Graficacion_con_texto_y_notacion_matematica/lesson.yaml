@@ -1,9 +1,9 @@
 - Class: meta
   Course: programacion-estadistica-r
-  Lesson: Graficación con texto y notación matemática
-  Author: your name goes here
+  Lesson: Graficacion con texto y notacion matematica
+  Author: Ismael Fernández
   Type: Standard
-  Organization: your organization's name goes here
+  Organization: Universidad Nacional Autónoma de México
   Version: 2.2.21
 
 - Class: text
