@@ -41,7 +41,7 @@ install_course_github("ifunam", "programacion-estadistica-r")
 
 
 
-## Instalar y ejecutar el curso manualmente
+## Instalar lecciones manualmente
 
 1) Da clic en el botón **Download ZIP** que se encuentra del lado derecho de esta página.
 
