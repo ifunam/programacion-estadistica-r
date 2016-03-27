@@ -62,7 +62,8 @@ swirl()
 ```
 
 después seguir las instrucciones y seleccionar el curso "programacion-estadistica-r".
-Sys.setlocale("LC_ALL", "en_US.UTF-8") te permitirá ver los acentos.
+
+```Sys.setlocale("LC_ALL", "en_US.UTF-8")``` te permitirá ver los acentos.
 
 
 
