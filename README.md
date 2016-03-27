@@ -1,4 +1,4 @@
-# Introducción a la Programación Estadística con R
+# programacion-estadistica-r
 
 Lecciones interactivas de programación en R para uso con el paquete [swirl] (http://swirlstats.com). Forman parte del curso "Introducción a la programación estadística con R" de Coursera (https://www.coursera.org/learn/programacion-estadistica-r).
 
@@ -21,35 +21,22 @@ Para acceder a este curso debes tener instalado R, y preferiblemente RStudio, as
 
 ##Instalación de swirl
 
-### En Windows
-De momento la versión actual de swirl no soporta caracteres especiales del español (á, é, í, ó, ú, ñ, etc) en Windows, por lo que deberás instalar una versión especial de swirl:
-
 1) Ingresa los siguientes comandos en la consola de R:
 
 ```
-install.packages("devtools")
-library(devtools)
-install_github("swirldev/swirl", ref = "ismael")
+install.packages("swirl", dependencies = TRUE)
+library("swirl")
+select_language()
 ```
 
 
-### En Linux y Mac OS
-
-1) Ingresa el siguiente comando en la consola de R:
-```
-install.packages("swirl")
-```
-
-
-
-## Instalar desde swirl
+## Instalar lecciones desde swirl
 
 1) Ingresa los siguientes comandos en la consola de R:
 
 ```
 library(swirl)
 install_course_github("ifunam", "programacion-estadistica-r")
-swirl()
 ```
 
 
@@ -63,11 +50,34 @@ swirl()
 ```
 library(swirl)
 install_course_zip("ruta/al/archivo/descargado/programacion-estadistica-r.zip")
+```
+
+## Después de la instalación en Mac OS.
+
+Una vez instalado el curso, cada vez que desees acceder a las prácticas debes ingresar:
+
+```
+Sys.setlocale("LC_ALL", "en_US.UTF-8")
 swirl()
 ```
+
+después seguir las instrucciones y seleccionar el curso "programacion-estadistica-r".
+Sys.setlocale("LC_ALL", "en_US.UTF-8") te permitirá ver los acentos.
+
+
+
+## Después de la instalación en Windows y Linux
+
+Una vez instalado el curso, cada vez que desees acceder a las prácticas debes ingresar:
+
+```
+swirl()
+```
+
+después seguir las instrucciones y seleccionar el curso "programacion-estadistica-r".
 
 
 
 ## Desinstalar el curso
 
-Si te gustaria desinstalar el curso, puedes usar `uninstall_course("Introducción a la Programación Estadística con R")` en cualquier momento.
+Si te deseas desinstalar el curso, puedes usar `uninstall_course("programacion-estadistica-r")` en cualquier momento.
