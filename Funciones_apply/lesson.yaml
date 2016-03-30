@@ -182,7 +182,7 @@
   encuentra en tu directorio de trabajo, en la carpeta swirl_temp, por lo que la
   ruta del archivo es "swirl_temp/ASA_estadisticasPasajeros(3).csv"'
   CorrectAnswer: asa_datos <- read.csv("swirl_temp/ASA_estadisticasPasajeros(3).csv")
-  AnswerTests: any_of_exprs('asa_datos <- read.csv("swirl_temp/ASA_estadisticasPasajeros(3).csv")',  'read.table("swirl_temp/ASA_estadisticasPasajeros(3).csv",header=TRUE, sep=",", fileEncoding = "latin1")', 'read.table("swirl_temp/ASA_estadisticasPasajeros(3).csv",header=TRUE, sep=",")', 'asa_datos <- read.csv("swirl_temp/ASA_estadisticasPasajeros(3).csv", header=TRUE)', 'asa_datos <- read.csv("swirl_temp/ASA_estadisticasPasajeros(3).csv", header=TRUE, fileEncoding = "latin1")', 'asa_datos<-read.csv("ASA_estadisticasPasajeros(3).csv", header =TRUE, sep ="," )')
+  AnswerTests: any_of_exprs('asa_datos <- read.csv("swirl_temp/ASA_estadisticasPasajeros(3).csv")',  'read.table("swirl_temp/ASA_estadisticasPasajeros(3).csv",header=TRUE, sep=",", fileEncoding = "latin1")', 'read.table("swirl_temp/ASA_estadisticasPasajeros(3).csv",header=TRUE, sep=",")', 'asa_datos <- read.csv("swirl_temp/ASA_estadisticasPasajeros(3).csv", header=TRUE)', 'asa_datos <- read.csv("swirl_temp/ASA_estadisticasPasajeros(3).csv", header=TRUE, fileEncoding = "latin1")', 'asa_datos<-read.csv("swirl_temp/ASA_estadisticasPasajeros(3).csv", header =TRUE, sep ="," )')
   Hint: "Recuerda que para leer archivos separados por comas se usa la función
   read.csv(), y recuerda guardar el contenido en la variable asa_datos."
 
