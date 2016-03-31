@@ -9,10 +9,10 @@
 # El nombre_de_funcion que tú le asignes se convertirá en el nombre de la
 # función. argumento_1 y argumento_2 representan a los argumentos de la función;
 # recuerda que puede ser uno, varios o hasta ninguno. Dentro del cuerpo de la
-# función puedes manipular los argumentos que especifiques en la función. El
+# función puedes manipular los argumentos que especifiques en ésta. El
 # valor que regresan las funciones es la última expresión en ser evaluada dentro
-# del cuerpo. Cuando termines de definir la función, puedes usar la función de
-# la siguiente manera:
+# del cuerpo de cada función. Cuando termines de definir una función, puedes
+# usarla de la siguiente manera:
 #
 # nombre_de_funcion(valor_1, valor_2)
 #
@@ -22,5 +22,5 @@
 # antes de ingresar submit() en la línea de comandos.
 
 sucesor <- function(x) {
-  #x + 1
+  #  x + 1
 }

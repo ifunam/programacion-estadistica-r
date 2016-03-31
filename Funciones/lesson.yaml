@@ -49,13 +49,14 @@
   vez creadas son guardadas como objetos de R de clase tipo function.'
 
 - Class: text
-  Output: 'En la siguiente pregunta se te pedirá que modifiques un script que
-  aparecerá en cuanto pases a la siguiente pregunta. Las instrucciones de lo que
-  debes hacer se encontrarán en el script. Una vez que hayas acabado de
-  modificar el script, guarda tus cambios en el script e ingresa submit() en la
-  línea de comandos y asi el script será evaluado. Si después de hacer esto
-  debes corregir tu script siéntete libre de hacerlo, solo no olvides ingresar
-  submit() una vez guardados tus cambios.'
+  Output: 'En la siguiente pregunta se te pedirá que modifiques un script. Las
+  instrucciones de lo que debes hacer se encontrarán en el script. Una vez que
+  hayas acabado de modificar el script, guarda tus cambios e ingresa submit()
+  en la línea de comandos y así el script será evaluado. Si después de hacer
+  esto la línea de comandos te dice que lo vuelvas a intentar y el script
+  nuevamente aparece, esto se debe a que debes corregir tu script, siéntete
+  libre de hacerlo, solo no olvides ingresar submit() cada vez que guardes tus
+  cambios.'
 
 - Class: script
   Output: "Generalmente el cuerpo de la función es encerrado entre llaves {},

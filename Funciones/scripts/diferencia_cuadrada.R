@@ -26,7 +26,7 @@
 #   Ej: 2 ^ 3 evalúa a 8.
 #
 # Recuerda establecer los valores por defecto apropiados. Cerciórate de guardar
-# tus cambios e ingresar submit() cuando hayas terminado.
+# tus cambios e ingresar submit() en la línea de comandos cuando hayas terminado.
 
 diferencia_cuadrada <- function(x, y) {
   # ¡Escribe tu código aquí!
