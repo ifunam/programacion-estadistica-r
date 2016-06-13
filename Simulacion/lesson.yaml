@@ -50,7 +50,7 @@
   AnswerTests: any_of_exprs('help(Distributions)', 'help("Distributions")', '?Distributions')
 
 - Class: text
-  Output: 'Es importante que revises que las funciones definen a la distribución
+  Output: 'Es importante que revises que las funciones definan la distribución
   de la manera que tú esperas.'
 
 - Class: text
