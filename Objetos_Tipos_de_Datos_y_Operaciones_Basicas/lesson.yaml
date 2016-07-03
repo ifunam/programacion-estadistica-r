@@ -471,8 +471,7 @@
   colores."
 
 - Class: text
-  Output: 'Otra manera de crear dataframes es con las funciones data.frame(),
-  read.table() y read.csv().'
+  Output: 'Otra manera de crear dataframes es con las funciones read.table() y read.csv().'
 
 - Class: text
   Output: 'También puedes usar la función data.matrix() para convertir un data

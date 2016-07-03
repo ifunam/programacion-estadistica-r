@@ -254,7 +254,7 @@
 
 - Class: text
   Output: 'Sepal.Length y Sepal.Width representan la longitud y ancho del sépalo
-  respectivamente. Petal.Length y Petak.Width representan la longitud y ancho
+  respectivamente. Petal.Length y Petal.Width representan la longitud y ancho
   del pétalo. Species representa a la especie (setosa, versicolor y virginica).'
 
 - Class: cmd_question
@@ -298,7 +298,7 @@
   atípicos.'
 
 - Class: cmd_question
-  Output: 'En caso de que quieras que te grafique frecuencias puedes usar el
+  Output: 'En caso de que no quieras que te grafique frecuencias puedes usar el
   parámetro freq = FALSE para que grafique probabilidades. Ingresa
   hist(iris$Petal.Length, col="red", freq=FALSE) en la línea de comandos.'
   CorrectAnswer: hist(iris$Petal.Length, col="red", freq=FALSE)
@@ -366,7 +366,7 @@
   Output: "Las gráficas de pastel son creadas con la función pie(x, labels=),
   donde x es un vector numérico positivo indicando el área de las rebanadas y
   labels es un vector que indica el nombre de cada rebanada. Ingresa pie(c(50,
-  50, 50), label=levels(iris$Species)) en la línea de comandos."
+  50, 50), labels=levels(iris$Species)) en la línea de comandos."
   CorrectAnswer: pie(c(50, 50, 50), label=levels(iris$Species))
   AnswerTests: omnitest(correctExpr='pie(c(50, 50, 50), label=levels(iris$Species))')
 

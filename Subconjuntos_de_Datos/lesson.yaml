@@ -209,7 +209,7 @@
 
 - Class: text
   Output: 'En los ejemplos de arriba solo has visto estructuras de datos basadas
-  en un solo tipo. Recordás que R tiene un tipo de datos incorporado para la
+  en un solo tipo. Recuerda que R tiene un tipo de datos incorporado para la
   mezcla de objetos de diferentes tipos, llamados listas.'
 
 - Class: text

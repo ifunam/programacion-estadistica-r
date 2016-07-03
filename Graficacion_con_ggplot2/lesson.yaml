@@ -27,7 +27,7 @@
 - Class: text
   Output: 'En esta práctica trabajarás con el conjunto de datos diamonds del
   paquete ggplot2, el cual contiene las medidas, información de calidad y
-  precios de casi de 54 000 diamantes.'
+  precios de casi 54 000 diamantes.'
 
 - Class: cmd_question
   Output: 'Para cargar el conjunto de datos diamonds ingresa data(diamonds) en

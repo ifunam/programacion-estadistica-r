@@ -186,7 +186,7 @@
   maneras, pero tal vez no es exactamente lo que estás buscando, o tal vez tú
   quieres tener más control sobre los colores. Para especificar los colores que
   quieras puedes crear un vector que contenga dichos colores. Por ejemplo, crea
-  el vector ‘mi_paleta’ que contenga los colores 1, "green" y "#0019FFFF".'
+  el vector ‘mi_paleta’ que contenga los colores "red", "green" y "#0019FFFF".'
   CorrectAnswer: mi_paleta <- c("red", "green", "#0019FFFF")
   AnswerTests: omnitest(correctExpr='mi_paleta <- c("red", "green", "#0019FFFF")')
   Hint: 'Ingresa mi_paleta <- c("red", "green", "#0019FFFF") en la línea de comandos.'
