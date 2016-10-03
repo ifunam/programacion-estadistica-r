@@ -159,7 +159,7 @@
 
 - Class: text
   Output: 'Además, hay objetos de tipo numérico (numeric) que se dividen en
-  complejos (complex) y enteros (integer). Los últimos ya los conoces, pues hasestado trabajando con ellos, además de los vectores y los caracteres.'
+  complejos (complex) y enteros (integer). Los últimos ya los conoces, pues has estado trabajando con ellos, además de los vectores y los caracteres.'
 
 
 - Class: cmd_question
