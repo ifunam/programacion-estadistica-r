@@ -3,7 +3,7 @@
 Lecciones interactivas de programación en R para uso con el paquete [swirl] (http://swirlstats.com). Forman parte del curso "Introducción a la programación estadística con R" de Coursera (https://www.coursera.org/learn/programacion-estadistica-r).
 
 
-##Acerca de las lecciones como curso
+## Acerca de las lecciones como curso
 
 Aunque las lecciones forman parte de un curso de Coursera como las tareas de programación, están diseñadas para ser autosuficientes, es decir no es necesario estar inscrito en el curso de Coursera para aprender.
 
@@ -13,13 +13,13 @@ Las lecciones forman un curso básico de programación en R, el cual proporciona
 
 
 
-##Prerrequisitos
+## Prerrequisitos
 
 Para acceder a este curso debes tener instalado R, y preferiblemente RStudio, así como el paquete swirl.
 
 
 
-##Instalación de swirl
+## Instalación de swirl
 
 1) Ingresa los siguientes comandos en la consola de R:
 
